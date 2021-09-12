@@ -1,12 +1,11 @@
 from enum import Enum
 from datetime import date
-from Enums import Eps, Rh, Gender, Purpose, Type
-
+from Enums import Eps, Rh, Gender
 
 #Creación de la clase usuario
 class User:
     # Declaración del constructor
-    def __init__(self, __dni, __name, __lastName, __gender, __phoneNumber,
+    def __init__(self, __dni, __name, __lastName, __Gender, __phoneNumber,
                 __emergencyContact, __emailAddress, __password, __address,
                 __size, __weight, __vehicle, __purpose, __Rh, __Eps,
                 __birthday, __medicalControl, __routineUser, __rankingEmpl,
@@ -18,7 +17,7 @@ class User:
         self.dni = __dni
         self.name = __name
         self.lastName = __lastName
-        self.gender = __gender
+        self.gender = __Gender
         self.phoneNumber = __phoneNumber
         self.emergencyContact = __emergencyContact
         self.emailAddress = __emailAddress
@@ -40,11 +39,17 @@ class User:
         self.bill = __bill
         self.monthlyPay = __monthlyPay
 
-persona1 = User(1054995036,'Donald','Herrera Vargas', 'Masculino', '3012232219', '3149847223', 'jack2119hv@gmail.com', 'Chupnelohpts', 'Kr 26 # 47-15', 1.78, 78, True, 'Tonificar', Rh.O_POSITIVO, Eps.SURA, date(1994, 3, 13), "Sura", "Pecho", 'Ranking', 'Programación Usuario', 'Programación Usuario', 'Historico de rutinas', 'factura', 'mensualidades')
+    def getDni(self):
+        return self.dni
 
-rh = persona1.eps
+    def getName(self):
+        return self.name
 
+    def setName(self, __name):
+        self.name = __name
+
+persona1 = User(1054995036,'Donald','Herrera Vargas', 'Masculino', '3012232219', '3149847223', 'jack2119hv@gmail.com', 'Chupnelohpts', 'Kr 26 # 47-15', 1.78, 78, True, 'Tonificar', Rh.O_POSITIVE, Eps.SURA, date(1994, 3, 13), "Sura", "Pecho", 'Ranking', 'Programación Usuario', 'Programación Usuario', 'Historico de rutinas', 'factura', 'mensualidades')
 print(persona1.eps)
-print(f"El rh del sujeto es {rh}")
+print(persona1.rh)
 
 
