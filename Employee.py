@@ -24,7 +24,11 @@ class Employee :
         self.ranking = __ranking
         self.scheduleEmpl = __scheduleEmpl
     
-    # Metodos 
+
+    #           Metodos 
+
+    # get
+
     def getEmployeeid(self): 
         return self.employeeId
 
@@ -40,8 +44,7 @@ class Employee :
     def getRanking(self):
         return self.ranking
     
-    def setEmployeeid(self, __employeeId):
-        self.employeeId = __employeeId
+    # set()
 
     def setNameEmployee(self, __nameEmployee):
         self.nameEmployee = __nameEmployee

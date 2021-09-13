@@ -14,6 +14,8 @@ class EmployeeSchedule :
         self.availableEmpl = __availableEmpl
  
     # Metodos
+
+    # get
     def getScheduleEmplId(self):
         return self.scheduleEmplId
     
@@ -23,11 +25,10 @@ class EmployeeSchedule :
     def getAvailableEmpl(self):
         return self.availableEmpl
 
+    # set
+
     def setTimeZoneEmpl(self, __scheduleEmplId):
         self.scheduleEmplId = __scheduleEmplId
-
-    def setScheduleEmplId(self, __timeZoneEmpl):
-        self.timeZoneEmpl = __timeZoneEmpl
     
     def setAvailableEmpl(self, __availableEmpl):
         self.availableEmpl = __availableEmpl

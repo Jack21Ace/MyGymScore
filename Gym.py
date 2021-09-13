@@ -17,6 +17,8 @@ class Gym :
         self.campus = __campus
  
     # Metodos
+
+    # get
     def getNit(self):
         return self.nit
     
@@ -31,6 +33,20 @@ class Gym :
     
     def getCampus(self):
         return self.campus
+
+    # set
+    def setName(self, __name):
+        self.name = __name
+    
+    def setAddres(self, __address):
+        self.address = __address
+
+    def setPhone(self, __phone):
+        self.phone = __phone
+    
+    def setCampus(self, __campus):
+        self.campus  = __campus
+    
 
 # EJEMPLO
 

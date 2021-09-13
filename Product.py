@@ -22,6 +22,8 @@ class Product :
         self.expiration = __expiration
 
     # Metodos
+    
+    # get
     def getProductId(self):
         return self.productId
 
@@ -39,9 +41,8 @@ class Product :
     
     def getExpiration(self):
         return self.expiration
-    
-    def setProductId(self, __productId):
-        self.productId = __productId
+
+    # set
 
     def setSupplier(self, __supplier):
         self.supplier = __supplier
