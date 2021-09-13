@@ -59,6 +59,8 @@ class Product :
         self.expiration = __expiration
 
 
+# EJEMPLO 
+
 product1 = Product(5677, 'Tipo Supplier', 40950, ProductType.SUPPLEMENTS, 'ActivoFUSHION', date(2021, 11, 2))
 
 print(f'El ID del Producto es: {product1.getProductId()}\n') 

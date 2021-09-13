@@ -65,6 +65,9 @@ class Employee :
 #        scheduleEmpl = __scheduleEmplId, __timeZoneEmpl, __availableEmpl                
 #        scheduleEmpl in self.schempl
          
+
+
+        # EJEMPLO 
           
 employee1 = Employee(3456, 'Oscar Ju', 25.000, RoleList.ADMINISTRATOR, Ranking.DOS, EmployeeSchedule)
  

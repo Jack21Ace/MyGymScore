@@ -32,6 +32,8 @@ class Gym :
     def getCampus(self):
         return self.campus
 
+# EJEMPLO
+
 gym1 = Gym(3453, 'Big Boys', 'Malabar', '3189086655','Tipo Campus')
 
 print(f'El nit del gym es {gym1.getNit()}\n') 
