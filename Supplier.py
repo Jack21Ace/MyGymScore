@@ -35,7 +35,8 @@ class Supplier:
 
 supplier1 = Supplier(8525649, 'Global Sport Ltda', '(606)886-4894', 'example@example.com')
 
-"""print(f"Nuestro proveedor para maquinaria  es {supplier1.getName()}\n" + 
-f"Su numero de contacto es {supplier1.getPhone()} \n" + 
+print("==========//==========//==========//==========//==========//==========//==========")
+print(f"Nuestro proveedor para maquinaria  es {supplier1.getName()}\n" +
+f"Su numero de contacto es {supplier1.getPhone()} \n" +
 f"Su Correo electronico es {supplier1.getEmailAddress()} \n" +
-f"Y su Nit es {supplier1.getNit()}")"""
+f"Y su Nit es {supplier1.getNit()}")

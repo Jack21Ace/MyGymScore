@@ -1,28 +1,28 @@
 from enum import Enum
 from datetime import date
 from typing import Any
-from Enums import Eps, Rh, Gender
+from Enums import Eps, Rh, Gender, Purpose, Ranking
 import datetime
 # Imports de las clases pendientes
-"""import Bill
+"""
 import RoutineHistory
-import ScheduleEmpl
-import ScheduleUser
-import MonthlyPay
-import Purpose
+"""
+# imports de clases
 import MedicalControl
 import Routine
-import RankingEmpl
-"""
+import EmployeeSchedule
+import Bill
+import MonthlyPay
+import UserSchedule
 
 #Creación de la clase usuario
 class User:
     # Declaración del constructor
     def __init__(self, __dni:int, __name:str, __lastName:str, __gender:Gender, __phoneNumber:str, __emergencyContact:str,
                 __emailAddress:str, __password:str, __address:str, __size:float, __weight:float, __vehicle:bool,
-                __purpose:Any, __rh:Rh, __eps:Eps, __birthday:datetime, __medicalControl:Any,
-                __routine:Any, __rankingEmpl:Any, __scheduleUser:Any, __scheduleEmpl:Any,
-                __routineHistory:Any, __bill:Any, __monthlyPay:Any):
+                __purpose:Purpose, __rh:Rh, __eps:Eps, __birthday:datetime, __medicalControl:MedicalControl,
+                __routine:Routine, __rankingEmpl:Ranking, __scheduleUser:UserSchedule, __scheduleEmpl:EmployeeSchedule,
+                __routineHistory:Any, __bill:Bill, __monthlyPay:MonthlyPay):
 
         # Datos de entrada
         self.dni = __dni
@@ -203,7 +203,7 @@ class User:
         self.monthlyPay = __MonthlyPay
 # getter && setters ENDS
 
-person1 = User(1054995036,'Donald','Herrera Vargas', Gender.MALE, '3012232219', '3149847223', 'jack2119hv@gmail.com', 'Chupnelohpts', 'Kr 26 # 47-15', 1.78, 78, True, 'Tonificar', Rh.O_POSITIVE, Eps.SURA, date(1994, 3, 13), "Sura", "Pecho", 'Ranking', 'Programación Usuario', 'Programación Usuario', 'Historico de rutinas', 'factura', 'mensualidades')
-
+person1 = User(1054995036,'Donald','Herrera Vargas', Gender.MALE, '3012232219', '3149847223', 'jack2119hv@gmail.com', 'Chupnelohpts', 'Kr 26 # 47-15', 1.78, 78, True, Purpose, Rh.O_POSITIVE, Eps.SURA, date(1994, 3, 13), Eps.SURA, Routine, Ranking, UserSchedule, EmployeeSchedule, 'Historico de rutinas', Bill, MonthlyPay)
+print("==========//==========//==========//==========//==========//==========//==========")
 print(f"El nombre del usuario es {person1.getName()}\n Su apellido es {person1.getLastName()}\n"+
-    f"Su genero es {person1.getGender()}")
+    f"Su genero es {person1.getGender()}.")

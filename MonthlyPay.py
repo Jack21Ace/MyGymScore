@@ -9,14 +9,14 @@ from Enums import PayMethod
 
 #Creación de la clase MonthlyPay
 class MonthlyPay:
-     # Declaración del constructor
+    # Declaración del constructor
     def __init__(self, __monthlyId:int, __price:float, __dayPay:date, __deadLine:date, __payMethod:PayMethod):
-         self.monthlyId = __monthlyId
-         self.price = __price
-         self.dayPay = __dayPay
-         self.deadLine = __deadLine
-         self.payMethod = __payMethod
-         
+        self.monthlyId = __monthlyId
+        self.price = __price
+        self.dayPay = __dayPay
+        self.deadLine = __deadLine
+        self.payMethod = __payMethod
+
     def getMonthlyId(self):
         return self.monthlyId
     def getPrice(self):
@@ -38,4 +38,8 @@ class MonthlyPay:
 
 monthlypay1 = MonthlyPay(123, 32.455, date(2021, 3, 14), date(2021, 3, 15), PayMethod)
 
-print(f'codigo: {monthlypay1.getMonthlyId()}\nEl total a pagar es: {monthlypay1.getPrice()}\nDía de pago: {monthlypay1.getDayPay()}\nFecha limite {monthlypay1.getDeadLine()}')
+print("==========//==========//==========//==========//==========//==========//==========")
+print(f'codigo: {monthlypay1.getMonthlyId()}\n'
+        f'El total a pagar es: {monthlypay1.getPrice()}\n'
+        f'Día de pago: {monthlypay1.getDayPay()}\n'
+        f'Fecha limite {monthlypay1.getDeadLine()}')

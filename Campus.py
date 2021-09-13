@@ -1,17 +1,17 @@
 # Import de las clases dependientes
 from typing import Any
-#import Item
-#import Bill
-#import Payroll
 
 # Imports
+import Bill
+import Payroll
+import Item
 import Supplier
 
 # Creacion de clase Campus
 class Campus:
     # Instancia del constructor "__init__"
     def __init__(self, __nit:int, __name:str, __phone:str, __address:str, __parking:bool, __sizeParking:int,
-                __inventory:Any, __technicalEmpl:bool, __supplier:Supplier, __bill:Any, __payroll:Any):
+                __inventory:Item, __technicalEmpl:bool, __supplier:Supplier, __bill:Bill, __payroll:Payroll):
         self.nit = __nit
         self.name = __name
         self.phone = __phone
@@ -101,9 +101,9 @@ class Campus:
 # getter && setter ENDS
 
 # Aqui la instancia de la clase Campus
-campus = Campus(96348512, 'Iron GYM', '(606) 725-8569', 'KR 48 # 64-28 piso 1', True, 10, Any, False, Supplier, Any, Any)
-
+campus = Campus(96348512, 'Iron GYM', '(606) 725-8569', 'KR 48 # 64-28 piso 1', True, 10, Item, False, Supplier, Bill, Payroll)
 # Test
-print(f"Nombre de la sede {campus.getName()}\nY su numero de telefono es {campus.getPhone()}.")
-
-#print("Nombre de la sede: " + campus.getName() + "\nY su numero de telefono es: " + campus.getPhone())
+print("==========//==========//==========//==========//==========//==========//==========")
+print(f"Nombre de la sede {campus.getName()}\nY su numero de telefono es {campus.getPhone()}\n"+
+f"Si la pregunta es si el GYM tiene parqueadero, la respuesta es: {campus.getParking()}\n"+
+f"Su capacidad es {campus.getSizeParking()}.")
