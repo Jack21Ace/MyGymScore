@@ -13,7 +13,7 @@ class Employee :
                 __role:RoleList, __ranking:Ranking, __scheduleEmpl:EmployeeSchedule):
 
         # Datos de entrada
-        self.schempl = []
+        self.schempls = []
         self.employeeId = __employeeId
         self.nameEmployee = __nameEmployee
         self.salary = __salary
@@ -53,22 +53,22 @@ class Employee :
 
     def setRanking(self, __ranking):
         self.ranking = __ranking
+   
+    def getScheduleEmpl(self):
+        return self.scheduleEmpl
+
+    def setScheduleEmpl(self, __scheduleEmpl):
+        self.scheduleEmpl = __scheduleEmpl
     # Metodos Getter and Setter END
 
-#    def getScheduleEmpl(self):
-#        return self.ranking
-
-#    def setScheduleEmpl(self, __scheduleEmpl):
-#        self.scheduleEmpl = __scheduleEmpl
-
-#    def addScheduleEmpl(self, __scheduleEmplId:int, __timeZoneEmpl:date, __availableEmpl:bool):
-#        scheduleEmpl = __scheduleEmplId, __timeZoneEmpl, __availableEmpl
-#        scheduleEmpl in self.schempl
-
+    def addScheduleEmpl(self, __scheduleEmplId:int, __timeZoneEmpl:date, __availableEmpl:bool):
+        schempl = EmployeeSchedule(self, __scheduleEmplId, __timeZoneEmpl, __availableEmpl)
+        schempl in self.schempls
+ 
 # EJEMPLO
-
+ 
 employee1 = Employee(3456, 'Oscar Ju', 25.000, RoleList.ADMINISTRATOR, Ranking.DOS, EmployeeSchedule)
-
+ 
 
 print("==========//==========//==========//==========//==========//==========//==========")
 print(f'El ID del Empleado es: {employee1.getEmployeeid()}\n'
@@ -76,6 +76,11 @@ print(f'El ID del Empleado es: {employee1.getEmployeeid()}\n'
         f'El salario del Empleado es {employee1.getSalary()}\n'
         f'El rol del Empleado es {employee1.getRole()}\n'
         f'El ranking del Empleado es {employee1.getRanking()}')
+ 
+
+#print(employee1.addScheduleEmpl(EmployeeSchedule))
+# Todavia no tenemos claro como utilizar el metodo add 
+
 
 #print(f'El Calendario del empleado es {employee1.getScheduleEmpl}\n')
 # print(f'El Calendario del empleado es {employee1.addScheduleEmpl}\n')
