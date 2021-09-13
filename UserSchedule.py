@@ -15,12 +15,15 @@ class UserSchedule:
     
     def getSchedule(self):
         return self.scheduleUserId  #PREGUNTAR ESTA LINEA
-    
     def getTimeZone(self):
         return self.timeZoneUser
-    
+    def setTimeZone(self, __timeZoneUser):
+        self.timeZoneUser = __timeZoneUser
     def getAvailableUser(self):
         return self.availableUser
+    def setAvailableUser(self, __availableUser):
+        self.availableUser = __availableUser
+    
     
 userschedule1 = UserSchedule(321, date(2021, 3, 14), True)
 

@@ -24,16 +24,28 @@ class Item:
         return self.itemId
     def getName(self):
         return self.name
+    def setName(self, __name):
+        self.name = __name
     def getAmount(self):
         return self.amount
+    def setAmount(self, __amount):
+        self.amount = __amount
     def getAvailable(self):
         return self.available
+    def setAvailable(self, __available):
+        self.available = __available
     def getDescription(self):
         return self.description
+    def setDescription(self, __description):
+        self.description = __description
     def getType (self):
-        return self.Type
+        return self.type
+    def setType(self, __type):
+        self.type = __type
     def getSupplier (self):
-        return self.Supplier
+        return self.supplier
+    def setSupplier(self, __supplier):
+        self.supplier = __supplier
     
 item1 = Item(122324, 'Colchoneta', 23, True, 'Ejercicios ABS', Type.STOOL, Supplier) 
 

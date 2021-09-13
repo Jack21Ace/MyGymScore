@@ -22,14 +22,24 @@ class Offer:
         return self.eventCode
     def getName(self):
         return self.name
+    def setName(self, __name):
+        self.name = __name
     def getStart (self):
         return self.start
+    def setStart(self, __start):
+        self.start = __start
     def getEnd (self):
         return self.end
+    def setEnd(self, __end):
+        self.end = __end
     def getDescription (self):
         return self.description
+    def setDescription(self, __description):
+        self.description = __description
     def getAvailable (self):
         return self.available
+    def setAvailable(self, __available):
+        self.available = __available
     
 offer1 = Offer(1232, 'Zamba', date(2021, 11, 13), date(2021, 11, 14), 'baile', True)
         
