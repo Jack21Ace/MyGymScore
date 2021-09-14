@@ -41,17 +41,15 @@ f"Su capacidad es {campus.getSizeParking()}.")"""
 bill1 = Bill(987456213, "Iron Fitt", 123456789, "Arturo", "3105487425", "kr 25 # 24-13", date(2021, 3, 13), time(7, 10, 5), DetailBill, User)
 print("==========//==========//==========//==========//==========//==========//==========")
 print(f"Su numero de factura es: {bill1.getNumberBill()}, el nombre de la sede es {campus.getName()}\n"+
-f"El nit de la empresa es: {bill1.getNit()} y el nombre del administrador es {bill1.getNameAdmin()}\n"+
-f"La fecha de la Factura es {bill1.getDate().value}, a las {bill1.getTime().value}\n")"""
+      f"El nit de la empresa es: {bill1.getNit()} y el nombre del administrador es {bill1.getNameAdmin()}\n"+
+      f"La fecha de la Factura es {bill1.getDate().value}, a las {bill1.getTime().value}\n")"""
 
 
-"""#Test DetailBill
-DetailBill = (User, Offer, MonthlyPay, Any)
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f"El nombre del comprador es {detailpay.getNameClient()} con su oferta en la factura es {User.getDni()}\n"
-    f"Su numero telefonico es {User.getPhoneNumber()} y vive en {User.getAddress()}\n"
-    f"Su pago mensual es {detailpay.getMonthlyPay().value} y Sus productos son {detailpay.getProduct()}.")"""
-
+# #Test DetailBill
+# DetailBill = (User, Offer, MonthlyPay, Any)
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f"El nombre del comprador es {detailpay.getNameClient()} con su oferta en la factura es {User.getDni()}\n"
+#       f"Su pago mensual es {detailpay.getMonthlyPay().value} y Sus productos son {detailpay.getProduct()}.")
 
 #Test Payroll
 # pay1 = Payroll(10, 900000, 0.12 , 0.25)

@@ -64,5 +64,4 @@ print(f"El nombre del comprador es {detailpay.getNameClient()}\n"+
 # DetailBill = (User, Offer, MonthlyPay, Any)
 # print("==========//==========//==========//==========//==========//==========//==========")
 # print(f"El nombre del comprador es {detailpay.getNameClient()} con su oferta en la factura es {User.getDni()}\n"
-#     f"Su numero telefonico es {User.getPhoneNumber()} y vive en {User.getAddress()}\n"
-#     f"Su pago mensual es {detailpay.getMonthlyPay().value} y Sus productos son {detailpay.getProduct()}.")
+#       f"Su pago mensual es {detailpay.getMonthlyPay().value} y Sus productos son {detailpay.getProduct()}.")
