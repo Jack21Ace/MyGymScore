@@ -19,13 +19,13 @@ print(f"El nombre del usuario es {user.getName()} con numero de documento {user.
     f"El grupo Sangüineo del usuario es: {user.getRh().value}")"""
 
 
-"""Test Employee
+"""# Test Employee
 employee = Employee(123456, 'R2D2', '3155555555', 1200000, RoleList.ADMINISTRATOR, Ranking.CUATRO, EmployeeSchedule)
 print("==========//==========//==========//==========//==========//==========//==========")
 print(f"El nombre del trabajador es {employee.getNameEmployee()}, su numero de telefono es {employee.getPhoneEmpl()}\n"
-    f"Su salario es {employee.getSalary()}.")"""
+    f"Su salario es {employee.getSalary()}, el rol del empleado es de {employee.getRole().value}, y su ranking va a ser de {employee.getRanking().value}\n")"""
 
-
+ 
 
 
 
