@@ -53,11 +53,12 @@ print(f"El nombre del comprador es {detailpay.getNameClient()} con su oferta en 
     f"Su pago mensual es {detailpay.getMonthlyPay().value} y Sus productos son {detailpay.getProduct()}.")"""
 
 
-# #Test Payroll
+#Test Payroll
 # pay1 = Payroll(10, 900000, 0.12 , 0.25)
+# total = pay1.totalPagar()
 # print("==========//==========//==========//==========//==========//==========//==========")
 # print(f"El salario neto es {pay1.getPayNet()} con el porcenteje descuento de {pay1.getPercentDiscount()}\n"
-#      f"El porcentaje de auxilio es: {pay1.getPercentAid().value} y El total a pagar es: {total}")
+#       f"El porcentaje de auxilio es: {pay1.getPercentAid().value} y El total a pagar es: {total}")
 
 
 
