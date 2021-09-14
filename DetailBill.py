@@ -48,13 +48,21 @@ class DetailBill:
         self.product = __product
 
     def _addDetailBill(self, __nameClient:User , __offer:Offer , __monthlyPay:MonthlyPay , __product:Any):
-        detailBill1 = DetailBill(User, Offer, MonthlyPay, Any)
+        detailBill1 = DetailBill(__nameClient, __offer, __monthlyPay, __product)
         detailBill1 in self.listBill
 
-
-detailpay = DetailBill (User, Offer, MonthlyPay, any)
+# Instancia del objeto
+detailpay = DetailBill (User, Offer, MonthlyPay, Any)
 print("==========//==========//==========//==========//==========//==========//==========")
 print(f"El nombre del comprador es {detailpay.getNameClient()}\n"+
         f"Su oferta en la factura es {detailpay.getOffer()}\n"+
         f"Su pago mensual es {detailpay.getMonthlyPay()}\n"+
-        f"Sus productos son {detailpay.getProduct()}.")
+        f"Sus productos son {detailpay.getProduct().value}")
+
+
+# #Test DetailBill
+# DetailBill = (User, Offer, MonthlyPay, Any)
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f"El nombre del comprador es {detailpay.getNameClient()} con su oferta en la factura es {User.getDni()}\n"
+#     f"Su numero telefonico es {User.getPhoneNumber()} y vive en {User.getAddress()}\n"
+#     f"Su pago mensual es {detailpay.getMonthlyPay().value} y Sus productos son {detailpay.getProduct()}.")
