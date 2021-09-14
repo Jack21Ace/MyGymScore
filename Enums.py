@@ -49,42 +49,41 @@ class Purpose(Enum):
 # Enumeracion Metodo de pago 
 class PayMethod(Enum):
     CASH = 'CASH'
-    CREDIT_CARD = 'CREDIT_CARD'
-    DEBIT_CARD = 'DEBIT_CARD'
-    WIRE_TRANSFER = 'WIRE_TRANSFER'
+    CREDIT_CARD = 'Tarjeta de Credito'
+    DEBIT_CARD = 'Tarjeta de Debito'
+    WIRE_TRANSFER = 'Transferencia Bancaria'
     PAYPAL = 'PAYPAL'
-    MOBYLE_PAY = 'MOBYLE_PAY'
-    BONUSES = 'BONUSES'
+    MOBYLE_PAY = 'Pagos Moviles'
+    BONUSES = 'Bonos'
 
 # Enumeracion TRONCO SUPERIOR 
 class UpperBody(Enum):
-    DELTOIDS = 'DELTOIDS'
-    BICEPS = 'BICEPS'
-    TRICEPS = 'TRICEPS'
-    TRAPEZE = 'TRAPEZE'
-    BACK = 'BACK'
-    ABDOMEN = 'ABDOMEN'
+    DELTOIDS = 'Deltoides'
+    BICEPS = 'Biceps'
+    TRICEPS = 'Triceps'
+    TRAPEZE = 'Trapecio'
+    BACK = 'Espalda'
+    ABDOMEN = 'Abdomen'
 
 # Enumeracion TRONCO INFERIOR
 class LowerBody(Enum):
-    BUTTOCKS = 'BUTTOCKS'
-    FEMORAL_BICEPS = 'FEMORAL_BICEPS'
-    QUADRICEPS_FEMORIS = 'QUADRICEPS_FEMORIS'
-    TIBIAL = 'TIBIAL'
-    CALF = 'CALF'
-    HAMSTRINGS = 'HAMSTRINGS'
+    BUTTOCKS = 'Gluteos'
+    FEMORAL_BICEPS = 'Biceps Femoral'
+    QUADRICEPS_FEMORIS = 'Quadriceps Femoral'
+    TIBIAL = 'Tibial'
+    CALF = 'Pantorrilla'
+    HAMSTRINGS = 'Isquiotibiales'
 
 # Enumeracion ACONDICIONAMIENTO
 class Conditioning(Enum):
-    WALK = 'WALK'
-    RUN = 'RUN'
-    JUMP = 'JUMP'
-    SWIM = 'SWIM'
-    SPINING_BIKE = 'SPINING_BIKE'
+    WALK = 'Caminata'
+    RUN = 'Correr'
+    JUMP = 'Saltar'
+    SWIM = 'Nadar'
+    SPINING_BIKE = 'Bicicleta Estatica'
 
 # Enumeración Type
 class Type(Enum):
-    TYPE = "Tipo"
     DISK = "Disco"
     BAR = "Barra"
     MANCUERNA = "Mancuerna"
@@ -100,7 +99,6 @@ class Type(Enum):
 
 # Enumeración Tipo del Producto
 class ProductType(Enum):
-    PRODUCTYPE = "Tipo producto"
     PROTEIN = "Proteína"
     AMINO_ACID = "Aminoácidos"
     SPORTSWEAR = "Ropa deportiva"
@@ -111,7 +109,6 @@ class ProductType(Enum):
 
 # Enumeración RoleList
 class RoleList(Enum):
-    ROLELIST = "Lista de roles"
     ADMINISTRATOR = "Administrador"
     TRAINER = "Entrenador"
     NUTRITIONIST = "Nutricionista"
@@ -119,7 +116,6 @@ class RoleList(Enum):
 
 # Enumeración del Ranking
 class Ranking(Enum):
-    RANKING = "Ranking"
     UNO = "Uno"
     DOS = "Dos"
     TRES = "Tres"

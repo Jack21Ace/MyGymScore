@@ -36,10 +36,9 @@ class MonthlyPay:
     def setPayMethod(self, __paymethod):
         self.paymethod = __paymethod
 
-monthlypay1 = MonthlyPay(123, 32.455, date(2021, 3, 14), date(2021, 3, 15), PayMethod)
-
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f'codigo: {monthlypay1.getMonthlyId()}\n'
-        f'El total a pagar es: {monthlypay1.getPrice()}\n'
-        f'Día de pago: {monthlypay1.getDayPay()}\n'
-        f'Fecha limite {monthlypay1.getDeadLine()}')
+# monthlypay1 = MonthlyPay(123, 32.455, date(2021, 3, 14), date(2021, 3, 15), PayMethod)
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f'codigo: {monthlypay1.getMonthlyId()}\n'
+#         f'El total a pagar es: {monthlypay1.getPrice()}\n'
+#         f'Día de pago: {monthlypay1.getDayPay()}\n'
+#         f'Fecha limite {monthlypay1.getDeadLine()}')

@@ -18,7 +18,7 @@ class Patology:
     def setCode(self, __code):
         self.code = __code
 
-patology1 = Patology('Artritis', 'ABC012')
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f'Sufre usted de: {patology1.getName()}, {patology1.getCode()}')
+# patology1 = Patology('Artritis', 'ABC012')
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f'Sufre usted de: {patology1.getName()}, {patology1.getCode()}')
 

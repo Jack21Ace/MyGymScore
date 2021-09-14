@@ -17,9 +17,9 @@ class UserSchedule:
     def getAvailableUser(self):
         return self.availableUser
 
-userschedule1 = UserSchedule(321, date(2021, 3, 14), True)
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f'codigo: {userschedule1.getSchedule()}\n'
-        f'Fecha: {userschedule1.getTimeZone()}\n'
-        f'Disponibilidad: {userschedule1.getAvailableUser()}')
+# userschedule1 = UserSchedule(321, date(2021, 3, 14), True)
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f'codigo: {userschedule1.getSchedule()}\n'
+#         f'Fecha: {userschedule1.getTimeZone()}\n'
+#         f'Disponibilidad: {userschedule1.getAvailableUser()}')
 

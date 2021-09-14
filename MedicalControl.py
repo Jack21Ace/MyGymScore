@@ -80,9 +80,9 @@ class MedicalControl:
         self.medicalTime = __medicalTime
 
 #
-medicalControl1 = MedicalControl(1234, 'Alvaro','Desgarro Muscular','Analgesicos','Fisioterapia',date(2021, 9,28),time(13,30,5), 1.5, Patology)
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f'Usted presenta {medicalControl1.getDiagnosis()}')
+# medicalControl1 = MedicalControl(1234, 'Alvaro','Desgarro Muscular','Analgesicos','Fisioterapia',date(2021, 9,28),time(13,30,5), 1.5, Patology)
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f'Usted presenta {medicalControl1.getDiagnosis()}')
 
 
 

@@ -44,12 +44,12 @@ class Routine:
         self.weight = __weight
 
     def getCreatedBy(self):
-        return self.getCreatedBy
+        return self.createdBy
 
     def setCreatedBy(self, __createdBy):
         self.createdBy = __createdBy
 
-routine1 = Routine(1, 'Tren Superior', 4, 10, 20.5, 'Donald', BodyZone)
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f'Hola\nSu rutina para hoy es: {routine1.getName()}, esperamos que te diviertas')
+# routine1 = Routine(1, 'Tren Superior', 4, 10, 20.5, 'Donald', BodyZone)
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f'Hola\nSu rutina para hoy es: {routine1.getName()}, esperamos que te diviertas')
 

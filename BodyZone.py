@@ -32,10 +32,10 @@ class BodyZone:
 
 # Ejemplo
 
-bodyzone1 = BodyZone(UpperBody.ABDOMEN, LowerBody.QUADRICEPS_FEMORIS, Conditioning.RUN)
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f'El ejecicio de la zona superior es: {bodyzone1.getUpperBody()}\n'
-        f'El ejecicio de la zona baja es: {bodyzone1.getLowerBody()}\n'
-        f'El ejecicio de acondicionamiento es: {bodyzone1.getConditioning()}')
+# bodyzone1 = BodyZone(UpperBody.ABDOMEN, LowerBody.QUADRICEPS_FEMORIS, Conditioning.RUN)
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f'El ejecicio de la zona superior es: {bodyzone1.getUpperBody()}\n'
+#         f'El ejecicio de la zona baja es: {bodyzone1.getLowerBody()}\n'
+#         f'El ejecicio de acondicionamiento es: {bodyzone1.getConditioning()}')
 
 

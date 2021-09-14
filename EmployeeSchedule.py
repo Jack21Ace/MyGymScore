@@ -34,9 +34,9 @@ class EmployeeSchedule :
 # Metodos ENDS
 
 # instancia del objeto
-scheemployee1 = EmployeeSchedule(897644, time(13,30,5), True)
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f'El ID del Calendario del Empleado es: {scheemployee1.getScheduleEmplId()}\n'
-        f'El Horario del Empleado es  {scheemployee1.getTimeZoneEmpl()}\n'
-        f'La disponibilidad del empleado es {scheemployee1.getAvailableEmpl()}')
+# scheemployee1 = EmployeeSchedule(897644, time(13,30,5), True)
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f'El ID del Calendario del Empleado es: {scheemployee1.getScheduleEmplId()}\n'
+#         f'El Horario del Empleado es  {scheemployee1.getTimeZoneEmpl()}\n'
+#         f'La disponibilidad del empleado es {scheemployee1.getAvailableEmpl()}')
 

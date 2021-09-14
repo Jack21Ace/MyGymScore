@@ -58,12 +58,11 @@ class Offer:
     def setAvailable(self, __available):
         self.available = __available
 
-offer1 = Offer(1232, 'Zamba', date(2021, 11, 13), date(2021, 11, 14), 'baile', True)
-
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f'Actividad {offer1.getName()}\n'
-    f'Su código es {offer1.getEventCode()}\n'
-    f'La fecha de inscripción {offer1.getStart()}\n'
-    f'Plazo hasta {offer1.getEnd()}\n'
-    f'Descripción del evento {offer1.getDescription()}\n'
-    f'Disponibilidad {offer1.getAvailable()}')
+# offer1 = Offer(1232, 'Zamba', date(2021, 11, 13), date(2021, 11, 14), 'baile', True)
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f'Actividad {offer1.getName()}\n'
+#     f'Su código es {offer1.getEventCode()}\n'
+#     f'La fecha de inscripción {offer1.getStart()}\n'
+#     f'Plazo hasta {offer1.getEnd()}\n'
+#     f'Descripción del evento {offer1.getDescription()}\n'
+#     f'Disponibilidad {offer1.getAvailable()}')

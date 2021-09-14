@@ -52,16 +52,9 @@ class DetailBill:
         detailBill1 in self.listBill
 
 # Instancia del objeto
-detailpay = DetailBill (User, Offer, MonthlyPay, Any)
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f"El nombre del comprador es {detailpay.getNameClient()}\n"+
-        f"Su oferta en la factura es {detailpay.getOffer()}\n"+
-        f"Su pago mensual es {detailpay.getMonthlyPay()}\n"+
-        f"Sus productos son {detailpay.getProduct().value}")
-
-
-# #Test DetailBill
-# DetailBill = (User, Offer, MonthlyPay, Any)
+# detailpay = DetailBill (User, Offer, MonthlyPay, Any)
 # print("==========//==========//==========//==========//==========//==========//==========")
-# print(f"El nombre del comprador es {detailpay.getNameClient()} con su oferta en la factura es {User.getDni()}\n"
-#       f"Su pago mensual es {detailpay.getMonthlyPay().value} y Sus productos son {detailpay.getProduct()}.")
+# print(f"El nombre del comprador es {detailpay.getNameClient()}\n"+
+#         f"Su oferta en la factura es {detailpay.getOffer()}\n"+
+#         f"Su pago mensual es {detailpay.getMonthlyPay()}\n"+
+#         f"Sus productos son {detailpay.getProduct().value}")

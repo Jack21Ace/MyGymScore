@@ -69,10 +69,10 @@ class Item:
 # ENDS METHODS
 
 # instancia del Obj Item
-item1 = Item(122324, 'Colchoneta', 23, True, 'Ejercicios ABS', Type.STOOL, Supplier)
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f'La identificación del item es: {item1.getItemId()}\n'
-        f'El elemento es: {item1.getName()}\n'
-        f'La cantidad actual: {item1.getAmount()}\n'
-        f'Disponibilidad: {item1.getAvailable()}\n'
-        f'Descripcion: {item1.getDescription()}')
+# item1 = Item(122324, 'Colchoneta', 23, True, 'Ejercicios ABS', Type.STOOL, Supplier)
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f'La identificación del item es: {item1.getItemId()}\n'
+#         f'El elemento es: {item1.getName()}\n'
+#         f'La cantidad actual: {item1.getAmount()}\n'
+#         f'Disponibilidad: {item1.getAvailable()}\n'
+#         f'Descripcion: {item1.getDescription()}')

@@ -33,10 +33,9 @@ class Supplier:
         self.emailAddress = __emailAddress
 # getter && setter ENDS
 
-supplier1 = Supplier(8525649, 'Global Sport Ltda', '(606)886-4894', 'example@example.com')
-
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f"Nuestro proveedor para maquinaria  es {supplier1.getName()}\n" +
-f"Su numero de contacto es {supplier1.getPhone()} \n" +
-f"Su Correo electronico es {supplier1.getEmailAddress()} \n" +
-f"Y su Nit es {supplier1.getNit()}")
+# supplier1 = Supplier(8525649, 'Global Sport Ltda', '(606)886-4894', 'example@example.com')
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f"Nuestro proveedor para maquinaria  es {supplier1.getName()}\n" +
+# f"Su numero de contacto es {supplier1.getPhone()} \n" +
+# f"Su Correo electronico es {supplier1.getEmailAddress()} \n" +
+# f"Y su Nit es {supplier1.getNit()}")

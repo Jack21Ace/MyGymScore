@@ -61,14 +61,11 @@ class Product :
 
 
 # Instanciop de la calse Product
-product1 = Product(5677, Supplier, 40950, ProductType.SUPPLEMENTS, 'ActivoFUSHION', date(2021, 11, 2))
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f'El ID del Producto es: {product1.getProductId()}\n'
-        f'El nombre del Proveedor es  {product1.getSupplier()}\n'
-        f'El precio del producto es {product1.getPrice()}\n'
-        f'El tipo del producto es {product1.getType()}\n'
-        f'La marca del producto es {product1.getBrand()}\n'
-        f'La fecha de expiracion del producto es {product1.getExpiration()}')
-
-# Se remueve el atributo name
-# Preguntar por la lista supilier de la clase supilier
+# product1 = Product(5677, Supplier, 40950, ProductType.SUPPLEMENTS, 'ActivoFUSHION', date(2021, 11, 2))
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f'El ID del Producto es: {product1.getProductId()}\n'
+#         f'El nombre del Proveedor es  {product1.getSupplier()}\n'
+#         f'El precio del producto es {product1.getPrice()}\n'
+#         f'El tipo del producto es {product1.getType()}\n'
+#         f'La marca del producto es {product1.getBrand()}\n'
+#         f'La fecha de expiracion del producto es {product1.getExpiration()}')

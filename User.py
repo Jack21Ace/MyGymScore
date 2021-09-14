@@ -14,6 +14,7 @@ import EmployeeSchedule
 import Bill
 import MonthlyPay
 import UserSchedule
+import RoutineHistory
 
 #Creación de la clase usuario
 class User:
@@ -22,7 +23,7 @@ class User:
                 __emailAddress:str, __password:str, __address:str, __size:float, __weight:float, __vehicle:bool,
                 __purpose:Purpose, __rh:Rh, __eps:Eps, __birthday:date, __medicalControl:MedicalControl,
                 __routine:Routine, __rankingEmpl:Ranking, __scheduleUser:UserSchedule, __scheduleEmpl:EmployeeSchedule,
-                __routineHistory:Any, __bill:Bill, __monthlyPay:MonthlyPay):
+                __routineHistory:RoutineHistory, __bill:Bill, __monthlyPay:MonthlyPay):
 
         # Datos de entrada
         self.dni = __dni
@@ -203,7 +204,7 @@ class User:
         self.monthlyPay = __MonthlyPay
 # getter && setters ENDS
 
-# person1 = User(1054995036,'Donald','Herrera Vargas', Gender.MALE, '3012232219', '3149847223', 'jack2119hv@gmail.com', 'Chupnelohpts', 'Kr 26 # 47-15', 1.78, 78, True, Purpose, Rh.O_POSITIVE, Eps.SURA, date(1994, 3, 13), MedicalControl, Routine, Ranking, UserSchedule, EmployeeSchedule, 'Historico de rutinas', Bill, MonthlyPay)
+# person1 = User(1054995036,'Donald','Herrera Vargas', Gender.MALE, '3012232219', '3149847223', 'jack2119hv@gmail.com', 'Chupnelohpts', 'Kr 26 # 47-15', 1.78, 78, True, Purpose, Rh.O_POSITIVE, Eps.SURA, date(1994, 3, 13), MedicalControl, Routine, Ranking, UserSchedule, EmployeeSchedule, RoutineHistory, Bill, MonthlyPay)
 # print("==========//==========//==========//==========//==========//==========//==========")
 # print(f"El nombre del usuario es {person1.getName()}\n Su apellido es {person1.getLastName()}\n"+
-#     f"Su genero es {person1.getGender()}.")
+#     f"Su genero es {person1.getGender().value}")

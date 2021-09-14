@@ -81,22 +81,3 @@ class Employee :
 #         f'El salario del Empleado es {employee1.getSalary()}\n'
 #         f'El rol del Empleado es {employee1.getRole()}\n'
 #         f'El ranking del Empleado es {employee1.getRanking()}')
-
-#print(employee1.addScheduleEmpl(EmployeeSchedule))
-# Todavia no tenemos claro como utilizar el metodo add
-
-
-#print(f'El Calendario del empleado es {employee1.getScheduleEmpl}\n')
-# print(f'El Calendario del empleado es {employee1.addScheduleEmpl}\n')
-
-# NOTAS :
-
-# Mirar bien que los nombres de los atributos concuerden con
-# sus respectivos metodos y parametros de entrada
-
-
-# Pendiente por añadir el metodo addOffer()
-
-# Preguntar por la lista Ranking, lista scheduleempl
-
-# hola

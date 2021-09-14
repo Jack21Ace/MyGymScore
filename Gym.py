@@ -51,10 +51,10 @@ class Gym:
 # End Methods
 
 
-gym1 = Gym(3453, 'Big Boys', 'Malabar', '3189086655', Campus)
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f'El nit del gym es {gym1.getNit()}\n'
-        f'El nombre del Gym es {gym1.getName()}\n'
-        f'La direccion del Gym es {gym1.getAddress()}\n'
-        f'El telefono del Gym es {gym1.getPhone()}\n'
-        f'La sede del Gym es {gym1.getCampus()}')
+# gym1 = Gym(3453, 'Big Boys', 'Malabar', '3189086655', Campus)
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f'El nit del gym es {gym1.getNit()}\n'
+#         f'El nombre del Gym es {gym1.getName()}\n'
+#         f'La direccion del Gym es {gym1.getAddress()}\n'
+#         f'El telefono del Gym es {gym1.getPhone()}\n'
+#         f'La sede del Gym es {gym1.getCampus()}')

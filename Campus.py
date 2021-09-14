@@ -101,9 +101,9 @@ class Campus:
 # getter && setter ENDS
 
 # Aqui la instancia de la clase Campus
-campus = Campus(96348512, 'Iron GYM', '(606) 725-8569', 'KR 48 # 64-28 piso 1', True, 10, Item, False, Supplier, Bill, Payroll)
+# campus = Campus(96348512, 'Iron GYM', '(606) 725-8569', 'KR 48 # 64-28 piso 1', True, 10, Item, False, Supplier, Bill, Payroll)
 # Test
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f"Nombre de la sede {campus.getName()}\nY su numero de telefono es {campus.getPhone()}\n"+
-f"Si la pregunta es si el GYM tiene parqueadero, la respuesta es: {campus.getParking()}\n"+
-f"Su capacidad es {campus.getSizeParking()}.")
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f"Nombre de la sede {campus.getName()}\nY su numero de telefono es {campus.getPhone()}\n"+
+# f"Si la pregunta es si el GYM tiene parqueadero, la respuesta es: {campus.getParking()}\n"+
+# f"Su capacidad es {campus.getSizeParking()}.")
