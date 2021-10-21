@@ -19,12 +19,13 @@ class User:
     # Declaración del constructor
     def __init__(self, __dni:int, __name:str, __lastName:str, __gender:Gender, __phoneNumber:str, __emergencyContact:str,
                 __emailAddress:str, __password:str, __address:str, __size:float, __weight:float, __vehicle:bool,
-                __purpose:Purpose, __rh:Rh, __eps:Eps, __birthday:date, __medicalControl:MedicalControl,
-                __routine:Routine, __rankingEmpl:Ranking, __scheduleUser:UserSchedule, __scheduleEmpl:EmployeeSchedule,
-                __routineHistory:RoutineHistory, __bill:Bill, __monthlyPay:MonthlyPay):
+                __purpose:Purpose, __rh:Rh, __eps:Eps, __birthDate:date, __bill:Any, __routine:Any,
+                __monthlyPay:Any, __monthlyPayHistory:Any, __employee:Any, __scheduleUser:Any,
+                __routineHistory:Any, __medicalControl:Any):
 
         # Datos de entrada
         self.dni = __dni
+
         self.name = __name
         self.lastName = __lastName
         self.gender = __gender
@@ -39,15 +40,15 @@ class User:
         self.purpose = __purpose
         self.rh = __rh
         self.eps = __eps
-        self.birthday = __birthday
-        self.medicalControl = __medicalControl
-        self.routineUser = __routine
-        self.rankingEmpl = __rankingEmpl
-        self.scheduleUser = __scheduleUser
-        self.scheduleEmpl = __scheduleEmpl
-        self.routineHistory = __routineHistory
+        self.birthDate = __birthDate
         self.bill = __bill
+        self.routineUser = __routine
         self.monthlyPay = __monthlyPay
+        self.monthlyPayHistory = __monthlyPayHistory
+        self.employee = __employee
+        self.scheduleUser = __scheduleUser
+        self.routineHistory = __routineHistory
+        self.medicalControl = __medicalControl
 
 # getter && setter STARTS
     # Getter para dni
@@ -124,12 +125,9 @@ class User:
     def setPurpose(self, __Purpose):
         self.purpose = __Purpose
 
-    # getter && setter para Rh
+    # getter para Rh
     def getRh(self):
         return self.rh
-
-    def setRh(self, __Rh):
-        self.rh = __Rh
 
     # getter && setter para Eps
     def getEps(self):
@@ -138,12 +136,9 @@ class User:
     def setEps(self, __Eps):
         self.eps = __Eps
 
-    # getter && setter para birthday
-    def getBirthday(self):
-        return self.birthday
-
-    def setBirthday(self, __birthday):
-        self.birthday = __birthday
+    # getter para birthDate
+    def getBirthDate(self):
+        return self.birthDate
 
     # getter && setter para MedicalControl
     def getMedicalControl(self):
