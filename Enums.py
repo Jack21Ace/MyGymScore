@@ -1,18 +1,5 @@
 from enum import Enum
-from typing import MutableMapping
-
-# Eps = Enum('Eps', 'ASMETSALUD SURA MEDIMAS');
-# Rh = Enum('Rh', 'O_POSITIVE O_NEGATIVE A_POSITIVE A_NEGATIVE B_POSITIVE B_NEGATIVE AB_POSITIVE AB_NEGATIVE UNSPECIFIED');
-# Gender = Enum('Gender', 'MALE FEMALE NO-BINARY');
-# Purpose = Enum('Purpose', 'REDUCE TONE_UP DEVELOP PHYSICAL_THERAPY CONDITIONING');
-# PayMethod = Enum('PayMethod', 'CASH CREDIT_CARD DEBIT_CARD WIRE_TRANSFER PAYPAL MOBYLE_PAY BONUSES');
-# UpperBody = Enum('UpperBody', 'DELTOIDS BICEPS TRICEPS TRAPEZE BACK ABDOMEN');
-# LowerBody = Enum('LowerBody', 'BUTTOCKS FEMORAL_BICEPS QUADRICEPS_FEMORIS TIBIAL CALF HAMSTRINGS');
-# Conditioning = Enum('Conditioning', 'WALK RUN JUMP SWIM SPINING_BIKE');
-# Type = Enum('Type', 'DISK BAR MANCUERNA RUBBER_BALL HEAVY_BALL ROPE MACHINE ELECTRIC PAD STOOL LOCKERS OFFICE');
-# ProductType = Enum('ProductType', 'PROTEIN AMINO_ACID SPORTSWEAR ACCESORIES SUPPLEMENTS HEALTHY_DRINKS HEALTHY_FOOD');
-# RoleList = Enum('RoleList', 'ADMINISTRATOR TRAINER NUTRITIONIST MAINTENANCE');
-# Ranking = Enum('Ranking', 'UNO DOS TRES CUATRO CINCO');
+#from typing import MutableMapping
 
 # Enumeración Eps
 class Eps(Enum):
@@ -98,17 +85,30 @@ class Type(Enum):
     OFFICE = "Oficina"
 
 # Enumeración Tipo del Producto
-class ProductType(Enum):
-    PROTEIN = "Proteína"
-    AMINO_ACID = "Aminoácidos"
-    SPORTSWEAR = "Ropa deportiva"
-    ACCESORIESb = "Accesorios"
-    SUPPLEMENTS = "Suplementos"
-    HEALTHY_DRINKS = "Bebidas saludables"
-    HEALTHY_FOOD = "Comida saludable"
+class AccessoryType(Enum):
+    BOTTLE = "Bottle"
+    T_SHIRT = "T_Shirt"
+    SHORT = "Short"
+    GLOVES = "Gloves"
+    VANDAGES = "Vandages"
+    WEIGHT_BELT = "Weight Belt"
+    TOWEL = "Towel"
+
+# ConsumableType Enumaration
+class ConsumableType(Enum):
+    PROTEIN = "Protenina"
+    AMINO_ACID = "Aminoacidos"
+    VITAMINE = "Vitaminas"
+    COLLAGENE = "Colageno"
+    GLUTAMINE = "Glutamina"
+    BANANA = "Bananos"
+    BOCADILLO = "Bocadillo"
+    JUICE = "Jugo"
+    CREATINE = "Queratina"
+    SNACK = "Barra de proteina"
 
 # Enumeración RoleList
-class RoleList(Enum):
+class Role(Enum):
     ADMINISTRATOR = "Administrador"
     TRAINER = "Entrenador"
     NUTRITIONIST = "Nutricionista"
