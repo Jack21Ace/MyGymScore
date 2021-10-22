@@ -29,42 +29,42 @@ class Item:
     def getName(self):
         return self.__name
 
-    def setName(self, __name):
+    def setName(self, __name:str):
         self.__name = __name
 
     # Getter && Setter para amount
     def getAmount(self):
         return self.__amount
 
-    def setAmount(self, __amount):
+    def setAmount(self, __amount:int):
         self.__amount = __amount
 
     # Getter && Setter para available
     def getAvailable(self):
         return self.__available
 
-    def setAvailable(self, __available):
+    def setAvailable(self, __available:bool):
         self.__available = __available
 
     # Getter && Setter para description
     def getDescription(self):
         return self.__description
 
-    def setDescription(self, __description):
+    def setDescription(self, __description:str):
         self.__description = __description
 
     # Getter && Setter para type
     def getType (self):
         return self.__type
 
-    def setType(self, __type):
+    def setType(self, __type:Type):
         self.__type = __type
 
     # Getter && Setter para type
     def getSupplier (self):
         return self.__Supplier
 
-    def setSupplier(self, __supplier):
+    def setSupplier(self, __supplier:Supplier):
         self.__supplier = __supplier
 # ENDS METHODS
 

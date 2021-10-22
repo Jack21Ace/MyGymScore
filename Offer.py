@@ -29,35 +29,35 @@ class Offer:
     def getName(self):
         return self.__name
 
-    def setName(self, __name):
+    def setName(self, __name:str):
         self.__name = __name
 
     # Getter && Setter para start
     def getStart (self):
         return self.__start
 
-    def setStart(self, __start):
+    def setStart(self, __start:date):
         self.__start = __start
 
     # Getter && Setter para end
     def getEnd (self):
         return self.__end
 
-    def setEnd(self, __end):
+    def setEnd(self, __end:date):
         self.__end = __end
 
     # Getter && Setter para description
     def getDescription (self):
         return self.__description
 
-    def setDescription(self, __description):
+    def setDescription(self, __description:str):
         self.__description = __description
 
     # Getter && Setter para available
     def getAvailable (self):
         return self.__available
 
-    def setAvailable(self, __available):
+    def setAvailable(self, __available:bool):
         self.__available = __available
 
 # offer1 = Offer(1232, 'Zamba', date(2021, 11, 13), date(2021, 11, 14), 'baile', True)

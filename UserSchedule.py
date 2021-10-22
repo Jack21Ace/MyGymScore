@@ -29,3 +29,12 @@ class UserSchedule:
 
     def setAvailableUser(self, __availableUser):
         self.__availableUser = __availableUser
+
+    def getUser(self):
+        return self.__user
+
+    def setUser(self, __user:User):
+        self.__user = __user
+
+
+    

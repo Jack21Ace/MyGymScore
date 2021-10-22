@@ -18,12 +18,12 @@ class Accessory():
     def getNameAccessory(self):
         return self.__nameAccessory
     
-    def setNameAccessory(self, __nameAccessory):
+    def setNameAccessory(self, __nameAccessory:str):
         self.__nameAccessory = __nameAccessory
 
     # Getter && Setter AccessoryType
     def getAccessoryType(self):
         return self.__accessoryType
 
-    def setAccessoryType(self, __accessoryType):
+    def setAccessoryType(self, __accessoryType:AccesoryType):
         self.__accessoryType = __accessoryType

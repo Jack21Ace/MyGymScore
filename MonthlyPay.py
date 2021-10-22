@@ -22,19 +22,19 @@ class MonthlyPay:
         return self.__monthlyId
     def getPrice(self):
         return self.__price
-    def setPrice(self, __price):
+    def setPrice(self, __price:int):
         self.__price = __price
     def getDayPay(self):
         return self.__dayPay
-    def setDayPay(self, __daypay):
+    def setDayPay(self, __daypay:date):
         self.__daypay = __daypay
     def getDeadLine(self):
         return self.__deadLine
-    def setDeadLine(self, __deadline):
+    def setDeadLine(self, __deadline:date):
         self.__deadline = __deadline
     def getPayMethod(self):
         return self.__payMethod
-    def setPayMethod(self, __paymethod):
+    def setPayMethod(self, __paymethod:PayMethod):
         self.__paymethod = __paymethod
 
 # monthlypay1 = MonthlyPay(123, 32.455, date(2021, 3, 14), date(2021, 3, 15), PayMethod)
