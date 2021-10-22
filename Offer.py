@@ -4,7 +4,7 @@ Created on Thu Oct 21 17:44:56 2021
 
 @author: Juan Camilo
 """
- 
+
 from datetime import date
 
 #Creación de la clase offer
@@ -17,8 +17,6 @@ class Offer:
         self.__end = __end
         self.__description = __description
         self.__available = __available
-
-        pass
 
     
 
@@ -62,9 +60,9 @@ class Offer:
     def setAvailable(self, __available):
         self.__available = __available
 
-offer1 = Offer(1232, 'Zamba', date(2021, 11, 13), date(2021, 11, 14), 'baile', True)
-#print("==========//==========//==========//==========//==========//==========//==========")
-#print(f'Actividad {offer1.getName()}\n'
+# offer1 = Offer(1232, 'Zamba', date(2021, 11, 13), date(2021, 11, 14), 'baile', True)
+# print("==========//==========//==========//==========//==========//==========//==========")
+# print(f'Actividad {offer1.getName()}\n'
 #     f'Su código es {offer1.getEventCode()}\n'
 #     f'La fecha de inscripción {offer1.getStart()}\n'
 #     f'Plazo hasta {offer1.getEnd()}\n'
