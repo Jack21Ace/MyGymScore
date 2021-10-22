@@ -95,7 +95,7 @@ class AccessoryType(Enum):
     TOWEL = "Towel"
 
 # ConsumableType Enumaration
-class consumableType(Enum):
+class ConsumableType(Enum):
     PROTEIN = "Protenina"
     AMINO_ACID = "Aminoacidos"
     VITAMINE = "Vitaminas"
