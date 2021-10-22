@@ -33,7 +33,7 @@ class Purpose(Enum):
     PHYSICAL_THERAPY = 'Terapia Fisica'
     CONDITIONING = 'CONDITIONING'
 
-# Enumeracion Metodo de pago
+# Enumeracion Metodo de pago 
 class PayMethod(Enum):
     CASH = 'CASH'
     CREDIT_CARD = 'Tarjeta de Credito'
@@ -43,7 +43,7 @@ class PayMethod(Enum):
     MOBYLE_PAY = 'Pagos Moviles'
     BONUSES = 'Bonos'
 
-# Enumeracion TRONCO SUPERIOR
+# Enumeracion TRONCO SUPERIOR 
 class UpperBody(Enum):
     DELTOIDS = 'Deltoides'
     BICEPS = 'Biceps'

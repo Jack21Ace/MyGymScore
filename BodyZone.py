@@ -42,4 +42,3 @@ class BodyZone:
 #         f'El ejecicio de la zona baja es: {bodyzone1.getLowerBody()}\n'
 #         f'El ejecicio de acondicionamiento es: {bodyzone1.getConditioning()}')
 
-

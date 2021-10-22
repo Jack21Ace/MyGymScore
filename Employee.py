@@ -1,6 +1,6 @@
 from datetime import date
-from Enums import Role, Ranking
-from typing import Any, List
+from Enums import RoleList, Ranking
+from typing import List
 
 
 # Importacion de clases
@@ -10,9 +10,10 @@ from Payroll import Payroll
 # Creacion clase empleado
 class Employee :
 
+    #scheduleEmpl:EmployeeSchedule() = EmployeeSchedule()
     # Constructor
-    def __init__(self, __employeeId:int, __nameEmployee:str,  __salary:float, __role:Role,
-            __ranking:List[Ranking], __listRanking:List[Ranking], __listScheduleEmpl:List[EmployeeSchedule]):
+    def __init__(self, __employeeId:int, __nameEmployee:str,  __salary:float, __role:RoleList,
+            __ranking:Ranking):
 
 
         # Datos de entrada
@@ -20,13 +21,12 @@ class Employee :
         self.__nameEmployee = __nameEmployee
         self.__salary = __salary
         self.__role = __role
-        self.__payRoll = Any # Composición Payroll()
+        self.__payroll = Payroll()         # Composición Payroll()
         self.__ranking = __ranking
-        self.__listRanking = __listRanking
         self.__listRanking:List[Ranking] = []
-        self.__scheduleEmpl = Any # Composición EmployeeSchedule()
-        self.__listScheduleEmpl = __listScheduleEmpl
+        self.__scheduleEmpl =  EmployeeSchedule() # Composición EmployeeSchedule()
         self.__listScheduleEmpl:List[EmployeeSchedule] = []
+
 
 
 # Metodos Getter and Setter
@@ -54,7 +54,7 @@ class Employee :
     def getRole(self):
         return self.__role
 
-    def setRole(self, __role:Role):
+    def setRole(self, __role:RoleList):
         self.__role = __role
 
 
@@ -70,7 +70,7 @@ class Employee :
     def getRanking(self):
         return self.__ranking
 
-    def setRanking(self, __ranking:List[Ranking]):
+    def setRanking(self, __ranking:Ranking):
         self.__ranking = __ranking
 
 
@@ -78,7 +78,7 @@ class Employee :
     def getListRanking(self):
         return self.__listRanking
 
-    def setListRanking(self, __listRanking):
+    def setListRanking(self, __listRanking:List[Ranking]):
         self.__listRanking = __listRanking
 
 
@@ -86,15 +86,14 @@ class Employee :
     def getScheduleEmpl(self):
         return self.__scheduleEmpl
 
-    def setScheduleEmpl(self, __scheduleEmpl):
-        self.__scheduleEmpl = __scheduleEmpl
+    def setScheduleEmpl(self, __scheduleEmpl:EmployeeSchedule()):
+        self.__scheduleEmpl =  __scheduleEmpl
 
-    
     # Getter && Setter Para listScheduleEmpl
     def getListScheduleEmpl(self):
         return self.__listScheduleEmpl
 
-    def setListScheduleEmpl(self, __listScheduleEmpl):
+    def setListScheduleEmpl(self, __listScheduleEmpl:List[EmployeeSchedule]):
         self.__listScheduleEmpl = __listScheduleEmpl
 
 # Metodos Getter and Setter END

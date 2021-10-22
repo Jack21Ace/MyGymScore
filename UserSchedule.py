@@ -21,13 +21,13 @@ class UserSchedule:
     def getTimeZone(self):
         return self.__timeZoneUser
 
-    def setTimeZone(self, __timeZoneUser:date):
+    def setTimeZone(self, __timeZoneUser):
         self.__timeZoneUser = __timeZoneUser
 
     def getAvailableUser(self):
         return self.__availableUser
 
-    def setAvailableUser(self, __availableUser:bool):
+    def setAvailableUser(self, __availableUser):
         self.__availableUser = __availableUser
 
     def getUser(self):

@@ -13,19 +13,16 @@ from EmployeeSchedule import EmployeeSchedule
 class Gym:
 
     # Constructor
-    def __init__(self, __nit:int, __name:str, __address:str, __phone:str, 
-                __campus:Campus, __listCampus:List[Campus], __employee:Employee, __listEmployee:List[Employee]):
+    def __init__(self, __nit:int, __name:str, __address:str, __phone:str):
 
         # Datos de entrada
         self.__nit = __nit
         self.__name = __name
         self.__address = __address
         self.__phone = __phone
-        self.__campus = __campus
-        self.__listCampus = __listCampus
+        self.__campus = Campus()
         self.__listCampus:List[Campus] = []
-        self.__employee = __employee
-        self.__listEmployee = __listEmployee
+        self.__employee = Employee()
         self.__listEmployee:List[Employee] = []
 
 # Metodos
@@ -62,21 +59,21 @@ class Gym:
     def getCampus(self):
         return self.__campus
 
-    def setCampus(self, __campus:str):
+    def setCampus(self, __campus:Campus()):
         self.__campus = __campus
 
     # Getter and Setter para listCampus
     def getListCampus(self):
         return self.__listCampus
 
-    def setListCampus(self, __listCampus:str):
+    def setListCampus(self, __listCampus:List[Campus]):
         self.__listCampus = __listCampus
 
 
     # Metodo ADD para Campus
     def addCampus(self, __nit:int, __name:str, __phone:str, __address:str, __parking:bool, __sizeParking:int,
                 __inventory:Item, __technicalEmpl:bool, __supplier:Supplier, __bill:Bill, __payroll:Payroll):
-        __listCampus = Campus(self, __nit, __name, __phone, __address, __parking, __sizeParking, __inventory,
+        __listCampus = Campus(self, __nit, __name, __phone, __address, __parking, __sizeParking, __inventory, 
                     __technicalEmpl, __supplier, __bill, __payroll)
         self.__listCampus.append(__listCampus)
 
@@ -85,7 +82,7 @@ class Gym:
     def getEmployee(self):
         return self.__employee
 
-    def setEmployee(self, __employee):
+    def setEmployee(self, __employee:Employee()):
         self.__employee = __employee
 
 
@@ -93,7 +90,7 @@ class Gym:
     def getListEmployee(self):
         return self.__listEmployee
 
-    def setListEmployee(self, __listEmployee):
+    def setListEmployee(self, __listEmployee:List[Employee]):
         self.__listEmployee = __listEmployee
 
 

@@ -1,6 +1,7 @@
 from Enums import Conditioning, ConsumableType
+from Product import Product
 
-class Consumable(object):
+class Consumable(Product):
     __nameConsumable: str = ""
     __consumableType:ConsumableType = None
 
