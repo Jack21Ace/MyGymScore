@@ -6,25 +6,24 @@ Created on Thu Oct 21 17:48:02 2021
 """
 
 from Enums import AccesoryType
-from Product import Product
 #Creación de la clase Accessory
-class Accessory(Product):
+class Accessory():
     # Declaración del constructor
     def __init__(self, __nameAccessory:str, __accessoryType:AccessoryType):
-        self.nameAccessory = __nameAccessory
-        self.accessoryType = __accessoryType
+        self.__nameAccessory = __nameAccessory
+        self.__accessoryType = __accessoryType
 
 # START METHODS
     # Getter && Setter para nameAccessory
     def getNameAccessory(self):
-        return self.nameAccessory
+        return self.__nameAccessory
     
     def setNameAccessory(self, __nameAccessory):
-        self.nameAccessory = __nameAccessory
+        self.__nameAccessory = __nameAccessory
 
     # Getter && Setter AccessoryType
     def getAccessoryType(self):
-        return self.accessoryType
+        return self.__accessoryType
 
     def setAccessoryType(self, __accessoryType):
-        self.accessoryType = __accessoryType
+        self.__accessoryType = __accessoryType
