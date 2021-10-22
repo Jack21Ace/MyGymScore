@@ -1,6 +1,6 @@
 from datetime import date
-from Enums import RoleList, Ranking
-from typing import List
+from Enums import Role, Ranking
+from typing import Any, List
 
 
 # Importacion de clases
@@ -11,8 +11,8 @@ from Payroll import Payroll
 class Employee :
 
     # Constructor
-    def __init__(self, __employeeId:int, __nameEmployee:str,  __salary:float, __role:RoleList, __payRoll:Payroll,
-            __ranking:List[Ranking], __listRanking:List[Ranking], __scheduleEmpl:EmployeeSchedule, __listScheduleEmpl:List[EmployeeSchedule]):
+    def __init__(self, __employeeId:int, __nameEmployee:str,  __salary:float, __role:Role,
+            __ranking:List[Ranking], __listRanking:List[Ranking], __listScheduleEmpl:List[EmployeeSchedule]):
 
 
         # Datos de entrada
@@ -20,13 +20,11 @@ class Employee :
         self.__nameEmployee = __nameEmployee
         self.__salary = __salary
         self.__role = __role
-        self.__payRoll = __payRoll
-
+        self.__payRoll = Any # Composición Payroll()
         self.__ranking = __ranking
         self.__listRanking = __listRanking
         self.__listRanking:List[Ranking] = []
-
-        self.__scheduleEmpl = __scheduleEmpl
+        self.__scheduleEmpl = Any # Composición EmployeeSchedule()
         self.__listScheduleEmpl = __listScheduleEmpl
         self.__listScheduleEmpl:List[EmployeeSchedule] = []
 
@@ -41,15 +39,14 @@ class Employee :
     def getNameEmployee(self):
         return self.__nameEmployee
 
-    def setNameEmployee(self, __nameEmployee):
+    def setNameEmployee(self, __nameEmployee:str):
         self.__nameEmployee = __nameEmployee
 
-    
     # Getter && Setter Para Salary
     def getSalary(self):
         return self.__salary
 
-    def setSalary(self, __salary):
+    def setSalary(self, __salary:float):
         self.__salary = __salary
 
 
@@ -57,7 +54,7 @@ class Employee :
     def getRole(self):
         return self.__role
 
-    def setRole(self, __role):
+    def setRole(self, __role:Role):
         self.__role = __role
 
 
@@ -65,7 +62,7 @@ class Employee :
     def getPayRoll(self):
         return self.__payroll
 
-    def setPayRoll(self, __payroll):
+    def setPayRoll(self, __payroll:Payroll()):
         self.__payroll = __payroll
 
 
@@ -73,7 +70,7 @@ class Employee :
     def getRanking(self):
         return self.__ranking
 
-    def setRanking(self, __ranking):
+    def setRanking(self, __ranking:List[Ranking]):
         self.__ranking = __ranking
 
 

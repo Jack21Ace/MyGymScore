@@ -21,11 +21,9 @@ class Gym:
         self.__name = __name
         self.__address = __address
         self.__phone = __phone
-
         self.__campus = __campus
         self.__listCampus = __listCampus
         self.__listCampus:List[Campus] = []
-
         self.__employee = __employee
         self.__listEmployee = __listEmployee
         self.__listEmployee:List[Employee] = []
@@ -40,7 +38,7 @@ class Gym:
     def getName(self):
         return self.__name
 
-    def setName(self, __name):
+    def setName(self, __name:str):
         self.__name = __name
 
 
@@ -48,7 +46,7 @@ class Gym:
     def getAddress(self):
         return self.__address
 
-    def setAddres(self, __address):
+    def setAddres(self, __address:str):
         self.__address = __address
 
 
@@ -56,7 +54,7 @@ class Gym:
     def getPhone(self):
         return self.__phone
 
-    def setPhone(self, __phone):
+    def setPhone(self, __phone:str):
         self.__phone = __phone
 
 
@@ -64,22 +62,21 @@ class Gym:
     def getCampus(self):
         return self.__campus
 
-    def setCampus(self, __campus):
+    def setCampus(self, __campus:str):
         self.__campus = __campus
 
-    
     # Getter and Setter para listCampus
     def getListCampus(self):
         return self.__listCampus
 
-    def setListCampus(self, __listCampus):
+    def setListCampus(self, __listCampus:str):
         self.__listCampus = __listCampus
 
 
     # Metodo ADD para Campus
     def addCampus(self, __nit:int, __name:str, __phone:str, __address:str, __parking:bool, __sizeParking:int,
                 __inventory:Item, __technicalEmpl:bool, __supplier:Supplier, __bill:Bill, __payroll:Payroll):
-        __listCampus = Campus(self, __nit, __name, __phone, __address, __parking, __sizeParking, __inventory, 
+        __listCampus = Campus(self, __nit, __name, __phone, __address, __parking, __sizeParking, __inventory,
                     __technicalEmpl, __supplier, __bill, __payroll)
         self.__listCampus.append(__listCampus)
 

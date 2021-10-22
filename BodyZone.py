@@ -17,21 +17,21 @@ class BodyZone:
     def getUpperBody(self):
         return self.__upperBody
 
-    def setUpperBody(self, __upperBody):
+    def setUpperBody(self, __upperBody:UpperBody):
         self.__upperBody = __upperBody
 
     # Getter && Setter Para LowerBody
     def getLowerBody(self):
         return self.__lowerBody
 
-    def setLowerBody(self, __lowerBody):
+    def setLowerBody(self, __lowerBody:LowerBody):
         self.__lowerBody = __lowerBody
 
     # Getter && Setter Para Conditioning
     def getConditioning(self):
         return self.__conditioning
 
-    def setConditioning(self, __conditioning):
+    def setConditioning(self, __conditioning:Conditioning):
         self.__conditioning = __conditioning
 
 # Ejemplo

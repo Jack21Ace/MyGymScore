@@ -5,7 +5,7 @@ class EmployeeSchedule :
 
     # Constructor
     def __init__(self, __scheduleEmplId:int, __timeZoneEmpl:date, __availableEmpl:bool, __extraTime:float, 
-            __freeDays:date):
+            __freeDays:int):
 
         # Datos de entrada
         self.__scheduleEmplId = __scheduleEmplId
@@ -24,7 +24,7 @@ class EmployeeSchedule :
     def getTimeZoneEmpl(self):
         return self.__timeZoneEmpl
 
-    def setTimeZoneEmpl(self, __timeZoneEmpl):
+    def setTimeZoneEmpl(self, __timeZoneEmpl:date):
         self.__timeZoneEmpl = __timeZoneEmpl
 
 
@@ -32,15 +32,14 @@ class EmployeeSchedule :
     def getAvailableEmpl(self):
         return self.__availableEmpl
 
-    def setAvailableEmpl(self, __availableEmpl):
+    def setAvailableEmpl(self, __availableEmpl:bool):
         self.__availableEmpl = __availableEmpl
 
-    
     # Getter && Setter para extraTime
     def getExtraTime(self):
         return self.__extraTime
 
-    def setExtraTime(self, __extraTime):
+    def setExtraTime(self, __extraTime:float):
         self.__extraTime = __extraTime
 
 
@@ -48,11 +47,9 @@ class EmployeeSchedule :
     def getFreeDays(self):
         return self.__freeDays
 
-    def setFreeDays(self, __freeDays):
+    def setFreeDays(self, __freeDays:int):
         self.__freeDays = __freeDays
 # Metodos ENDS
-
-
 
 # instancia del objeto
 # scheemployee1 = EmployeeSchedule(897644, time(13,30,5), True)
