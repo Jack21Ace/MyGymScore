@@ -10,22 +10,22 @@ from User import User
 #Creación de la clase userschedule
 class UserSchedule:
     def __init__(self, __scheduleUserId:int, __timeZoneUser:date, __availableUser:bool, __user:User):
-        self.scheduleUserId = __scheduleUserId
-        self.timeZoneUser = __timeZoneUser
-        self.availableUser = __availableUser
-        self.user = __user
+        self.__scheduleUserId = __scheduleUserId
+        self.__timeZoneUser = __timeZoneUser
+        self.__availableUser = __availableUser
+        self.__user = __user
 
     def getSchedule(self):
-        return self.scheduleUserId  #PREGUNTAR ESTA LINEA
+        return self.__scheduleUserId  #PREGUNTAR ESTA LINEA
 
     def getTimeZone(self):
-        return self.timeZoneUser
+        return self.__timeZoneUser
 
     def setTimeZone(self, __timeZoneUser):
-        self.timeZoneUser = __timeZoneUser
+        self.__timeZoneUser = __timeZoneUser
 
     def getAvailableUser(self):
-        return self.availableUser
+        return self.__availableUser
 
     def setAvailableUser(self, __availableUser):
-        self.availableUser = __availableUser
+        self.__availableUser = __availableUser

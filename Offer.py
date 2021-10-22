@@ -11,54 +11,54 @@ from datetime import date
 class Offer:
     # Declaración del constructor
     def __init__(self, __eventCode:int, __name:str, __start:date, __end:date, __description:str, __available:bool):
-        self.eventCode = __eventCode
-        self.name = __name
-        self.start = __start
-        self.end = __end
-        self.description = __description
-        self.available = __available
+        self.__eventCode = __eventCode
+        self.__name = __name
+        self.__start = __start
+        self.__end = __end
+        self.__description = __description
+        self.__available = __available
 
     
 
 # START METHODS
     # Getter para eventCode
     def getEventCode(self):
-        return self.eventCode
+        return self.__eventCode
 
     # Getter && Setter para name
     def getName(self):
-        return self.name
+        return self.__name
 
     def setName(self, __name):
-        self.name = __name
+        self.__name = __name
 
     # Getter && Setter para start
     def getStart (self):
-        return self.start
+        return self.__start
 
     def setStart(self, __start):
-        self.start = __start
+        self.__start = __start
 
     # Getter && Setter para end
     def getEnd (self):
-        return self.end
+        return self.__end
 
     def setEnd(self, __end):
-        self.end = __end
+        self.__end = __end
 
     # Getter && Setter para description
     def getDescription (self):
-        return self.description
+        return self.__description
 
     def setDescription(self, __description):
-        self.description = __description
+        self.__description = __description
 
     # Getter && Setter para available
     def getAvailable (self):
-        return self.available
+        return self.__available
 
     def setAvailable(self, __available):
-        self.available = __available
+        self.__available = __available
 
 # offer1 = Offer(1232, 'Zamba', date(2021, 11, 13), date(2021, 11, 14), 'baile', True)
 # print("==========//==========//==========//==========//==========//==========//==========")
