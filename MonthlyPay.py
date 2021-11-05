@@ -20,26 +20,33 @@ class MonthlyPay:
 
     def getMonthlyId(self):
         return self.__monthlyId
+
     def getPrice(self):
         return self.__price
+
     def setPrice(self, __price:int):
         self.__price = __price
+
     def getDayPay(self):
         return self.__dayPay
+
     def setDayPay(self, __daypay:date):
-        self.__daypay = __daypay
+        self.__dayPay = __daypay
+        
+
     def getDeadLine(self):
         return self.__deadLine
-    def setDeadLine(self, __deadline:date):
-        self.__deadline = __deadline
+
+    def setDeadLine(self, __deadLine:date):
+        self.__deadLine = __deadLine
+        
+
     def getPayMethod(self):
         return self.__payMethod
-    def setPayMethod(self, __paymethod:PayMethod):
-        self.__paymethod = __paymethod
 
-# monthlypay1 = MonthlyPay(123, 32.455, date(2021, 3, 14), date(2021, 3, 15), PayMethod)
-# print("==========//==========//==========//==========//==========//==========//==========")
-# print(f'codigo: {monthlypay1.getMonthlyId()}\n'
-#         f'El total a pagar es: {monthlypay1.getPrice()}\n'
-#         f'Día de pago: {monthlypay1.getDayPay()}\n'
-#         f'Fecha limite {monthlypay1.getDeadLine()}')
+    def setPayMethod(self, __paymethod:PayMethod):
+        self.__payMethod = __paymethod
+    
+    def __str__(self):
+        result = f"Total a pagar: {str(self.__price)}\nFecha pago oportuno: {str(self.__dayPay)}\nFecha Limite: {str(self.__deadLine)}\nMetodo de pago elegido: {str(self.__payMethod.value)}"
+        return result

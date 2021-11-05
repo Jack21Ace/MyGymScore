@@ -19,7 +19,9 @@ class Patology(object): #Clase de tipo objeto
     def setCode(self, __code):
         self.__code = __code
 
-# patology1 = Patology('Artritis', 'ABC012')
-# print("==========//==========//==========//==========//==========//==========//==========")
-# print(f'Sufre usted de: {patology1.getName()}, {patology1.getCode()}')
+    def __str__(self):
+        result = f"Sufre usted de: {str(self.__name)}\nCodigo de la patologia: {str(self.__code)}"
+        return result
+
+
 

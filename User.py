@@ -6,7 +6,7 @@ from datetime import date
 import RoutineHistory
 """
 # imports de clases
-# import MedicalControl
+import MedicalControl
 # import Routine
 # import EmployeeSchedule
 # import Bill
@@ -15,12 +15,12 @@ import RoutineHistory
 # import RoutineHistory
 
 #Creación de la clase usuario
-class User(object):
+class User:
 
     # Inicializador de la clase
     def __init__(self, __dni:int, __name:str, __lastName:str, __gender:Gender, __phoneNumber:str, __emergencyContact:str,
                 __emailAddress:str, __password:str, __address:str, __size:float, __weight:float, __vehicle:bool,
-                __purpose:Purpose, __rh:Rh, __eps:Eps, __birthDate:date, __employee:Any, __medicalControl:Any, __scheduleUser:Any):
+                __purpose:Purpose, __rh:Rh, __eps:Eps, __birthDate:date, __employee:Any, __medicalControl:MedicalControl, __scheduleUser:Any):
 
         # Datos de entrada
         self.__dni = __dni
@@ -206,7 +206,8 @@ class User(object):
 
     # Mejor forma para imprimir la información almacenada
     def __str__(self):
-        pass
+        result = f"Nuevo Usuario Registrado\nNombre: {str(self.__name)} {str(self.__lastName)}\nNumero Contacto: {str(self.__phoneNumber)}\nGenero: {str(self.__gender.value)}\nEmail:{str(self.__emailAddress)}\nFecha de Nacimiento: {str(self.__birthDate)}\nRH: {str(self.__rh.value)}\nEPS: {str(self.__eps.value)}\nContacto Emergencia: {str(self.__emergencyContact)}"
+        return result  
 
 # getter && setters ENDS
 ############################################################################################
@@ -215,13 +216,4 @@ class User(object):
 ############################################################################################
 
 person1 = User(1054995036, "Donald", "Herrera", Gender.MALE, "3012232219", "3148947223", "example@example.com", "123456", "kajsh", 1.78, 78, True, Purpose.TONE_UP, Rh.O_POSITIVE, Eps.SURA, date(1994,3,13), Any, Any, Any)
-print("==========//==========//==========//==========//==========//==========//==========")
-print(f"Nuevo Usuario Registrado \n",
-        f"Nombre: {person1.getName().upper()} {person1.getLastName().upper()} \n",
-        f"Genero: {person1.getGender().value.upper()}\n",
-        f"Numero de Contacto: {person1.getPhoneNumber()}\n",
-        f"Email: {person1.getEmailAddress().upper()}\n",
-        f"Fecha de Nacimiento: {person1.getBirthDate()}\n",
-        f"RH: {person1.getRh().value.upper()}\n",
-        f"EPS: {person1.getEps().value.upper()}\n",
-        f"Contacto Emergencia: {person1.getEmergencyContact()}")
+print(person1.__str__())

@@ -3,11 +3,11 @@ from typing import List
 from Supplier import Supplier
 
 # Clase Product
-class Product:
+class Product: 
 
     # Constructor
     def __init__(self, __productId:int, __productName:str, __price:float, __brand:str,
-                __expiration:datetime, __available:bool):
+                __expiration:datetime, __available:bool, __suppliers:List[Supplier]):
 
         # Datos de entrada
         self.__productId = __productId
@@ -16,7 +16,7 @@ class Product:
         self.__brand = __brand
         self.__expiration = __expiration
         self.__available = __available
-        self.__suppliers:List[Supplier] = []
+        self.__suppliers:List[Supplier] = __suppliers
 
 # STARTS Metodos
     # Getter para productId
@@ -34,7 +34,7 @@ class Product:
     def getPrice(self):
         return self.__price
 
-    def setPrice(self, __price:float):
+    def setPrice(self, __price:float): 
         self.__price = __price
 
     # Getter && Setter para brand
@@ -66,13 +66,18 @@ class Product:
         self.__suppliers = __suppliers
 
 
+    def __str__(self) -> str:
+        result = f"Nombre del producto: {str(self.__productName)}\nValor: {(self.__price):.3f}\nMarca: {str(self.__brand)}\nDisponibilidad: {str(self.__available)}\nProveedor: {str(self.__suppliers)}"
+        return result
 
 
 # Instanciop de la calse Product
-# product1 = Product(5677, Supplier, 40950, ProductType.SUPPLEMENTS, 'ActivoFUSHION', date(2021, 11, 2))
-# print("==========//==========//==========//==========//==========//==========//==========")
+print("==========//==========//==========//==========//==========//==========//==========")
+product1 = Product(134679, "Termo", 5.500, "NIKE", None, True, Supplier)
+print(product1.__str__())
+#print(product1.__str__())
 # print(f'El ID del Producto es: {product1.getProductId()}\n'
-#         f'El nombre del Proveedor es  {product1.getSupplier()}\n'
+#         f'El nombre del Proveedor es  {Supplier.}\n'
 #         f'El precio del producto es {product1.getPrice()}\n'
 #         f'El tipo del producto es {product1.getType()}\n'
 #         f'La marca del producto es {product1.getBrand()}\n'

@@ -62,17 +62,15 @@ class Item:
 
     # Getter && Setter para type
     def getSupplier (self):
-        return self.__Supplier
+        return self.__supplier
 
     def setSupplier(self, __supplier:Supplier):
         self.__supplier = __supplier
 # ENDS METHODS
-
+    def __str__(self):
+        result = f"El elemnto es: {str(self.__name)}\nSu codigo es: {str(self.__itemId)}\nEn inventario tenemos: {str(self.__amount)}\nDisponibles: {str(self.__available)}\nDescripción: {str(self.__description)}\nTipo: {str(self.__type.value)}\nProveedor: {str(self.__supplier)}"
+        return result
+ 
 # instancia del Obj Item
-# item1 = Item(122324, 'Colchoneta', 23, True, 'Ejercicios ABS', Type.STOOL, Supplier)
-# print("==========//==========//==========//==========//==========//==========//==========")
-# print(f'La identificación del item es: {item1.getItemId()}\n'
-#         f'El elemento es: {item1.getName()}\n'
-#         f'La cantidad actual: {item1.getAmount()}\n'
-#         f'Disponibilidad: {item1.getAvailable()}\n'
-#         f'Descripcion: {item1.getDescription()}')  
+item1 = Item(122324, 'Colchoneta', 23, True, 'Ejercicios ABS', Type.PAD, Supplier.supplier1.getName())
+#print(item1.__str__()) 

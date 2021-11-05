@@ -18,7 +18,6 @@ class Offer:
         self.__description = __description
         self.__available = __available
 
-    
 
 # START METHODS
     # Getter para eventCode
@@ -60,11 +59,7 @@ class Offer:
     def setAvailable(self, __available:bool):
         self.__available = __available
 
-# offer1 = Offer(1232, 'Zamba', date(2021, 11, 13), date(2021, 11, 14), 'baile', True)
-# print("==========//==========//==========//==========//==========//==========//==========")
-# print(f'Actividad {offer1.getName()}\n'
-#     f'Su código es {offer1.getEventCode()}\n'
-#     f'La fecha de inscripción {offer1.getStart()}\n'
-#     f'Plazo hasta {offer1.getEnd()}\n'
-#     f'Descripción del evento {offer1.getDescription()}\n'
-#     f'Disponibilidad {offer1.getAvailable()}')
+    def __str__(self):
+        result = f"Codigo de la oferta {str(self.__eventCode)}\nActividad: {str(self.__name)}\nFecha Inicio: {str(self.__start)}\nFecha Fin: {str(self.__end)}\nDescripción: {str(self.__description)}"
+        return result
+    

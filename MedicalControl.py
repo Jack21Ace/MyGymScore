@@ -5,7 +5,7 @@ from typing import Any, List
 class MedicalControl:
     # Declaración del constructor o Inicializador de tipo objeto
     def __init__(self, __medicEmploName:str, __diagnosis:str, __treatment:str, __suggestions:str, __medicalDate:date,
-    __evolutionaryLevel:float, __patologies:Patology):
+    __evolutionaryLevel:float, __patologies:List[Patology]):
     # patología es agregación no es obligación
     # composición depende si o si de la otra clase
 
@@ -16,7 +16,7 @@ class MedicalControl:
         self.__suggestions = __suggestions
         self.__medicalDate = __medicalDate
         self.__evolutionaryLevel = __evolutionaryLevel
-        self.__patologies:List[Patology] = []
+        self.__patologies:List[Patology] = __patologies
 
 # START METHODS
     # Getter && Setter para medicEmploName
@@ -48,17 +48,17 @@ class MedicalControl:
         self.__suggestions = __suggestions
 
     # Getter && Setter para __medicalDate
-    def __getMedicalDate(self):
+    def getMedicalDate(self):
         return self.__medicalDate
 
-    def __setMedicalDate(self, __medicalDate:date):
+    def setMedicalDate(self, __medicalDate:date):
         self.__medicalDate = __medicalDate
 
     # Getter && Setter para __evolutionaryLevel
-    def __getEvolutionaryLevel(self):
+    def getEvolutionaryLevel(self):
         return self.__evolutionaryLevel
 
-    def __setEvolutionaryLevel(self, __evolutionaryLevel:float):
+    def setEvolutionaryLevel(self, __evolutionaryLevel:float):
         self.__evolutionaryLevel = __evolutionaryLevel
 
    
@@ -80,10 +80,9 @@ class MedicalControl:
     def setPatologies(self, __patologies:Patology):
         self.__patologies = __patologies
 
-#
-# medicalControl1 = MedicalControl(1234, 'Alvaro','Desgarro Muscular','Analgesicos','Fisioterapia',date(2021, 9,28),time(13,30,5), 1.5, Patology)
-# print("==========//==========//==========//==========//==========//==========//==========")
-# print(f'Usted presenta {medicalControl1.getDiagnosis()}')
+    def __str__(self):
+        result = f"El medico que le atiende es: {str(self.__medicEmploName)}\nDiagnostico Medico: {str(self.__diagnosis)}\nTratamiento: {str(self.__treatment)}\nSugerencia: {str(self.__suggestions)}\nFecha de la Cita: {str(self.__medicalDate)}\nNivel Evolutivo en el GYM: {str(self.__evolutionaryLevel)}\nCodigo Patologia: {str(self.__patologies)}"
+        return result
 
 
 

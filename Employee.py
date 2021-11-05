@@ -1,6 +1,6 @@
-from datetime import date
-from Enums import RoleList, Ranking
-from typing import List
+from datetime import date, time
+from Enums import Role, Ranking
+from typing import List, Any
 
 
 # Importacion de clases
@@ -10,25 +10,22 @@ from Payroll import Payroll
 # Creacion clase empleado
 class Employee :
 
-    #scheduleEmpl:EmployeeSchedule() = EmployeeSchedule()
     # Constructor
-    def __init__(self, __employeeId:int, __nameEmployee:str,  __salary:float, __role:RoleList,
-            __ranking:Ranking):
-
+    def __init__(self, __employeeId:int, __nameEmployee:str, __phoneEmployee:str, 
+                __salary:float, __role:Role, __ranking:Ranking):
 
         # Datos de entrada
         self.__employeeId = __employeeId
         self.__nameEmployee = __nameEmployee
+        self.__phoneEmployee = __phoneEmployee
         self.__salary = __salary
         self.__role = __role
-        self.__payroll = Payroll()         # Composición Payroll()
+        self.__payroll = Payroll(10, 900000, 0.12 , 0.25)         # Composición Payroll()
         self.__ranking = __ranking
         self.__listRanking:List[Ranking] = []
-        self.__scheduleEmpl =  EmployeeSchedule() # Composición EmployeeSchedule()
+        self.__scheduleEmpl =  EmployeeSchedule(456, time(8,00), True, 2, 0, 8) # Composición EmployeeSchedule()
         self.__listScheduleEmpl:List[EmployeeSchedule] = []
-
-
-
+   
 # Metodos Getter and Setter
     # Getter Para EmployeeId
     def getEmployeeid(self):
@@ -42,6 +39,15 @@ class Employee :
     def setNameEmployee(self, __nameEmployee:str):
         self.__nameEmployee = __nameEmployee
 
+
+    # Getter and Setter Para phoneEmployee
+    def getPhoneEmployee(self):
+        return self.__phoneEmployee
+
+    def setPhoneEmployee(self, __phoneEmployee:str):
+        self.__phoneEmployee = __phoneEmployee
+
+
     # Getter && Setter Para Salary
     def getSalary(self):
         return self.__salary
@@ -54,16 +60,8 @@ class Employee :
     def getRole(self):
         return self.__role
 
-    def setRole(self, __role:RoleList):
+    def setRole(self, __role:Role):
         self.__role = __role
-
-
-    # Getter and Setter Para payroll
-    def getPayRoll(self):
-        return self.__payroll
-
-    def setPayRoll(self, __payroll:Payroll()):
-        self.__payroll = __payroll
 
 
     # Getter && Setter Para Ranking
@@ -82,11 +80,19 @@ class Employee :
         self.__listRanking = __listRanking
 
 
+    # Getter and Setter Para payroll
+    def getPayRoll(self):
+        return self.__payroll
+ 
+    def setPayRoll(self, __payroll:Payroll):
+        self.__payroll = __payroll
+ 
+
     # Getter && Setter Para ScheduleEmployee
     def getScheduleEmpl(self):
         return self.__scheduleEmpl
 
-    def setScheduleEmpl(self, __scheduleEmpl:EmployeeSchedule()):
+    def setScheduleEmpl(self, __scheduleEmpl:EmployeeSchedule):
         self.__scheduleEmpl =  __scheduleEmpl
 
     # Getter && Setter Para listScheduleEmpl
@@ -98,17 +104,13 @@ class Employee :
 
 # Metodos Getter and Setter END
 
-
 # Metodo ADD para scheduleempl
     def addScheduleEmpl(self, __scheduleEmplId:int, __timeZoneEmpl:date, __availableEmpl:bool):
         __listScheduleEmpl = EmployeeSchedule(self, __scheduleEmplId, __timeZoneEmpl, __availableEmpl)
         self.__listScheduleEmpl.append(__listScheduleEmpl)
-
-# EJEMPLO
-# employee1 = Employee(3456, 'Oscar Ju', '3155555555', 25.000, RoleList.ADMINISTRATOR, Ranking.DOS, EmployeeSchedule)
-# print("==========//==========//==========//==========//==========//==========//==========")
-# print(f'El ID del Empleado es: {employee1.getEmployeeid()}\n'
-#         f'El nombre del Empleado es  {employee1.getNameEmployee()}\n'
-#         f'El salario del Empleado es {employee1.getSalary()}\n'
-#         f'El rol del Empleado es {employee1.getRole()}\n'
-#         f'El ranking del Empleado es {employee1.getRanking()}')
+           
+    def __str__(self):
+        cadena = f'El ID del empleado es: {str(self.__employeeId)}\nEl nombre del empleado es:  {str(self.__nameEmployee)}\nEl telefono de {str(self.__nameEmployee)} es: {str(self.__phoneEmployee)}\nEl salario de {str(self.__nameEmployee)} es: {str(self.__salary)}\nEl rol de {str(self.__nameEmployee)} es: {str(self.__role.value)}\nEl ranking de {str(self.__nameEmployee)} es: {str(self.__ranking.value)}\nEl horario de {str(self.__nameEmployee)} es {str(self.__scheduleEmpl.getTimeZoneEmpl())}\nEl total a pagar a {str(self.__nameEmployee)} es: {str(self.__payroll.totalPagar())}'
+        return cadena
+        
+  
