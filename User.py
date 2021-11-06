@@ -1,4 +1,4 @@
-from typing import Any, List, get_origin
+from typing import Any, List
 from Enums import Eps, Rh, Gender, Purpose, Ranking
 from datetime import date
 # Imports de las clases pendientes
@@ -10,7 +10,6 @@ import MedicalControl
 # import Routine
 # import EmployeeSchedule
 # import Bill
-# import MonthlyPay
 # import UserSchedule
 # import RoutineHistory
 
@@ -43,7 +42,6 @@ class User:
         self.__listBill:List[Any]=[] # Listas Tipadas
         self.__routine = Any # Composición Any()
         self.__routineHistory:List[Any] = [] # Listas Tipadas
-        self.__monthlyPay = Any # Composición Any()
         self.__monthlyPayHistory:List[Any] = [] # Listas Tipadas
         self.__employee = __employee # Agregación
         self.__scheduleUser = __scheduleUser # Agregación
@@ -171,11 +169,6 @@ class User:
     def getRoutineHistory(self):
         return self.__routineHistory
 
-    # getter && setter para MonthlyPay
-    def getMonthlyPay(self):
-        # return self.__monthlyPay...parameters
-        return self.__monthlyPay
-
     # getter  para MonthlyPayHistory
     def getMonthlyPayHistory(self):
         return self.__monthlyPayHistory
@@ -215,5 +208,5 @@ class User:
 # Crear funcion impirmir información.#
 ############################################################################################
 
-person1 = User(1054995036, "Donald", "Herrera", Gender.MALE, "3012232219", "3148947223", "example@example.com", "123456", "kajsh", 1.78, 78, True, Purpose.TONE_UP, Rh.O_POSITIVE, Eps.SURA, date(1994,3,13), Any, Any, Any)
+person1 = User(1054995036, "Donald J.", "Herrera", Gender.MALE, "3012232219", "3148947223", "example@example.com", "123456987", "Barrio El Hueco", 1.78, 78, True, Purpose.TONE_UP, Rh.O_POSITIVE, Eps.SURA, date(1994,3,13), Any, Any, Any)
 print(person1.__str__())

@@ -46,7 +46,6 @@ class DetailBill:
  
     def AddProduct(self, __productId:int, __supplier:List[Any],__name:str, __price:float,
                 __type:Any, __brand:str, __expiration:Any):
- 
         Product1 = Product(__productId, __supplier,__price,__type,__brand,__expiration);
         self.__listProduct.append(Product1)
         
