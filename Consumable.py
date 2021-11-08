@@ -9,12 +9,6 @@ class Consumable(Product):
         Product.__init__(self, __productId, __productName, __price, __brand,
                 __expiration, __available, __suppliers)
 
-    def getNameConsumable(self):
-        return self.__nameConsumable
-
-    def setNameConsumable(self, __nameConsumable:str):
-        self.__nameConsumable = __nameConsumable
-
     def getConsumableType(self):
         return self.__consumableType
 

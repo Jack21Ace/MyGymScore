@@ -70,7 +70,3 @@ class Item:
     def __str__(self):
         result = f"El elemnto es: {str(self.__name)}\nSu codigo es: {str(self.__itemId)}\nEn inventario tenemos: {str(self.__amount)}\nDisponibles: {str(self.__available)}\nDescripción: {str(self.__description)}\nTipo: {str(self.__type.value)}\nProveedor: {str(self.__supplier)}"
         return result
- 
-# instancia del Obj Item
-item1 = Item(122324, 'Colchoneta', 23, True, 'Ejercicios ABS', Type.PAD, Supplier.supplier1.getName())
-print(item1.__str__()) 

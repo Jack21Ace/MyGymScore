@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 from typing import Any, List, get_origin
 from Employee import Employee
+=======
+<<<<<<< HEAD
+from typing import Any, List, get_origin
+from Employee import Employee
+=======
+from typing import Any, List
+>>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
+>>>>>>> ca39c60063961f6e39481e34df44f670e4f4668a
 from Enums import Eps, Rh, Gender, Purpose, Ranking
 from datetime import date
 # Imports de las clases pendientes
@@ -8,12 +17,26 @@ import RoutineHistory
 """
 # imports de clases
 import MedicalControl
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ca39c60063961f6e39481e34df44f670e4f4668a
 import Routine
 #import EmployeeSchedule
 #import Bill
 import MonthlyPay
 from UserSchedule import UserSchedule
 import RoutineHistory
+<<<<<<< HEAD
+=======
+=======
+# import Routine
+# import EmployeeSchedule
+# import Bill
+# import UserSchedule
+# import RoutineHistory
+>>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
+>>>>>>> ca39c60063961f6e39481e34df44f670e4f4668a
 
 #Creación de la clase usuario
 class User:
@@ -40,7 +63,19 @@ class User:
         self.__rh = __rh
         self.__eps = __eps
         self.__birthDate = __birthDate
+<<<<<<< HEAD
         self.__routine = Routine() # Composición Any()
+=======
+<<<<<<< HEAD
+        self.__routine = Routine() # Composición Any()
+=======
+        self.__bill = Any # Composición Any()
+        self.__listBill:List[Any]=[] # Listas Tipadas
+        self.__routine = Any # Composición Any()
+        self.__routineHistory:List[Any] = [] # Listas Tipadas
+        self.__monthlyPayHistory:List[Any] = [] # Listas Tipadas
+>>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
+>>>>>>> ca39c60063961f6e39481e34df44f670e4f4668a
         self.__employee = __employee # Agregación
         self.__scheduleUser = __scheduleUser # Agregación
         self.__medicalControl = __medicalControl # Agregación
@@ -154,7 +189,19 @@ class User:
     def setRoutine(self, __routine:Routine()):
         self.__routine = __routine
 
+<<<<<<< HEAD
         # getter para Employee
+=======
+<<<<<<< HEAD
+        # getter para Employee
+=======
+    # getter  para MonthlyPayHistory
+    def getMonthlyPayHistory(self):
+        return self.__monthlyPayHistory
+
+    # getter para Employee
+>>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
+>>>>>>> ca39c60063961f6e39481e34df44f670e4f4668a
     def getEmployee(self):
         return self.__employee
 
@@ -189,5 +236,13 @@ class User:
 # Crear funcion impirmir información.#
 ############################################################################################
 
+<<<<<<< HEAD
 person1 = User(1054995036, "Donald J.", "Herrea", Gender.MALE, "3012232219", "3148947223", "example@exapĺer.com","134679", "Manizales", 1.78, 78, True, Purpose.TONE_UP, Rh.O_POSITIVE, Eps.SURA, date(1994,3,13), Employee, MedicalControl, UserSchedule)
+=======
+<<<<<<< HEAD
+person1 = User(1054995036, "Donald J.", "Herrea", Gender.MALE, "3012232219", "3148947223", "example@exapĺer.com","134679", "Manizales", 1.78, 78, True, Purpose.TONE_UP, Rh.O_POSITIVE, Eps.SURA, date(1994,3,13), Employee, MedicalControl, UserSchedule)
+=======
+person1 = User(1054995036, "Donald J.", "Herrera", Gender.MALE, "3012232219", "3148947223", "example@example.com", "123456987", "Barrio El Hueco", 1.78, 78, True, Purpose.TONE_UP, Rh.O_POSITIVE, Eps.SURA, date(1994,3,13), Any, Any, Any)
+>>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
+>>>>>>> ca39c60063961f6e39481e34df44f670e4f4668a
 print(person1.__str__())
