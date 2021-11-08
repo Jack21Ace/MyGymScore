@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+from typing import Any, List, get_origin
+from Employee import Employee
+=======
 from typing import Any, List
+>>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
 from Enums import Eps, Rh, Gender, Purpose, Ranking
 from datetime import date
 # Imports de las clases pendientes
@@ -7,19 +12,28 @@ import RoutineHistory
 """
 # imports de clases
 import MedicalControl
+<<<<<<< HEAD
+import Routine
+#import EmployeeSchedule
+#import Bill
+import MonthlyPay
+from UserSchedule import UserSchedule
+import RoutineHistory
+=======
 # import Routine
 # import EmployeeSchedule
 # import Bill
 # import UserSchedule
 # import RoutineHistory
+>>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
 
 #Creación de la clase usuario
 class User:
 
     # Inicializador de la clase
-    def __init__(self, __dni:int, __name:str, __lastName:str, __gender:Gender, __phoneNumber:str, __emergencyContact:str,
-                __emailAddress:str, __password:str, __address:str, __size:float, __weight:float, __vehicle:bool,
-                __purpose:Purpose, __rh:Rh, __eps:Eps, __birthDate:date, __employee:Any, __medicalControl:MedicalControl, __scheduleUser:Any):
+    def __init__(self, __dni:int, __name:str, __lastName:str, __gender:Gender, __phoneNumber:str, __emergencyContact:str, __emailAddress:str,
+     __password:str, __address:str, __size:float, __weight:float, __vehicle:bool, __purpose:Purpose, __rh:Rh, __eps:Eps, 
+     __birthDate:date, __employee:Employee, __medicalControl:MedicalControl, __scheduleUser:UserSchedule):
 
         # Datos de entrada
         self.__dni = __dni
@@ -38,11 +52,15 @@ class User:
         self.__rh = __rh
         self.__eps = __eps
         self.__birthDate = __birthDate
+<<<<<<< HEAD
+        self.__routine = Routine() # Composición Any()
+=======
         self.__bill = Any # Composición Any()
         self.__listBill:List[Any]=[] # Listas Tipadas
         self.__routine = Any # Composición Any()
         self.__routineHistory:List[Any] = [] # Listas Tipadas
         self.__monthlyPayHistory:List[Any] = [] # Listas Tipadas
+>>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
         self.__employee = __employee # Agregación
         self.__scheduleUser = __scheduleUser # Agregación
         self.__medicalControl = __medicalControl # Agregación
@@ -148,32 +166,23 @@ class User:
     def getBirthDate(self):
         return self.__birthDate
 
-    #getter para Bill
-    def getBill(self):
-        #return self.Bill...parameters
-        return self.__bill
-
-    #getter para ListBill
-    def getListBill(self):
-        return self.__listBill
-
     # getter && setter para Routine
     def getRoutine(self):
         # return self.Routine...parameters
         return self.__routine
 
-    def setRoutine(self, __routine:Any):
-        self.__routine = Any()
+    def setRoutine(self, __routine:Routine()):
+        self.__routine = __routine
 
-    # getter && setter para RoutineHistory
-    def getRoutineHistory(self):
-        return self.__routineHistory
-
+<<<<<<< HEAD
+        # getter para Employee
+=======
     # getter  para MonthlyPayHistory
     def getMonthlyPayHistory(self):
         return self.__monthlyPayHistory
 
     # getter para Employee
+>>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
     def getEmployee(self):
         return self.__employee
 
@@ -181,7 +190,7 @@ class User:
     def getMedicalControl(self):
         try:
             return self.__medicalControl
-        except:
+        except: 
             pass
 
     def setMedicalControl(self, __medicalControl:List[Any]):
@@ -200,7 +209,7 @@ class User:
     # Mejor forma para imprimir la información almacenada
     def __str__(self):
         result = f"Nuevo Usuario Registrado\nNombre: {str(self.__name)} {str(self.__lastName)}\nNumero Contacto: {str(self.__phoneNumber)}\nGenero: {str(self.__gender.value)}\nEmail:{str(self.__emailAddress)}\nFecha de Nacimiento: {str(self.__birthDate)}\nRH: {str(self.__rh.value)}\nEPS: {str(self.__eps.value)}\nContacto Emergencia: {str(self.__emergencyContact)}"
-        return result  
+        return result
 
 # getter && setters ENDS
 ############################################################################################
@@ -208,5 +217,9 @@ class User:
 # Crear funcion impirmir información.#
 ############################################################################################
 
+<<<<<<< HEAD
+person1 = User(1054995036, "Donald J.", "Herrea", Gender.MALE, "3012232219", "3148947223", "example@exapĺer.com","134679", "Manizales", 1.78, 78, True, Purpose.TONE_UP, Rh.O_POSITIVE, Eps.SURA, date(1994,3,13), Employee, MedicalControl, UserSchedule)
+=======
 person1 = User(1054995036, "Donald J.", "Herrera", Gender.MALE, "3012232219", "3148947223", "example@example.com", "123456987", "Barrio El Hueco", 1.78, 78, True, Purpose.TONE_UP, Rh.O_POSITIVE, Eps.SURA, date(1994,3,13), Any, Any, Any)
+>>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
 print(person1.__str__())

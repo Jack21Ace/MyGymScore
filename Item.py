@@ -73,4 +73,4 @@ class Item:
  
 # instancia del Obj Item
 item1 = Item(122324, 'Colchoneta', 23, True, 'Ejercicios ABS', Type.PAD, Supplier.supplier1.getName())
-#print(item1.__str__()) 
+print(item1.__str__()) 

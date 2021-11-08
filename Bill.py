@@ -2,14 +2,15 @@
 from typing import Any
 from datetime import date
 #Imports de clases
-import DetailBill
-import User
- 
+from DetailBill import DetailBill
+from User import User
+from DetailBill import DetailBill
+from Offer import Offer
+from Product import Product 
     
 class Bill:
     # definición de constructor
-    def __init__(self, __numberBill:int, __nit:int, __nameAdmin:str, __phone:str, __address:str,
-                __date:date,  __detailBill:DetailBill, __user:User):
+    def __init__(self, __numberBill:int, __nit:int, __nameAdmin:str, __phone:str, __address:str, __date:date):
     
         self.__bills=[]
         self.__numberBill = __numberBill
@@ -18,8 +19,8 @@ class Bill:
         self.__phone = __phone
         self.__address = __address
         self.__date = __date
-        self.__detailBill = __detailBill
-        self.__user = __user
+        self.__detailBill = DetailBill(101234, Offer, Product) # Composicion de DetailBill
+        self.__user = User() # Composicion User 
 
 # Inicio Metodos
     # Getter para NumberBill
@@ -58,7 +59,6 @@ class Bill:
     def setDate(self, __date):
         self.__date = __date
 
-
     # Getter && Setter Para detailBill
     def getDetailBill(self):
         return self.__detailBill
@@ -66,20 +66,22 @@ class Bill:
     def setDetailBill(self, __detailBill):
         self.__detailBill = __detailBill
 
-#getter para User
+    # getter para User
     def getUser(self):
         return self.__user
  
        
-    def addBill(self, __numberBill:int, __nit:int, __nameAdmin:str, __phone:str, __address:str, __date:date, __detailBill:DetailBill, __User:User):
-        bill = Bill(666,999, "LILO", "3005002000", "De aqui pa alla", date(2021,11,4), Any, Any)
-        self.__bills.append(bill)
+    def addBill(self, __numberBill:int, __nit:int, __nameAdmin:str, __phone:str, __address:str, __date:date):
+        __bills = Bill(__numberBill, __nit, __nameAdmin, __phone, __address, __date)
+        self.__bills.append(__bills)
         return self.__bills
+
+
 
     def __str__(self) -> str:
         result = f"Codigo de la factura {str(self.__numberBill)}"
         return result
  
-bill = Bill(987456213, 123456789, "Arturo", "3105487425", "kr 25 # 24-13", date(2021, 3, 13), Any, Any)
-print("===================")
-print(bill.__str__())
+# bill = Bill(987456213, 123456789, "Arturo", "3105487425", "kr 25 # 24-13", date(2021, 3, 13), Any, Any)
+# print("===================")
+# print(bill.__str__())

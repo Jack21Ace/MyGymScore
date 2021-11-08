@@ -1,6 +1,6 @@
 from datetime import date, time
 from Enums import Role, Ranking
-from typing import List, Any
+from typing import List
 
 
 # Importacion de clases
@@ -108,9 +108,10 @@ class Employee :
     def addScheduleEmpl(self, __scheduleEmplId:int, __timeZoneEmpl:date, __availableEmpl:bool):
         __listScheduleEmpl = EmployeeSchedule(self, __scheduleEmplId, __timeZoneEmpl, __availableEmpl)
         self.__listScheduleEmpl.append(__listScheduleEmpl)
+        return self.__listScheduleEmpl
            
     def __str__(self):
         cadena = f'El ID del empleado es: {str(self.__employeeId)}\nEl nombre del empleado es:  {str(self.__nameEmployee)}\nEl telefono de {str(self.__nameEmployee)} es: {str(self.__phoneEmployee)}\nEl salario de {str(self.__nameEmployee)} es: {str(self.__salary)}\nEl rol de {str(self.__nameEmployee)} es: {str(self.__role.value)}\nEl ranking de {str(self.__nameEmployee)} es: {str(self.__ranking.value)}\nEl horario de {str(self.__nameEmployee)} es {str(self.__scheduleEmpl.getTimeZoneEmpl())}\nEl total a pagar a {str(self.__nameEmployee)} es: {str(self.__payroll.totalPagar())}'
         return cadena
         
-  
+employee1 = Employee(2375, 'Oscar Andres', '317 8613343', 250000, Role.ADMINISTRATOR, Ranking.DOS)

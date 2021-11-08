@@ -5,17 +5,16 @@ Created on Thu Oct 21 17:43:24 2021
 @author: Juan Camilo
 """
 
-from datetime import date
-from User import User
+from datetime import datetime
+
 #Creación de la clase userschedule
 class UserSchedule:
-    def __init__(self, __scheduleUserId:int, __timeZoneUser:date, __availableUser:bool, __user:User):
+    def __init__(self, __scheduleUserId:int, __timeZoneUser:datetime, __availableUser:bool):
         self.__scheduleUserId = __scheduleUserId
         self.__timeZoneUser = __timeZoneUser
         self.__availableUser = __availableUser
-        self.__user = __user
 
-    def getSchedule(self):
+    def getScheduleUserId(self):
         return self.__scheduleUserId  #PREGUNTAR ESTA LINEA
 
     def getTimeZone(self):
@@ -30,13 +29,9 @@ class UserSchedule:
     def setAvailableUser(self, __availableUser):
         self.__availableUser = __availableUser
 
-    def getUser(self):
-        return self.__user
-
-    def setUser(self, __user:User):
-        self.__user = __user
+    def __str__(self):
+        cadena = f'El Id del calendario del usuario es: {str(self.__scheduleUserId)}\nEl horario es: {str(self.__timeZoneUser)}\nLa disponibilidad es: {str(self.__availableUser)}'
+        return cadena
 
 
 
-
-    

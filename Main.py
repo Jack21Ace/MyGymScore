@@ -1,3 +1,5 @@
+from datetime import date, time, datetime
+from Enums import Type, PayMethod, Ranking, Role, UpperBody, LowerBody, Conditioning, ConsumableType, AccessoryType
 from datetime import date, time
 from Enums import Type, PayMethod, Ranking, Role, ConsumableType, AccessoryType
 from Payroll import Payroll
@@ -10,13 +12,22 @@ from MedicalControl import MedicalControl
 from Offer import Offer
 from Employee import Employee
 from Product import Product
+from DetailBill import DetailBill
+from BodyZone import BodyZone
+from Routine import Routine
+from UserSchedule import UserSchedule
+from Consumable import Consumable
+from Accessory import Accessory
 from Consumable import Consumable
 from Accessory import Accessory
 
 def poli(my_producto:Product):
         print(my_producto.__str__()) 
 
-# PAYROLL 
+def poli(my_producto:Product):
+        print(my_producto.__str__()) 
+
+# PAYROLL
 print("==========//==========//PAYROLL//==========//==========")
 pay1 = Payroll(10, 900000, 0.12 , 0.25)
 print("\n" + pay1.__str__() + "\n")
@@ -52,12 +63,15 @@ print("\n" + offer1.__str__() + "\n")
 print("==========//==========//EMPLOYEE//==========//==========")
 employee1 = Employee(2375, 'Oscar Andres', '317 8613343', 250000, Role.ADMINISTRATOR, Ranking.DOS)
 print("\n" + employee1.__str__() + "\n" )
-
 # PRODUCT 
 # print("==========//==========//PRODUCT//==========//==========")
 # product1 = Product(134679, "Termo", 5.500, "NIKE", None, True, supplier1.getName())
 # print("\n" + product1.__str__() + "\n" ) 
 
+# CONSUMABLE 
+print("==========//==========//PRODUCT//==========//==========")
+product1 = Product(134679, "Termo", 5.500, "NIKE", None, True, supplier1.getName())
+print("\n" + product1.__str__() + "\n" ) 
 # CONSUMABLE 
 print("==========//==========//PRODUCT//==========//==========")
 print("\n---CONSUMABLE---\n")
@@ -67,4 +81,24 @@ print("\n---ACCESSORY---\n")
 # ACCESSORY
 accessory = Accessory(AccessoryType.GLOVES, 6497, "Guantes de entreno", 55.000, "OMEGA", None, False, supplier1.getName())
 poli(accessory)
+# DETAILBILL
+print("==========//==========//DETAILBILL//==========//==========")
+detailpay = DetailBill(101234, offer1, product1)
+print("\n" + detailpay.__str__() + "\n" ) 
+# BODYZONE
+print("==========//==========//BODYZONE//==========//==========")
+bodyzone1 = BodyZone(UpperBody.ABDOMEN, LowerBody.QUADRICEPS_FEMORIS, Conditioning.RUN)
+print("\n" + bodyzone1.__str__() + "\n" ) 
+# ROUTINE
+print("==========//==========//ROUTINE//==========//==========")
+routine1 = Routine(123, 4, 13, 20.5, employee1.getNameEmployee(), time(8, 30))
+print("\n" + routine1.__str__() + "\n" )  
+# USERSCHEDULE
+print("==========//==========//USERSCHEDULE//==========//==========")
+userSchedule = UserSchedule(123, datetime.strptime("08/11/21 14:30", "%d/%m/%y %H:%M").ctime(), True)
+print(userSchedule.__str__())
+# GYM 
+# CAMPUS
+# BILL
+# USER
 
