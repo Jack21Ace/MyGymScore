@@ -5,7 +5,7 @@ from Item import Item
 from Supplier import Supplier
 from Bill import Bill
 from Payroll import Payroll
-from Enums import Ranking, RoleList
+from Enums import Ranking, Role
 from EmployeeSchedule import EmployeeSchedule
 
 
@@ -20,9 +20,9 @@ class Gym:
         self.__name = __name
         self.__address = __address
         self.__phone = __phone
-        self.__campus = Campus()
+        self.__campus = Campus()                 # Composicion de Campus
         self.__listCampus:List[Campus] = []
-        self.__employee = Employee()
+        self.__employee = Employee(2375, 'Oscar Andres', '317 8613343', 250000, Role.ADMINISTRATOR, Ranking.DOS)    # Composicion de Empleado
         self.__listEmployee:List[Employee] = []
 
 # Metodos
@@ -95,12 +95,10 @@ class Gym:
 
 
     # Metodo ADD para Employee
-    def addEmployee(self, __employeeId:int, __nameEmployee:str,  __salary:float, __role:RoleList, __payRoll:Payroll,
-            __ranking:List[Ranking], __listRanking:List[Ranking], __scheduleEmpl:EmployeeSchedule, __listScheduleEmpl:List[EmployeeSchedule]):
-        __listEmployee = Employee(self, __employeeId, __nameEmployee,  __salary, __role, __payRoll,
-            __ranking, __listRanking, __scheduleEmpl, __listScheduleEmpl)
+    def addEmployee(self, __employeeId:int, __nameEmployee:str,  __salary:float, __role:Role, __payRoll:Payroll, __ranking:List[Ranking], __listRanking:List[Ranking], __scheduleEmpl:EmployeeSchedule, __listScheduleEmpl:List[EmployeeSchedule]):
+        __listEmployee = Employee(self, __employeeId, __nameEmployee,  __salary, __role, __payRoll,__ranking, __listRanking, __scheduleEmpl, __listScheduleEmpl)
         self.__listEmployee.append(__listEmployee)
-
+        return self.__listEmployee
 # End Methods
 
 

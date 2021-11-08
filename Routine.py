@@ -1,34 +1,29 @@
 #import BodyZone
 
 #Creación de la clase Routine
-from typing import Any, Counter
+from typing import Any, Counter, List
 from BodyZone import BodyZone
 from datetime import time
-
-from Enums import Conditioning, LowerBody, UpperBody
+from Employee import Employee
+from Enums import Conditioning, LowerBody, UpperBody, Role, Ranking
 
 
 class Routine:
     # Declaración del constructor
-    def __init__(self, __routineId:int, __name:str, __series:int, __count:int, __weight:float, __createdBy:str, __timer:time):
+    def __init__(self, __routineId:int, __series:int, __count:int, __weight:float, __createdBy:Employee, __timer:time):
+
         # Datos de entrada
         self.__routineId = __routineId
-        self.__name = __name
         self.__series = __series
         self.__count = __count
         self.__weight = __weight
         self.__createdBy = __createdBy
         self.__timer = __timer
-        self.__bodyZone = []
+        self.__routineHistory:List = []
+        self.__bodyZone = BodyZone(UpperBody.ABDOMEN, LowerBody.QUADRICEPS_FEMORIS, Conditioning.RUN) # Composicion de BodyZone
 
     def getRoutineId(self):
         return self.__routineId
-
-    def getName(self):
-        return self.__name
-
-    def setName(self, __name:str):
-        self.__name = __name
   
     def getSeries(self):
         return self.__series
@@ -51,32 +46,26 @@ class Routine:
     def getCreatedBy(self):
         return self.__createdBy
 
-    def setCreatedBy(self, __createdBy:str):
+    def setCreatedBy(self, __createdBy:Employee):
         self.__createdBy = __createdBy
 
-    # def addBodyZone(self, bodyZone):
-    #     self.__bodyZone.append(bodyZone)
-
-    # def totalBodyZone(self):
-    #     result:str = ""
-    #     for bodyZone in self.__bodyZone:
-    #         result += bodyZone.__upperBody
-    #     return result
-
-    def getTimer(self):
+    def getTimer(self): 
         return self.__timer
 
     def setTimer(self, __timer:time):
         self.__timer = __timer
+    
+    def getRoutineHistory(self):
+        return self.__routineHistory
+    
+    def setRoutineHistory(self, __routineHistory:List): 
+        self.__routineHistory = __routineHistory
+
+    def getBodyZone(self):
+        return self.__bodyZone
 
     def __str__(self):
-        cadena = f"Hola {str(self.__name)}"
+        cadena = f"El Id de la rutina es: {str(self.__routineId)}\nVa a hacer {str(self.__series)} series de {str(self.__count)}\nEl peso es: {str(self.__weight)} kilos\nComienza a las  {str(self.__timer)}\nLa zona de trabajo del cuerpo para esta rutina va a ser: {str(self.__bodyZone.getLowerBody().value)}\nCreado por: {str(self.__createdBy)}"
         return cadena 
 
-routine1 = Routine(1, "Donald", 4,12,20,"Instructor",time(8,12))
-print("==========//==========//==========//==========//==========//==========//==========")
-#routine1.addBodyZone(BodyZone(UpperBody.TRAPEZE,LowerBody.HAMSTRINGS,Conditioning.SPINING_BIKE))
-print(routine1.__str__()) 
-print(f"Su rutina para hoy sera: ") 
-#print(f'Hola {routine1.getName()}\nSu rutina para hoy es: {routine1.getBodyZone().value} {routine1.getSeries()} Series de ')
- 
+

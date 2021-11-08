@@ -1,23 +1,29 @@
 from typing import Any, List
+from Enums import Eps, Rh, Gender, Purpose, Type
+from datetime import date
 
 import User
+import Bill
+import Item
 import Supplier
 
 
-class Campus(object):
+class Campus:
 
-    def __init__(self, __campusNit: int, __campusName: str, __campusPhone: str,
-                __campusAddreess: str, __sizeParking: int, __technicalService: bool):
+    def __init__(self, __campusNit: int, __campusName: str, __campusPhone: str, __campusAddreess: str,  
+    __parking:bool,__sizeParking: int,__technicalService: bool, __user:User):
         self.__campusNit = __campusNit
         self.__campusName = __campusName
         self.__campusPhone = __campusPhone
         self.__campusAddreess = __campusAddreess
+        self.__parking = __parking
         self.__sizeParking = __sizeParking
-        self.__inventario:Any =  List[Any()] # Composición Item
+        self.__item:Item =  Item(122324, 'Colchoneta', 23, True, 'Ejercicios ABS', Type.PAD, Supplier) # Composición Item
+        self.__inventario:List[Item()] = []
         self.__technicalService = __technicalService
-        self.__bill:Any = List[Any()] # Composición
-        self.__supplier:Supplier = List[Supplier()] # Composición
-        self.__userList:User = List[User()] # Composición
+        self.__bill:Bill = Bill(987456213, 123456789, "Arturo", "3105487425", "kr 25 # 24-13", date(2021, 3, 13), Any, Any) # Composición
+        self.__supplier:Supplier = Supplier(8525649, 'Global Sport Ltda', '(606)886-4894', 'example@example.com') # Composición
+        self.__userList:User = __user
 
     # getter para CampusNit
     def getCampusNit(self):
@@ -44,6 +50,13 @@ class Campus(object):
     def setCampusAddreess(self, __campusAddreess:str):
         self.__campusAddreess = __campusAddreess
 
+    # getter && setter para parking
+    def getParking(self):
+        return self.__parking
+
+    def setGarking(self, __parking:str):
+        self.__parking = __parking
+
     # getter && setter para SizeParking
     def getSizeParking(self):
         return self.__sizeParking
@@ -55,9 +68,8 @@ class Campus(object):
     def getInventario(self):
         return self.__inventario
 
-    def setInventario(self, __inventario:List[Any()]):
-        self.__inventario = __inventario
-
+    def setInventario(self, __inventario):
+        self.__inventario= __inventario
     # getter && setter para technicalService
     def getTechnicalService(self):
         return self.__technicalService
@@ -69,14 +81,14 @@ class Campus(object):
     def getBill(self):
         return self.__bill
 
-    def setBill(self, __bill:List[Any()]):
+    def setBill(self, __bill):
         self.__bill = __bill
 
     # getter && setter para Supplier
     def getSupplier(self):
         return self.__supplier
 
-    def setSupplier(self, __supplier:List[Supplier()]):
+    def setSupplier(self, __supplier):
         self.__supplier = __supplier
 
     # getter && setter para userList
@@ -88,4 +100,8 @@ class Campus(object):
 
     # Mejor forma para imprimir la información almacenada
     def __str__(self):
-        pass
+        result = f"Nombre del gimnasio: "
+        return result
+
+campus = Campus(316495151, "Iron Gym", "3145887742", "Villamaria", False, 0, True, User)
+print(campus.__str__())

@@ -61,7 +61,6 @@ class MedicalControl:
     def setEvolutionaryLevel(self, __evolutionaryLevel:float):
         self.__evolutionaryLevel = __evolutionaryLevel
 
-   
     def addPatology(self, __name:str, __code:str):
         patology = Patology(self, __name, __code)
         self.patologyList.append(patology)

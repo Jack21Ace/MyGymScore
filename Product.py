@@ -69,16 +69,3 @@ class Product:
     def __str__(self) -> str:
         result = f"Nombre del producto: {str(self.__productName)}\nValor: {(self.__price):.3f}\nMarca: {str(self.__brand)}\nDisponibilidad: {str(self.__available)}\nProveedor: {str(self.__suppliers)}"
         return result
-
-
-# Instanciop de la calse Product
-print("==========//==========//==========//==========//==========//==========//==========")
-product1 = Product(134679, "Termo", 5.500, "NIKE", None, True, Supplier)
-print(product1.__str__())
-#print(product1.__str__())
-# print(f'El ID del Producto es: {product1.getProductId()}\n'
-#         f'El nombre del Proveedor es  {Supplier.}\n'
-#         f'El precio del producto es {product1.getPrice()}\n'
-#         f'El tipo del producto es {product1.getType()}\n'
-#         f'La marca del producto es {product1.getBrand()}\n'
-#         f'La fecha de expiracion del producto es {product1.getExpiration()}')
