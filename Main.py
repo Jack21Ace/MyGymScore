@@ -1,5 +1,5 @@
 from datetime import date, time, datetime
-from Enums import Type, PayMethod, Ranking, Role, UpperBody, LowerBody, Conditioning
+from Enums import Type, PayMethod, Ranking, Role, UpperBody, LowerBody, Conditioning, ConsumableType, AccessoryType
 from Payroll import Payroll
 from EmployeeSchedule import EmployeeSchedule
 from Supplier import Supplier
@@ -14,6 +14,11 @@ from DetailBill import DetailBill
 from BodyZone import BodyZone
 from Routine import Routine
 from UserSchedule import UserSchedule
+from Consumable import Consumable
+from Accessory import Accessory
+
+def poli(my_producto:Product):
+        print(my_producto.__str__()) 
 
 # PAYROLL
 print("==========//==========//PAYROLL//==========//==========")
@@ -51,11 +56,19 @@ print("\n" + offer1.__str__() + "\n")
 print("==========//==========//EMPLOYEE//==========//==========")
 employee1 = Employee(2375, 'Oscar Andres', '317 8613343', 250000, Role.ADMINISTRATOR, Ranking.DOS)
 print("\n" + employee1.__str__() + "\n" )
-# PRODUCT
+# PRODUCT 
 print("==========//==========//PRODUCT//==========//==========")
 product1 = Product(134679, "Termo", 5.500, "NIKE", None, True, supplier1.getName())
 print("\n" + product1.__str__() + "\n" ) 
-
+# CONSUMABLE 
+print("==========//==========//PRODUCT//==========//==========")
+print("\n---CONSUMABLE---\n")
+consumable = Consumable(ConsumableType.BOCADILLO, 123, "Bocadillo", 1.000, "Beleño", date(2025, 5, 12), True, supplier1.getName())
+poli(consumable)
+print("\n---ACCESSORY---\n")
+# ACCESSORY
+accessory = Accessory(AccessoryType.GLOVES, 6497, "Guantes de entreno", 55.000, "OMEGA", None, False, supplier1.getName())
+poli(accessory)
 # DETAILBILL
 print("==========//==========//DETAILBILL//==========//==========")
 detailpay = DetailBill(101234, offer1, product1)
@@ -72,7 +85,7 @@ print("\n" + routine1.__str__() + "\n" )
 print("==========//==========//USERSCHEDULE//==========//==========")
 userSchedule = UserSchedule(123, datetime.strptime("08/11/21 14:30", "%d/%m/%y %H:%M").ctime(), True)
 print(userSchedule.__str__())
-# GYM
+# GYM 
 # CAMPUS
 # BILL
 # USER

@@ -5,15 +5,22 @@ Created on Thu Oct 21 17:48:02 2021
 @author: Juan Camilo
 """
 
+from datetime import time
+from typing import List
 from Enums import AccessoryType
 from Product import Product
 from Supplier import Supplier
 #Creación de la clase Accessory
 class Accessory(Product):
     # Declaración del constructor
-    def __init__(self, __nameAccessory:str, __accessoryType:AccessoryType):
-        self.__nameAccessory = __nameAccessory
+    # Declaración del constructor
+    # Declaración del constructor
+    def __init__(self, __accessoryType:AccessoryType, __productId:int, __productName:str, __price:float, __brand:str,
+                __expiration:time, __available:bool, __suppliers:List[Supplier]):
         self.__accessoryType = __accessoryType
+
+        Product.__init__(self, __productId, __productName, __price, __brand,
+                __expiration, __available, __suppliers)
 
 # START METHODS
     # Getter && Setter para nameAccessory
@@ -29,10 +36,3 @@ class Accessory(Product):
 
     def setAccessoryType(self, __accessoryType:AccessoryType):
         self.__accessoryType = __accessoryType
-
-    def __str__(self) -> str:
-        result = f"{str(Product.self.__)}"
-        return result
-
-acc = Accessory("Botella", AccessoryType.BOTTLE)
-print(acc.__str__())
