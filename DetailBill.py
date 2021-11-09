@@ -61,8 +61,8 @@ class DetailBill:
 
     # Metodo add para DetailBill
     def addDetailBill(self, __detailCode:int , __offer:Offer , __monthlyPay:MonthlyPay , __product:Product):
-        __listDetailBill = DetailBill(__detailCode, __offer, __monthlyPay, __product)
-        self.__listDetailBill.append(__listDetailBill)
+        bill = DetailBill(__detailCode, __offer, __monthlyPay, __product)
+        self.__listDetailBill.append(bill)
         return self.__listDetailBill
 
     def __str__(self):

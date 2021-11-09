@@ -7,6 +7,7 @@ from Bill import Bill
 from Payroll import Payroll
 from Enums import Ranking, Role
 from EmployeeSchedule import EmployeeSchedule
+from User import User
 
 
 # Crear clase Gym
@@ -20,10 +21,10 @@ class Gym:
         self.__name = __name
         self.__address = __address
         self.__phone = __phone
-        self.__campus = Campus()                 # Composicion de Campus
-        self.__listCampus:List[Campus] = []
+        self.__campus = Campus(976431258, "Iron GYM", "8845632", "Villamaria", True, 13, False, User) # Composicion de Campus
+        self.__listCampus:List = []
         self.__employee = Employee(2375, 'Oscar Andres', '317 8613343', 250000, Role.ADMINISTRATOR, Ranking.DOS)    # Composicion de Empleado
-        self.__listEmployee:List[Employee] = []
+        self.__listEmployee:List = []
 
 # Metodos
     # getter de Nit
@@ -59,7 +60,7 @@ class Gym:
     def getCampus(self):
         return self.__campus
 
-    def setCampus(self, __campus:Campus()):
+    def setCampus(self, __campus:Campus):
         self.__campus = __campus
 
     # Getter and Setter para listCampus
@@ -82,7 +83,7 @@ class Gym:
     def getEmployee(self):
         return self.__employee
 
-    def setEmployee(self, __employee:Employee()):
+    def setEmployee(self, __employee:Employee):
         self.__employee = __employee
 
 
@@ -96,16 +97,11 @@ class Gym:
 
     # Metodo ADD para Employee
     def addEmployee(self, __employeeId:int, __nameEmployee:str,  __salary:float, __role:Role, __payRoll:Payroll, __ranking:List[Ranking], __listRanking:List[Ranking], __scheduleEmpl:EmployeeSchedule, __listScheduleEmpl:List[EmployeeSchedule]):
-        __listEmployee = Employee(self, __employeeId, __nameEmployee,  __salary, __role, __payRoll,__ranking, __listRanking, __scheduleEmpl, __listScheduleEmpl)
-        self.__listEmployee.append(__listEmployee)
+        self.__employee = Employee(self, __employeeId, __nameEmployee,  __salary, __role, __payRoll,__ranking, __listRanking, __scheduleEmpl, __listScheduleEmpl)
+        self.__listEmployee.append(self.__employee)
         return self.__listEmployee
 # End Methods
 
-
-# gym1 = Gym(3453, 'Big Boys', 'Malabar', '3189086655', Campus)
-# print("==========//==========//==========//==========//==========//==========//==========")
-# print(f'El nit del gym es {gym1.getNit()}\n'
-#         f'El nombre del Gym es {gym1.getName()}\n'
-#         f'La direccion del Gym es {gym1.getAddress()}\n'
-#         f'El telefono del Gym es {gym1.getPhone()}\n'
-#         f'La sede del Gym es {gym1.getCampus()}')
+    def __str__(self):
+        result = f"El Nit del Gym es: {str(self.__nit)}\nNombre del GYM: {str(self.__name)}\nDirección: {str(self.__address)}\nTelefono: {str(self.__phone)}\nNombre del empleado encargado: {str(self.__employee.getNameEmployee())}\nNombre del campus: {str(self.__campus.getCampusName())}"
+        return result

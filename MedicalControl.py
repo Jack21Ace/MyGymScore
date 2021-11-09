@@ -63,7 +63,7 @@ class MedicalControl:
 
     def addPatology(self, __name:str, __code:str):
         patology = Patology(self, __name, __code)
-        self.patologyList.append(patology)
+        self.__patologies.append(patology)
 
     # revisar GET
     def getPatology(code:int):

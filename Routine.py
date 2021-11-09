@@ -54,10 +54,10 @@ class Routine:
 
     def setTimer(self, __timer:time):
         self.__timer = __timer
-    
+
     def getRoutineHistory(self):
         return self.__routineHistory
-    
+
     def setRoutineHistory(self, __routineHistory:List): 
         self.__routineHistory = __routineHistory
 
@@ -67,5 +67,3 @@ class Routine:
     def __str__(self):
         cadena = f"El Id de la rutina es: {str(self.__routineId)}\nVa a hacer {str(self.__series)} series de {str(self.__count)}\nEl peso es: {str(self.__weight)} kilos\nComienza a las  {str(self.__timer)}\nLa zona de trabajo del cuerpo para esta rutina va a ser: {str(self.__bodyZone.getLowerBody().value)}\nCreado por: {str(self.__createdBy)}"
         return cadena 
-
-

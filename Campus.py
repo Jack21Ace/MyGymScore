@@ -1,37 +1,37 @@
+from Enums import Type
 from typing import Any, List, Mapping
-from Bill import Bill
 from BodyZone import BodyZone
 from DetailBill import DetailBill
 from Employee import Employee
-from Gym import Gym
 from Routine import Routine
-
 from User import User
 from Supplier import Supplier
 from Item import Item
- 
+
 class Campus:
 
     def __init__(self, __campusNit: int, __campusName: str, __campusPhone: str,
-                __campusAddreess: str, __sizeParking: int, __technicalService: bool, __user:User): 
+                __campusAddreess: str, __parking:bool, __sizeParking: int, __technicalService: bool, __user:User):
 
         # Datos de entrada
         self.__campusNit = __campusNit
         self.__campusName = __campusName
         self.__campusPhone = __campusPhone
         self.__campusAddreess = __campusAddreess
+        self.__parking = __parking
         self.__sizeParking = __sizeParking
         self.__technicalService = __technicalService
-        self.__item = Item()      # Composición Item
-        self.__inventario:List[Item] =  [] 
 
-        self.__bill:Any = List[Any()] # Composición Bill
+        self.__item = Item(122324, 'Colchoneta', 23, True, 'Ejercicios ABS', Type.PAD)   # Composición Item
+        self.__inventario:List[self.__item] =  []
 
-        self.__supplier = Supplier()  #  Composición Supplier 
-        self.__listSupplier:List[Supplier] = [] 
+        self.__bill:List = []
 
-        self.__user = __user  # Agregacion 
-        self.__userList:List[User] = [] 
+        self.__supplier = Supplier(8525649, 'Global Sport Ltda', '(606)886-4894', 'example@example.com')  #  Composición Supplier
+        self.__listSupplier:List[self.__supplier] = []
+
+        self.__user = __user  # Agregacion
+        self.__userList:List[User()] = []
 
     # getter para CampusNit
     def getCampusNit(self):
@@ -59,6 +59,13 @@ class Campus:
         self.__campusAddreess = __campusAddreess
 
     # getter && setter para SizeParking
+    def getParking(self):
+        return self.__parking
+
+    def setParking(self, __parking:bool):
+        self.__parking = __parking
+
+    # getter && setter para SizeParking
     def getSizeParking(self):
         return self.__sizeParking
 
@@ -75,7 +82,7 @@ class Campus:
     # getter && setter para Item
     def getItem(self):
         return self.__item
-    
+
     def setItem(self, __item:Item):
         self.__item = __item
 
@@ -83,16 +90,16 @@ class Campus:
     def getInventario(self):
         return self.__inventario
 
-    def setInventario(self, __inventario:List[Item]):
+    def setInventario(self, __inventario:List):
         self.__inventario = __inventario
 
 
-    # getter && setter para Bill
-    def getBill(self):
-        return self.__bill
+    # # getter && setter para Bill
+    # def getBill(self):
+    #     return self.__bill
 
-    def setBill(self, __bill:List[Any()]):
-        self.__bill = __bill
+    # def setBill(self, __bill:List):
+    #     self.__bill = __bill
 
 
     # getter && setter para Supplier
@@ -102,27 +109,28 @@ class Campus:
     def setSupplier(self, __supplier:Supplier):
         self.__supplier = __supplier
 
+
     # getter && setter para listSupplier
     def getlistSupplier(self):
         return self.__listSupplier
 
-    def setlistSupplier(self, __listSupplier:List[Supplier]):
+    def setlistSupplier(self, __listSupplier:List):
         self.__listSupplier = __listSupplier
 
 
     # getter && setter para user
     def getUser(self):
         return self.__user
-    
+
     # getter && setter para userList
     def getUserList(self):
         return self.__userList
 
-    def setUserList(self, __userList:List[User]):
+    def setUserList(self, __userList:List):
         self.__userList = __userList
 
 
     # Mejor forma para imprimir la información almacenada
     def __str__(self):
-        pass
-
+        result = f"Nombre del Gimnasio: {str(self.__campusName)}\nNit: {str(self.__campusNit)}\nTelefono: {str(self.__campusPhone)}\nNos encontramos en: {str(self.__campusAddreess)}\nTiene zona de parking?: {str(self.__parking)} - Espacios {str(self.__sizeParking)}\nServicio tecnico: {str(self.__technicalService)}\nEl nombre del  item es: {str(self.__item.getName())}\nEl nombre del proveedor es: {str(self.__supplier.getName())}"
+        return result

@@ -22,9 +22,9 @@ class Employee :
         self.__role = __role
         self.__payroll = Payroll(10, 900000, 0.12 , 0.25)         # Composición Payroll()
         self.__ranking = __ranking
-        self.__listRanking:List[Ranking] = []
+        self.__listRanking:List[self.__ranking] = []
         self.__scheduleEmpl =  EmployeeSchedule(456, time(8,00), True, 2, 0, 8) # Composición EmployeeSchedule()
-        self.__listScheduleEmpl:List[EmployeeSchedule] = []
+        self.__listScheduleEmpl:List[self.__scheduleEmpl] = []
    
 # Metodos Getter and Setter
     # Getter Para EmployeeId
@@ -113,5 +113,4 @@ class Employee :
     def __str__(self):
         cadena = f'El ID del empleado es: {str(self.__employeeId)}\nEl nombre del empleado es:  {str(self.__nameEmployee)}\nEl telefono de {str(self.__nameEmployee)} es: {str(self.__phoneEmployee)}\nEl salario de {str(self.__nameEmployee)} es: {str(self.__salary)}\nEl rol de {str(self.__nameEmployee)} es: {str(self.__role.value)}\nEl ranking de {str(self.__nameEmployee)} es: {str(self.__ranking.value)}\nEl horario de {str(self.__nameEmployee)} es {str(self.__scheduleEmpl.getTimeZoneEmpl())}\nEl total a pagar a {str(self.__nameEmployee)} es: {str(self.__payroll.totalPagar())}'
         return cadena
-        
-employee1 = Employee(2375, 'Oscar Andres', '317 8613343', 250000, Role.ADMINISTRATOR, Ranking.DOS)
+

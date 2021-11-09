@@ -1,49 +1,18 @@
-<<<<<<< HEAD
-from typing import Any, List, get_origin
-from Employee import Employee
-=======
-<<<<<<< HEAD
-from typing import Any, List, get_origin
-from Employee import Employee
-=======
 from typing import Any, List
->>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
->>>>>>> ca39c60063961f6e39481e34df44f670e4f4668a
+from Employee import Employee
 from Enums import Eps, Rh, Gender, Purpose, Ranking
-from datetime import date
-# Imports de las clases pendientes
-"""
-import RoutineHistory
-"""
-# imports de clases
-import MedicalControl
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> ca39c60063961f6e39481e34df44f670e4f4668a
-import Routine
-#import EmployeeSchedule
-#import Bill
-import MonthlyPay
+from datetime import datetime, date, time
+from MedicalControl import MedicalControl
+from Routine import Routine
+from Patology import Patology
 from UserSchedule import UserSchedule
-import RoutineHistory
-<<<<<<< HEAD
-=======
-=======
-# import Routine
-# import EmployeeSchedule
-# import Bill
-# import UserSchedule
-# import RoutineHistory
->>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
->>>>>>> ca39c60063961f6e39481e34df44f670e4f4668a
 
 #Creación de la clase usuario
 class User:
 
     # Inicializador de la clase
     def __init__(self, __dni:int, __name:str, __lastName:str, __gender:Gender, __phoneNumber:str, __emergencyContact:str, __emailAddress:str,
-     __password:str, __address:str, __size:float, __weight:float, __vehicle:bool, __purpose:Purpose, __rh:Rh, __eps:Eps, 
+     __password:str, __address:str, __size:float, __weight:float, __vehicle:bool, __purpose:Purpose, __rh:Rh, __eps:Eps,
      __birthDate:date, __employee:Employee, __medicalControl:MedicalControl, __scheduleUser:UserSchedule):
 
         # Datos de entrada
@@ -63,22 +32,13 @@ class User:
         self.__rh = __rh
         self.__eps = __eps
         self.__birthDate = __birthDate
-<<<<<<< HEAD
-        self.__routine = Routine() # Composición Any()
-=======
-<<<<<<< HEAD
-        self.__routine = Routine() # Composición Any()
-=======
-        self.__bill = Any # Composición Any()
-        self.__listBill:List[Any]=[] # Listas Tipadas
-        self.__routine = Any # Composición Any()
-        self.__routineHistory:List[Any] = [] # Listas Tipadas
-        self.__monthlyPayHistory:List[Any] = [] # Listas Tipadas
->>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
->>>>>>> ca39c60063961f6e39481e34df44f670e4f4668a
+        self.__routine = Routine(123, 4, 13, 20.5, Employee, time(8, 30)) # Composición ()
+        self.__routineHistory:List[self.__routine] = [] # Listas Tipadas
         self.__employee = __employee # Agregación
         self.__scheduleUser = __scheduleUser # Agregación
-        self.__medicalControl = __medicalControl # Agregación
+        self.__historyScheduleUser = []
+        self.__medicalControl = __medicalControl # Agregación 
+        self.__historymedicalControl = []
 
 # getter && setter STARTS
     # Getter para dni
@@ -181,29 +141,28 @@ class User:
     def getBirthDate(self):
         return self.__birthDate
 
-    # getter && setter para Routine
+    # Metodo ADD para Routine
+    def addRoutine(self, __routineId:int, __series:int, __count:int, __weight:float, __createdBy:Employee, __timer:datetime):
+        self.__routine = Routine(__routineId, __series, __count, __weight, __createdBy, __timer)
+        self.__routineHistory.append(self.__routine)
+        return self.__routineHistory
+
     def getRoutine(self):
-        # return self.Routine...parameters
         return self.__routine
 
-    def setRoutine(self, __routine:Routine()):
+    def setRoutine(self, __routine:Routine):
         self.__routine = __routine
 
-<<<<<<< HEAD
-        # getter para Employee
-=======
-<<<<<<< HEAD
-        # getter para Employee
-=======
-    # getter  para MonthlyPayHistory
-    def getMonthlyPayHistory(self):
-        return self.__monthlyPayHistory
-
     # getter para Employee
->>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
->>>>>>> ca39c60063961f6e39481e34df44f670e4f4668a
     def getEmployee(self):
         return self.__employee
+    
+    # Metodo ADD para Medicalcontrol
+    def addmedicalControl(self, __medicEmploName:str, __diagnosis:str, __treatment:str, __suggestions:str, __medicalDate:date,
+    __evolutionaryLevel:float, __patologies:List[Patology]):
+        self.__medicalControl = MedicalControl(__medicEmploName, __diagnosis, __treatment, __suggestions, __medicalDate, __evolutionaryLevel, __patologies)
+        self.__historymedicalControl.append(self.__medicalControl)
+        return self.__historymedicalControl
 
     # getter && setter para MedicalControl
     def getMedicalControl(self):
@@ -218,6 +177,12 @@ class User:
         except:
             pass
 
+# Metodo ADD Para UserSchedule 
+    def addUserSchedule(self, __scheduleUserId:int, __timeZoneUser:datetime, __availableUser:bool):
+        self.__ScheduleUser = UserSchedule(__scheduleUserId, __timeZoneUser, __availableUser)
+        self.__historyScheduleUser.append(self.__ScheduleUser)
+        return self.__historyScheduleUser
+
     # getter && setter para ScheduleUser
     def getScheduleUser(self):
         return self.__scheduleUser
@@ -225,24 +190,10 @@ class User:
     def setScheduleUser(self, __ScheduleUser:List[Any]):
         self.__scheduleUser = __ScheduleUser
 
+# getter && setters ENDS
+
     # Mejor forma para imprimir la información almacenada
     def __str__(self):
-        result = f"Nuevo Usuario Registrado\nNombre: {str(self.__name)} {str(self.__lastName)}\nNumero Contacto: {str(self.__phoneNumber)}\nGenero: {str(self.__gender.value)}\nEmail:{str(self.__emailAddress)}\nFecha de Nacimiento: {str(self.__birthDate)}\nRH: {str(self.__rh.value)}\nEPS: {str(self.__eps.value)}\nContacto Emergencia: {str(self.__emergencyContact)}"
+        result = f"Nuevo Usuario Registrado\nNombre: {str(self.__name)} {str(self.__lastName)}\nNumero Contacto: {str(self.__phoneNumber)}\nGenero: {str(self.__gender.value)}\nEmail:{str(self.__emailAddress)}\nFecha de Nacimiento: {str(self.__birthDate)}\nRH: {str(self.__rh.value)}\nEPS: {str(self.__eps.value)}\nContacto Emergencia: {str(self.__emergencyContact)}\n\n===== AGREGACIÓN CON CONTROL MEDICO EN USUARIO =====\n{str(self.__medicalControl)}\n\n===== AGREGACIÓN CON PROGRAMACIÓN DE RUTINA EN USUARIO =====\n{str(self.__scheduleUser)}"
         return result
 
-# getter && setters ENDS
-############################################################################################
-# Pendiente metodos de creación de rutina "addRoutine", "addMedicalControl" , "addSchedule"
-# Crear funcion impirmir información.#
-############################################################################################
-
-<<<<<<< HEAD
-person1 = User(1054995036, "Donald J.", "Herrea", Gender.MALE, "3012232219", "3148947223", "example@exapĺer.com","134679", "Manizales", 1.78, 78, True, Purpose.TONE_UP, Rh.O_POSITIVE, Eps.SURA, date(1994,3,13), Employee, MedicalControl, UserSchedule)
-=======
-<<<<<<< HEAD
-person1 = User(1054995036, "Donald J.", "Herrea", Gender.MALE, "3012232219", "3148947223", "example@exapĺer.com","134679", "Manizales", 1.78, 78, True, Purpose.TONE_UP, Rh.O_POSITIVE, Eps.SURA, date(1994,3,13), Employee, MedicalControl, UserSchedule)
-=======
-person1 = User(1054995036, "Donald J.", "Herrera", Gender.MALE, "3012232219", "3148947223", "example@example.com", "123456987", "Barrio El Hueco", 1.78, 78, True, Purpose.TONE_UP, Rh.O_POSITIVE, Eps.SURA, date(1994,3,13), Any, Any, Any)
->>>>>>> ac0599c3934684bd29b085462f6c219c2f99add6
->>>>>>> ca39c60063961f6e39481e34df44f670e4f4668a
-print(person1.__str__())
