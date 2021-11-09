@@ -156,7 +156,7 @@ class User:
     # getter para Employee
     def getEmployee(self):
         return self.__employee
-    
+
     # Metodo ADD para Medicalcontrol
     def addmedicalControl(self, __medicEmploName:str, __diagnosis:str, __treatment:str, __suggestions:str, __medicalDate:date,
     __evolutionaryLevel:float, __patologies:List[Patology]):
@@ -196,4 +196,3 @@ class User:
     def __str__(self):
         result = f"Nuevo Usuario Registrado\nNombre: {str(self.__name)} {str(self.__lastName)}\nNumero Contacto: {str(self.__phoneNumber)}\nGenero: {str(self.__gender.value)}\nEmail:{str(self.__emailAddress)}\nFecha de Nacimiento: {str(self.__birthDate)}\nRH: {str(self.__rh.value)}\nEPS: {str(self.__eps.value)}\nContacto Emergencia: {str(self.__emergencyContact)}\n\n===== AGREGACIÓN CON CONTROL MEDICO EN USUARIO =====\n{str(self.__medicalControl)}\n\n===== AGREGACIÓN CON PROGRAMACIÓN DE RUTINA EN USUARIO =====\n{str(self.__scheduleUser)}"
         return result
-

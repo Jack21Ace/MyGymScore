@@ -41,7 +41,7 @@ print("\n" + scheemployee1.__str__() + "\n")
 print("==========//==========//SUPPLIER//==========//==========")
 supplier1 = Supplier(8525649, 'Global Sport Ltda', '(606)886-4894', 'example@example.com')
 print("\n" + supplier1.__str__() + "\n")
-# ITEM  
+# ITEM
 print("==========//==========//ITEM//==========//==========")
 item1 = Item(122324, 'Colchoneta', 23, True, 'Ejercicios ABS', Type.PAD)
 print("\n" + item1.__str__() + "\n")

@@ -48,7 +48,8 @@ class Payroll:
 
     def addPayroll(self, __payrollId:int, __payNet:float, __percentDiscounts:float, __percentAid:float):
         payroll1= Payroll(__payrollId , __payNet , __percentDiscounts , __percentAid)
-        payroll1 in self.payr
+        self.__payr.append(payroll1)
+
     def __str__(self):
         result = f"El salario neto es: {str(self.__payNet)}\nEl porcentaje de descuento es: {str(self.__percentDiscounts)}\nEl porcentaje de auxilio es: {str(self.__percentAid)}\nEl total a pagar es: {total}"
         return result
@@ -56,5 +57,3 @@ class Payroll:
 pay1 = Payroll(10, 900000, 0.12 , 0.25)
 total = pay1.totalPagar()
 #print(pay1.__str__())
-
- 

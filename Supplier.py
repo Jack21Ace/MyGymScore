@@ -36,4 +36,5 @@ class Supplier(object):
     def __str__(self):
         result = f"Nombre del proveedor: {str(self.__name)}\nNIT: {str(self.__nit)}\nNumero de contacto: {str(self.__phone)}\nEmail: {str(self.__emailAddress)}"
         return result
-        
+
+
