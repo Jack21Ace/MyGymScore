@@ -5,7 +5,7 @@ from Enums import Eps, Rh, Gender, Purpose, Ranking
 from datetime import date, time, datetime
 # Imports de las clases pendientes
 """
-import RoutineHistory
+#import RoutineHistory
 """
 # imports de clases
 import MedicalControl
