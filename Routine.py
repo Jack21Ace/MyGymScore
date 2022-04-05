@@ -1,69 +1,98 @@
-#import BodyZone
-
-#Creación de la clase Routine
-from typing import Any, Counter, List
-from BodyZone import BodyZone
+from Enums import UpperBody, LowerBody, Conditioning
 from datetime import time
-from Employee import Employee
-from Enums import Conditioning, LowerBody, UpperBody, Role, Ranking
-
+from typing import List
+from BodyZone import BodyZone
 
 class Routine:
     # Declaración del constructor
-    def __init__(self, __routineId:int, __series:int, __count:int, __weight:float, __createdBy:Employee, __timer:time):
+    def __init__(self, routineId:int, series:int, count:int, weight:float, timer:time):
 
         # Datos de entrada
-        self.__routineId = __routineId
-        self.__series = __series
-        self.__count = __count
-        self.__weight = __weight
-        self.__createdBy = __createdBy
-        self.__timer = __timer
-        self.__routineHistory:List = []
-        self.__bodyZone = BodyZone(UpperBody.ABDOMEN, LowerBody.QUADRICEPS_FEMORIS, Conditioning.RUN) # Composicion de BodyZone
+        self._routineId = routineId
+        self._series = series
+        self._count = count
+        self._weight = weight
+        self._timer = timer
+        self._hRutinas:list = []
+        self._bodyZone = BodyZone(UpperBody.ABDOMEN, LowerBody.QUADRICEPS_FEMORIS, Conditioning.RUN) # Composicion de BodyZone
 
-    def getRoutineId(self):
-        return self.__routineId
-  
-    def getSeries(self):
-        return self.__series
+    @property
+    def routineId(self):
+        return self._routineId
 
-    def setSeries(self, __series:int):
-        self.__series = __series
+    @property
+    def series(self):
+        return self._series
 
-    def getCount(self):
-        return self.__count
+    @series.setter
+    def series(self, series):
+        self._series = series
 
-    def setCount(self, __count:int):
-        self.__count = __count
+    @series.deleter
+    def series(self):
+        print(f"{self._series} Eliminada!")
+        del self._series
 
-    def getWeight(self):
-        return self.__weight
 
-    def setWeight(self, __weight:float):
-        self.__weight = __weight
+    @property
+    def count(self):
+        return self._count
 
-    def getCreatedBy(self):
-        return self.__createdBy
+    @count.setter
+    def count(self, count):
+        self._count = count
 
-    def setCreatedBy(self, __createdBy:Employee):
-        self.__createdBy = __createdBy
+    @count.deleter
+    def count(self):
+        print(f"{self._count} Eliminada!")
+        del self._count
 
-    def getTimer(self): 
-        return self.__timer
 
-    def setTimer(self, __timer:time):
-        self.__timer = __timer
+    @property
+    def weight(self):
+        return self._weight
 
-    def getRoutineHistory(self):
-        return self.__routineHistory
+    @weight.setter
+    def weight(self, weight):
+        self._weight = weight
 
-    def setRoutineHistory(self, __routineHistory:List): 
-        self.__routineHistory = __routineHistory
+    @weight.deleter
+    def weight(self):
+        print(f"{self._weight} Eliminado!")
+        del self._weight
 
-    def getBodyZone(self):
-        return self.__bodyZone
+
+    @property
+    def timer(self):
+        return self._timer
+
+    @timer.setter
+    def timer(self, timer):
+        self._timer = timer
+
+    @timer.deleter
+    def timer(self):
+        print(f"{self._timer} Eliminado!")
+        del self._timer
+
+
+    @property
+    def hRutinas(self):
+        return self._hRutinas
+
+    @hRutinas.setter
+    def hRutinas(self, hRutinas):
+        self._hRutinas = hRutinas
+
+    @hRutinas.deleter
+    def hRutinas(self):
+        del self._hRutinas
 
     def __str__(self):
-        cadena = f"El Id de la rutina es: {str(self.__routineId)}\nVa a hacer {str(self.__series)} series de {str(self.__count)}\nEl peso es: {str(self.__weight)} kilos\nComienza a las  {str(self.__timer)}\nLa zona de trabajo del cuerpo para esta rutina va a ser: {str(self.__bodyZone.getLowerBody().value)}\nCreado por: {str(self.__createdBy)}"
-        return cadena 
+        return f"""Rutina N° {str(self._routineId)}
+Compuesta por:
+{str(self._series)} Series de {str(self._count)} Repeticiones
+Peso: {str(self._weight)}
+Hora: {str(self._timer)}
+"""
+
