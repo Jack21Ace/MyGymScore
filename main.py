@@ -1,7 +1,8 @@
     # def read(data):
     #     result = list(map(lambda a,b,c,d,e,f,g,h:(a,b,c,d,e,f,g,h), data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7]))
     #     print(result)
-from typing import Any
+from asyncore import read
+from typing import Any, Type
 from User import User
 from Routine import Routine
 from Enums import Eps, Rh
@@ -9,6 +10,8 @@ from datetime import time, datetime
 from itemCrud import Item
 from productCrud import Product
 from SupplierCrud import Proveedor
+from GymCrud import Gym
+from CampusCrud import Campus
 
 if __name__ == '__main__':
 
@@ -393,6 +396,140 @@ if __name__ == '__main__':
             else:
                 print("Opcion incorrecta")
 
+    def optCampus():
+        def createC():
+            _campusNit = str(input("Ingrese el Nit : "))
+            _campusName= str(input("Ingrese el nombre del gimnasio: "))
+            _campusPhone = str(input("Ingrese la dirección: "))
+            _campusAddreess = str(input("Ingrese telefono: "))
+            nuevoGym = Campus(_campusNit,_campusName,_campusPhone,_campusAddreess)
+            campus.append(nuevoGym)
+            print(nuevoGym)
+
+        def listarC():
+            print("  ")
+            print("-----Informe-----")
+            for indice in range(0, len(campus)):
+                print(f"{indice + 1 } - {campus[indice]}")
+
+
+        def deleteC():
+            listarC()
+            indice = int(input("Ingrese el numero del Gimnasio a eliminar"))
+            print(f"Esta seguro/a de eliminar a {campus[indice -1].getCampusName()} {campus[indice -1].getCampusPhone()} {campus[indice -1].getCampusAddreess()}")
+            respuesta = input("S- si N- no").lower()
+            if (respuesta == "s"):
+                campus.remove(campus[indice - 1])
+
+        def modificarC():
+            listarC()
+            indice = int(input("Ingrese el numero del gimnasio a modificar: "))
+            _campusName = input("Ingrese el nuevo nombre del gimnasio: ")
+            campus[indice - 1].setCampusName(_campusName)
+            _campusPhone = input("Ingrese la nueva dirección: ")
+            campus[indice - 1].setCampusPhone(_campusPhone)
+            _campusAddreess = input("Ingrese el nuevo telefono: ")
+            campus[indice - 1].setCampusAddreess(_campusAddreess)
+
+
+        campus:list=[]
+        campus1 = Campus("900712196", "European Hardcore", "Chipre", "cualquier cosa", True, 13, False, optUser())
+        campus.append(campus1)
+        campus2 = Campus("800206239", "MMA Training", "La Sultana", "cualquier otra cosa", False, 0, True, optUser())
+        campus.append(campus2)
+
+        opt = ''
+        while (opt != "x"):
+            opt = str(input("""  Ingrese una de las siguientes opciones
+        //-----------//-----------//-----------//
+        C-) CREAR NUEVO CAMPUS
+        R-) LISTAR CAMPUS
+        U-) MODIFICAR CAMPUS
+        D-) ELIMINAR CAMPUS
+        X-) SALIR
+        """).lower())
+        #F-) BUSCAR GIMNASIO
+
+            if opt == 'x':
+                print('Hasta Pronto')
+            if opt == 'c':
+                createC()
+            if opt == 'r':
+                listarC()
+            if opt == 'u':
+                modificarC()
+            if opt == 'd':
+                deleteC()
+            else:
+                print("Opcion incorrecta")
+
+    def optGym():
+        def create():
+            _nit = str(input("Ingrese el Nit : "))
+            _name= str(input("Ingrese el nombre del gimnasio: "))
+            _address = str(input("Ingrese la dirección: "))
+            _phone = str(input("Ingrese telefono: "))
+            nuevoGym = Gym(_nit, _name, _address, _phone)
+            gyms.append(nuevoGym)
+            print(nuevoGym)
+
+        def listar():
+            print("  ")
+            print("-----Informe-----")
+            for indice in range(0, len(gyms)):
+                print(f"{indice + 1 } - {gyms[indice]}")
+
+
+        def delete():
+            listar()
+            indice = int(input("Ingrese el numero del Gimnasio a eliminar"))
+            print(f"Esta seguro/a de eliminar a {gyms[indice -1].getName()} {gyms[indice -1].getPhone()} {gyms[indice -1].getAddress()}")
+            respuesta = input("S- si N- no").lower()
+            if (respuesta == "s"):
+                gyms.remove(gyms[indice - 1])
+
+        def modificar():
+            listar()
+            indice = int(input("Ingrese el numero del gimnasio a modificar: "))
+            _name = input("Ingrese el nuevo nombre del gimnasio: ")
+            gyms[indice - 1].setName(_name)
+            _address = input("Ingrese la nueva dirección: ")
+            gyms[indice - 1].setAddress(_address)
+            _phone = input("Ingrese el nuevo telefono: ")
+            gyms[indice - 1].setName(_phone)
+
+
+        gyms:list=[]
+        gym1 = Gym("900712196", "European Hardcore", "Chipre", "311 6987561")
+        gyms.append(gym1)
+        gym2 = Gym("800206239", "MMA Training", "La Sultana", "315 9876325")
+        gyms.append(gym2)
+
+        opt = ''
+        while (opt != "x"):
+            opt = str(input("""  Ingrese una de las siguientes opciones
+        //-----------//-----------//-----------//
+        C-) CREAR NUEVO GIMNASIO
+        R-) LISTAR GIMNASIOS
+        U-) MODIFICAR GIMNASIO
+        D-) ELIMINAR GIMNASIO
+        X-) SALIR
+        """).lower())
+        #F-) BUSCAR GIMNASIO
+
+            if opt == 'x':
+                print('Hasta Pronto')
+            if opt == 'c':
+                create()
+            if opt == 'r':
+                listar()
+            if opt == 'u':
+                modificar()
+            if opt == 'd':
+                delete()
+            else:
+                print("Opcion incorrecta")
+
 
     def menu():
         opt:str = ""
@@ -403,6 +540,8 @@ if __name__ == '__main__':
     2-) MODULO ITEMS
     3-) MODULO PROVEEDORES
     4-) MODULO PRODUCTOS
+    5-) MODULO GYM
+    6-) MODULO CAMPUS
     0-) SALIR
     """).lower())
     #F-) BUSCAR USUARIO
@@ -415,8 +554,12 @@ if __name__ == '__main__':
                 optItem()
             elif opt == '3':
                 optProveedor()
-            elif opt == "4":
+            elif opt == '4':
                 optProducto()
+            elif opt == '5':
+                optGym()
+            elif opt == '6':
+                optCampus()
             else:
                 print("Opcion incorrecta")
     menu()
