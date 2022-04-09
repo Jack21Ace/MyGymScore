@@ -1,9 +1,9 @@
 from datetime import datetime, time
+from dateutil.relativedelta import relativedelta
 from Enums import Eps, Rh
 from Routine import Routine
-
 class User:
-    def __init__(self, nombre:str, apellido:str, dni:str, email:str, telefono:int, fechaNacimiento:str, rh:str, eps:str):
+    def __init__(self, nombre:str, apellido:str, dni:str, email:str, telefono:int, fechaNacimiento:datetime, rh:str, eps:str):
         self._nombre = nombre
         self._apellido = apellido
         self._dni = dni
@@ -15,15 +15,8 @@ class User:
         self._rutina = Routine(111, 4, 8, 50.0, time(6, 00)) #COMPOSICIÓN
         self._historialRutinas:Routine = []
 
-
     def __str__(self):
-        return f"""Nombre: {str(self._nombre)} {str(self._apellido)};  DNI: {str(self._dni)};  Correo: {str(self._email)};  Edad: {str(self._fechaNacimiento)};  Telefono: {str(self._telefono)};  Grupo Sanguineo: {str(self._rh)};  Eps: {str(self._eps)}\n
-=====//==Rutina Asignada==//=====\n
-{str(self._rutina)}\n
-=====//==Historial de Rutinas==//=====\n
-{str(self._historialRutinas)}\n
-=====//=====//=====//=====//=====//=====\n
-"""
+        return f"Nombre: {str(self._nombre)} {str(self._apellido)}\nDNI: {str(self._dni)}\nCorreo: {str(self._email)}\nEdad: {str(self._fechaNacimiento)}\nTelefono: {str(self._telefono)}\nGrupo Sanguineo: {str(self._rh)};  Eps: {str(self._eps)}\n\n=====//==Rutina Asignada==//=====\n\n{str(self._rutina)}\n\n"#=====//==Historial de Rutinas==//=====\n\n=====//=====//=====//=====//=====//====="
 
 
 # Getter and Setter
@@ -94,7 +87,8 @@ class User:
 
     @property
     def fechaNacimiento(self):
-        return self._fechaNacimiento
+        edad = relativedelta(datetime.now(), self.fechaNacimiento)
+        return edad
 
     @fechaNacimiento.setter
     def fechaNacimiento(self, fechaNacimiento):
@@ -144,7 +138,6 @@ class User:
         del self._rutina
 
 
-
     @property
     def historialRutinas(self):
         return self._historialRutinas
@@ -156,5 +149,3 @@ class User:
     @historialRutinas.deleter
     def historialRutinas(self):
         del self._historialRutinas
-
-

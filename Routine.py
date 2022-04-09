@@ -2,7 +2,6 @@ from Enums import UpperBody, LowerBody, Conditioning
 from datetime import time
 from typing import List
 from BodyZone import BodyZone
-
 class Routine:
     # Declaración del constructor
     def __init__(self, routineId:int, series:int, count:int, weight:float, timer:time):
