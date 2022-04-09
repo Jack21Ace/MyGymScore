@@ -35,3 +35,25 @@ class Gym:
         self._phone = _phone
     def setAddress(self,_address):
         self._address = _address
+
+
+   
+
+    gyms:list=[]
+    gym1 = Gym("900712196", "European Hardcore", "Chipre", "311 6987561")
+    gyms.append(gym1)
+    gym2 = Gym("800206239", "MMA Training", "La Sultana", "315 9876325")
+    gyms.append(gym2)
+
+    def mergeSort(campus):
+     if len(campus) <= 1:
+        return campus
+
+    medio = len(campus) / 2
+    izquierda = lista[:medio]
+    derecha = lista[medio:]
+
+    izquierda = mergeSort(izquierda)
+    derecha = mergeSort(derecha)
+
+    return merge(izquierda, derecha)

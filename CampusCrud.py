@@ -43,3 +43,10 @@ class Campus:
         self.__campusPhone = __campusPhone
     def setCampusAddreess(self,__campusAddreess):
         self.__campusAddreess = __campusAddreess
+
+
+    campus:list=[]
+    campus1 = Campus("900712196", "European Hardcore", "Chipre", "cualquier cosa", True, 13, False, optUser())
+    campus.append(campus1)
+    campus2 = Campus("800206239", "MMA Training", "La Sultana", "cualquier otra cosa", False, 0, True, optUser())
+    campus.append(campus2)

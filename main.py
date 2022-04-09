@@ -508,6 +508,22 @@ if __name__ == '__main__':
         opt = ''
         while (opt != "x"):
             opt = str(input("""  Ingrese una de las siguientes opciones
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //-----------//-----------//-----------//
         C-) CREAR NUEVO GIMNASIO
         R-) LISTAR GIMNASIOS
