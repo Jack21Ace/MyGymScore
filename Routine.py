@@ -1,7 +1,6 @@
 from Enums import UpperBody, LowerBody, Conditioning
 from datetime import time
 from typing import List
-from BodyZone import BodyZone
 class Routine:
     # Declaración del constructor
     def __init__(self, routineId:int, series:int, count:int, weight:float, timer:time):
@@ -13,7 +12,7 @@ class Routine:
         self._weight = weight
         self._timer = timer
         self._hRutinas:list = []
-        self._bodyZone = BodyZone(UpperBody.ABDOMEN, LowerBody.QUADRICEPS_FEMORIS, Conditioning.RUN) # Composicion de BodyZone
+        #self._bodyZone = BodyZone(UpperBody.ABDOMEN, LowerBody.QUADRICEPS_FEMORIS, Conditioning.RUN) # Composicion de BodyZone
 
     @property
     def routineId(self):

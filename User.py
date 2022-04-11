@@ -1,7 +1,9 @@
 from datetime import datetime, time, date
 from dateutil.relativedelta import relativedelta
 from Enums import Eps, Rh
+from dataclasses import dataclass, field
 from Routine import Routine
+@dataclass(order=True)
 class User:
     def __init__(self, nombre:str, apellido:str, dni:str, email:str, telefono:str, edad:int, rh:str, eps:str):
         self._nombre = nombre

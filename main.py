@@ -69,6 +69,7 @@ if __name__ == '__main__':
         quickSort(data, 0, len(data) -1, lambda x, y : x.edad < y.edad)
         for usr in data:
             print(usr)
+        return data
     # FINAL quick sort para usuarios
     
     # INICIO marge para rutinas
@@ -114,30 +115,41 @@ if __name__ == '__main__':
             print(r)
     
 
-    # def buscarPorEdad():
-    #     def identity(element):
-    #         return element
+    def buscarPorEdad():
+        def binary_search_recursive(data, element, start, end):
+            if start > end:
+                return -1
 
-    #     def find_index(elements, value, key):
-    #         ...
+            mid = (start + end) // 2
+            if element == data[mid]:
+                return mid
 
-    #     def contains(elements, value, key=identity):
-    #         return find_index(elements, value, key) is not None
-
-    #     def find(elements, value, key=identity):
-    #         index = find_index(elements, value, key)
-    #         return None if index is None else elements[index]
+            if element < data[mid]:
+                return binary_search_recursive(data, element, start, mid-1)
+            else:
+                return binary_search_recursive(data, element, mid+1, end)
         
+        searchAge = int(input(f"Sobre que edad desea buscar"))
+        print("Index of {}: {}".format(searchAge, binary_search_recursive(data, searchAge, 0, len(data))))
+
+
+        # def find_index(elements, value, key=lambda x: x):
+        #     ...
+
+        # # def contains(elements, value, key=lambda x: x):
+        # #     return find_index(elements, value, key=lambda x: x) is not None
+
+        # def find(elements, value, key=lambda x: x):
+        #     index = find_index(elements, value, key)
+        #     return None if index is None else elements[index]
         
-    #     usr = namedtuple('User', 'nombre apellido dni email telefono edad rh eps')
-    #     age = attrgetter('edad')
-    #     data.optUsuarios()
-    #     find(data, key=age, value=28)
+
+        # find(data, key=lambda x : x.edad, value=33)
 
     def options():
         opt = ''
         while (opt != 'x'):
-            opt = str(input("Ingrese una de las siguientes opciones\n-----//-----//-----//-----//-----//-----//-----//-----\n1-) Ordenar por Usuarios\n2-) Ordenar por Rutinas\n3-) Buscar Usuario por Edad\X-) Salir\n").lower())
+            opt = str(input("Ingrese una de las siguientes opciones\n-----//-----//-----//-----//-----//-----//-----//-----\n1-) Ordenar por Usuarios\n2-) Ordenar por Rutinas\n3-) Buscar Usuario por Edad\nX-) Salir\n").lower())
             if opt == 'x':
                 print('Adios')
             elif opt == '1':
@@ -145,7 +157,7 @@ if __name__ == '__main__':
             elif opt == '2':
                 optRutinas()
             elif opt == '3':
-                #buscarPorEdad()
+                buscarPorEdad()
                 pass
             else:
                 print('Ingreso una opción erronea')
