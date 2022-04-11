@@ -1,22 +1,20 @@
-from datetime import datetime, time
+from datetime import datetime, time, date
 from dateutil.relativedelta import relativedelta
 from Enums import Eps, Rh
 from Routine import Routine
 class User:
-    def __init__(self, nombre:str, apellido:str, dni:str, email:str, telefono:int, fechaNacimiento:datetime, rh:str, eps:str):
+    def __init__(self, nombre:str, apellido:str, dni:str, email:str, telefono:str, edad:int, rh:str, eps:str):
         self._nombre = nombre
         self._apellido = apellido
         self._dni = dni
         self._email = email
         self._telefono = telefono
-        self._fechaNacimiento = fechaNacimiento
+        self._edad = edad
         self._rh = rh
         self._eps = eps
         self._rutina = Routine(111, 4, 8, 50.0, time(6, 00)) #COMPOSICIÓN
-        self._historialRutinas:Routine = []
+        self._historialRutinas = []
 
-    def __str__(self):
-        return f"Nombre: {str(self._nombre)} {str(self._apellido)}\nDNI: {str(self._dni)}\nCorreo: {str(self._email)}\nEdad: {str(self._fechaNacimiento)}\nTelefono: {str(self._telefono)}\nGrupo Sanguineo: {str(self._rh)};  Eps: {str(self._eps)}\n\n=====//==Rutina Asignada==//=====\n\n{str(self._rutina)}\n\n"#=====//==Historial de Rutinas==//=====\n\n=====//=====//=====//=====//=====//====="
 
 
 # Getter and Setter
@@ -86,18 +84,27 @@ class User:
 
 
     @property
-    def fechaNacimiento(self):
-        edad = relativedelta(datetime.now(), self.fechaNacimiento)
-        return edad
+    def edad(self):
+        return self._edad
 
-    @fechaNacimiento.setter
-    def fechaNacimiento(self, fechaNacimiento):
-        self._fechaNacimiento = fechaNacimiento
 
-    @fechaNacimiento.deleter
-    def fechaNacimiento(self):
-        del self._fechaNacimiento
+    @edad.setter
+    def edad(self, edad):
+        edad = date.today().year - edad.year
+        cumple = edad+relativedelta(years=edad)
+        if cumple > date.today():
+            edad -=1
+        self._edad = edad
+        return self._edad
 
+    def new_method(self):
+        self._edad
+        
+
+    @edad.deleter
+    def edad(self):
+        del self._edad
+    
 
     @property
     def rh(self):
@@ -149,3 +156,7 @@ class User:
     @historialRutinas.deleter
     def historialRutinas(self):
         del self._historialRutinas
+    
+
+    def __str__(self):
+        return f"Nombre: {str(self._nombre)} {str(self._apellido)}\nDNI: {str(self._dni)}\nCorreo: {str(self._email)}\nEdad: {self.edad}\nTelefono: {str(self._telefono)}\nGrupo Sanguineo: {str(self._rh)};  Eps: {str(self._eps)}\n\n=====//==Rutina Asignada==//=====\n\n{str(self._rutina)}\n\n=====//==Historial de Rutinas==//=====\n\n{str(self._historialRutinas)}\n\n=====//=====//=====//=====//=====//====="

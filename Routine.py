@@ -29,7 +29,6 @@ class Routine:
 
     @series.deleter
     def series(self):
-        print(f"{self._series} Eliminada!")
         del self._series
 
 
@@ -43,7 +42,6 @@ class Routine:
 
     @count.deleter
     def count(self):
-        print(f"{self._count} Eliminada!")
         del self._count
 
 
@@ -57,7 +55,6 @@ class Routine:
 
     @weight.deleter
     def weight(self):
-        print(f"{self._weight} Eliminado!")
         del self._weight
 
 
@@ -71,7 +68,6 @@ class Routine:
 
     @timer.deleter
     def timer(self):
-        print(f"{self._timer} Eliminado!")
         del self._timer
 
 
@@ -88,10 +84,5 @@ class Routine:
         del self._hRutinas
 
     def __str__(self):
-        return f"""Rutina N° {str(self._routineId)}
-Compuesta por:
-{str(self._series)} Series de {str(self._count)} Repeticiones
-Peso: {str(self._weight)}
-Hora: {str(self._timer)}
-"""
+        return f"Rutina N° {str(self._routineId)} Compuesta por: {str(self._series)} Series de {str(self._count)} Repeticiones Peso: {str(self._weight)}. Hora: {str(self._timer)}"
 
