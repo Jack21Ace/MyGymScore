@@ -208,3 +208,5 @@ class User:
 # print("==========//==========//==========//==========//==========//==========//==========")
 # print(f"El nombre del usuario es {person1.getName()}\n Su apellido es {person1.getLastName()}\n"+
 #     f"Su genero es {person1.getGender().value}")
+
+# Pipe chupelo gonorreo
