@@ -1,18 +1,15 @@
-from Enums import UpperBody, LowerBody, Conditioning
 from datetime import time
-from typing import List
 class Routine:
     # Declaración del constructor
-    def __init__(self, routineId:int, series:int, count:int, weight:float, timer:time):
+    def __init__(self, routineId:int, series:int, count:int, weight:float, timer:time, bodyzone:str):
 
         # Datos de entrada
         self._routineId = routineId
         self._series = series
+        self._bodyZone = bodyzone
         self._count = count
         self._weight = weight
         self._timer = timer
-        self._hRutinas:list = []
-        #self._bodyZone = BodyZone(UpperBody.ABDOMEN, LowerBody.QUADRICEPS_FEMORIS, Conditioning.RUN) # Composicion de BodyZone
 
     @property
     def routineId(self):
@@ -82,6 +79,53 @@ class Routine:
     def hRutinas(self):
         del self._hRutinas
 
+    @property
+    def bodyZone(self):
+        return self._bodyzone
+
+    @bodyZone.setter
+    def bodyZone(self, bodyzone):
+        self._bodyzone = bodyzone
+
     def __str__(self):
         return f"Rutina N° {str(self._routineId)} Compuesta por: {str(self._series)} Series de {str(self._count)} Repeticiones Peso: {str(self._weight)}. Hora: {str(self._timer)}"
+
+    # INICIO marge para rutinas
+    def optRutinas(rutinas):
+        def merge(rutinas, leftIndex, rightIndex, middle, compare_func):
+            leftCopy = rutinas[leftIndex:middle + 1]
+            rightCopy = rutinas[middle+1:rightIndex+1]
+            leftCopyIndex = 0
+            rightCopyIndex = 0
+            sortedIndex = leftIndex
+            while leftCopyIndex < len(leftCopy) and rightCopyIndex < len(rightCopy):
+                if compare_func(leftCopy[leftCopyIndex], rightCopy[rightCopyIndex]):
+                    rutinas[sortedIndex] = leftCopy[leftCopyIndex]
+                    leftCopyIndex += 1
+                else:
+                    rutinas[sortedIndex] = rightCopy[rightCopyIndex]
+                    rightCopyIndex += 1
+                sortedIndex = sortedIndex + 1
+            while leftCopyIndex < len(leftCopy):
+                rutinas[sortedIndex] = leftCopy[leftCopyIndex]
+                leftCopyIndex += 1
+                sortedIndex += 1
+            while rightCopyIndex < len(rightCopy):
+                rutinas[sortedIndex] = rightCopy[rightCopyIndex]
+                rightCopyIndex += 1
+                sortedIndex += 1
+        def merge_sort(rutinas, leftIndex, rightIndex, compare_func):
+            if leftIndex >= rightIndex:
+                return
+            middle = (leftIndex + rightIndex)//2
+            merge_sort(rutinas, leftIndex, middle, compare_func)
+            merge_sort(rutinas, middle + 1, rightIndex, compare_func)
+            merge(rutinas, leftIndex, rightIndex, middle, compare_func)
+        merge_sort(rutinas, 0 , len(rutinas)-1, lambda A, B : A.series < B.series)
+        print('\n=======================================================================\n')
+        merge_sort(rutinas, 0 , len(rutinas) -1, lambda A, B : A.timer < B.timer)
+        print("Rutinas ordenadas por hota inicio: ")
+        for r in rutinas:
+            print(r)
+        print("\n")
 
