@@ -1,10 +1,14 @@
-from datetime import datetime, time, date
-from dataclasses import dataclass
+from datetime import time
 from Routine import Routine
 
 
-@dataclass(order=True)
 class User:
+    # Declaracion de Variables
+    # cola vacia
+    queue:list = []
+    # head
+    head:int = 0
+
     def __init__(self, nombre: str, apellido: str, dni: str, email: str, telefono: str, edad: int, rh: str, eps: str, medicalControl:list):
         self._nombre = nombre
         self._apellido = apellido
@@ -15,12 +19,11 @@ class User:
         self._rh = rh
         self._eps = eps
         self._rutina = Routine(111, 4, 8, 50.0, time(6, 00), "Acondicionamiento")  # COMPOSICIÓN
-        self._medicalControl = medicalControl
+        self._medicalControl:list = medicalControl
+        self.sizeMedicalControl = 4
 
 
 # Getter and Setter
-
-
     @property
     def nombre(self):
         return self._nombre
@@ -49,10 +52,6 @@ class User:
     def dni(self):
         return self._dni
 
-    @dni.setter
-    def dni(self, dni):
-        self._dni = dni
-
     @dni.deleter
     def dni(self):
         del self._dni
@@ -60,10 +59,6 @@ class User:
     @property
     def email(self):
         return self._email
-
-    @email.setter
-    def email(self, email):
-        self._email = email
 
     @email.deleter
     def email(self):
@@ -89,9 +84,6 @@ class User:
     def edad(self, edad):
         self._edad = edad
 
-    def new_method(self):
-        self._edad
-
     @edad.deleter
     def edad(self):
         del self._edad
@@ -99,6 +91,10 @@ class User:
     @property
     def rh(self):
         return self._rh
+
+    @rh.deleter
+    def rh(self):
+        del self._rh
 
     @property
     def eps(self):
@@ -125,18 +121,6 @@ class User:
         del self._rutina
 
     @property
-    def historialRutinas(self):
-        return self._historialRutinas
-
-    @historialRutinas.setter
-    def historialRutinas(self, historialRutinas):
-        self._historialRutinas = historialRutinas
-
-    @historialRutinas.deleter
-    def historialRutinas(self):
-        del self._historialRutinas
-
-    @property
     def medicalControl(self):
         self._medicalControl
 
@@ -149,8 +133,7 @@ class User:
         del self._medicalControl
 
     def __str__(self):
-        return f"Nombre: {str(self._nombre)} {str(self._apellido)}\nDNI: {str(self._dni)}\nCorreo: {str(self._email)}\nEdad: {self.edad}\nTelefono: {str(self._telefono)}\nGrupo Sanguineo: {str(self._rh)};  Eps: {str(self._eps)}\n\n=====//==Rutina Asignada==//=====\n\n{str(self._rutina)}\n\n=====//==Historial Medico==//=====\n\n{str(self._medicalControl)}\n\n=====//=====//=====//=====//=====//====="
-
+        return f"Nombre: {str(self.nombre)} {str(self.apellido)}\nDNI: {str(self.dni)}\nCorreo: {str(self.email)}\nEdad: {self.edad}\nTelefono: {str(self.telefono)}\nGrupo Sanguineo: {str(self.rh)}; Eps: {str(self.eps)}\n\n=====//==Rutina Asignada==//=====\n\n{str(self.rutina)}\n\n=====//==Historial Medico==//=====\n\n{str(self.medicalControl)}\n\n=====//=====//=====//=====//=====//====="
 
     # INICIO quick sort para usuarios
     def optUsuarios(data):
@@ -184,6 +167,36 @@ class User:
         return data
     # FINAL quick sort para usuarios
 
-# user1 = User('Pepito', 'Perez', 'H34565412', 'example@example.com', "3012232219", 28, "O+", 'Sura', [])
+    def enqueue(self, data):
+        if (len(self.queue) >= self.sizeMedicalControl):
+            print(f"Queue is Full!!!!")
+            result = list(map(lambda x:x, data))
+            print(result)
+        else:
+            input("Ingrese datos del usario a encolar")
+            nombre = str(input("Ingrese Nombre: "))
+            apellido = str(input("Ingrese Apellido: "))
+            dni = str(input("Ingrese Dni: "))
+            email = str(input("Ingrese Email: "))
+            telefono = str(input("Ingrese Telefono: "))
+            edad = int(input("Ingrese Edad: "))
+            rh = str(input("Ingrese Rh: "))
+            eps = str(input("Ingrese Eps: "))
+            medicalControl = []
+            self.e = User(nombre, apellido, dni, email, telefono, edad, rh, eps, medicalControl)
+            self.queue[:0] = [self.e]
+            print(self.queue)
 
-# print(user1)
+    def dequeue(self):
+        if not self.queue:
+            print('Queue is Empty!!')
+        else:
+            self.head = self.queue[-1]
+            tem = self.queue[:-1]
+            self.queue = tem
+            print(f'Element removed: {self.head.dni}\n{self.head}\n{self.queue}')
+
+    def stack(self):
+        temp = self.queue[1:]
+        self.queue = temp
+        print(f'Element removed: {self.head.dni}\n{self.head}\n{self.queue}')

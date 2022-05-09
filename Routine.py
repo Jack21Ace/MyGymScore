@@ -1,5 +1,10 @@
 from datetime import time
 class Routine:
+    # Declaracion de Variables
+    # cola vacia
+    queue:list = []
+    # head
+    head:int = 0
     # Declaración del constructor
     def __init__(self, routineId:int, series:int, count:int, weight:float, timer:time, bodyzone:str):
 
@@ -10,6 +15,7 @@ class Routine:
         self._count = count
         self._weight = weight
         self._timer = timer
+        self.size = 5
 
     @property
     def routineId(self):
@@ -88,7 +94,7 @@ class Routine:
         self._bodyzone = bodyzone
 
     def __str__(self):
-        return f"Rutina N° {str(self._routineId)} Compuesta por: {str(self._series)} Series de {str(self._count)} Repeticiones Peso: {str(self._weight)}. Hora: {str(self._timer)}"
+        return f"Rutina N° {str(self.routineId)} Compuesta por: {str(self.series)} Series de {str(self.count)} Repeticiones Peso: {str(self.weight)}. Hora: {str(self.timer)}"
 
     # INICIO marge para rutinas
     def optRutinas(rutinas):
@@ -128,4 +134,35 @@ class Routine:
         for r in rutinas:
             print(r)
         print("\n")
+
+    def enqueue(self, data):
+        if (len(self.queue) >= self.size):
+            print(f"Queue is Full!!!!")
+            result = list(map(lambda x:x, data))
+            print(result)
+        else:
+            input("Ingrese datos de la rutina a encolar")
+            routineId = int(input("# Rutina"))
+            series = int(input("# Series"))
+            count = int(input("# Repeticiones"))
+            weight = float(input("Peso en kilos"))
+            timer = time(input("Hora"))
+            bodyzone = str(input("tipo Rutina"))
+            self.e = Routine(routineId, series, count, weight, timer, bodyzone)
+            self.queue[:0] = [self.e]
+            print(self.queue)
+
+    def dequeue(self):
+        if not self.queue:
+            print('Queue is Empty!!')
+        else:
+            self.head = self.queue[-1]
+            tem = self.queue[:-1]
+            self.queue = tem
+            print(f'Element removed: {self.head.routineId}\n{self.head}\n{self.queue}')
+
+    def stack(self):
+        temp = self.queue[1:]
+        self.queue = temp
+        print(f'Element removed: {self.head.routineId}\n{self.head}\n{self.queue}')
 

@@ -29,64 +29,80 @@ if __name__ == '__main__':
     data:list=[]
     user1 = User("Victor", "Patiño", "13467925-T", "example@yahoo.com", "3010222555", 25, "O+", "Sura", [mC1])
     user1.rutina = r1
-    user2 = User("Julian", "Naranjo", "987654321", "3114445555", "porsospecha@hotmail.com", 48, "A-", "Medi+", [mC2,mC7])
+    user2 = User("Julian", "Naranjo", "987654321", "3114445555", "porsospecha@hotmail.com", 48, "A-", "Medi+", [mC1])
     user2.rutina = r4
     user3 = User("Sonia", "Herrera", "P-97642585", "3225285746", "profesalveme@yahoo.com", 33, 'AB+', "Salud Mortal", [mC3, mC4])
     user3.rutina = r7
-    user4 = User("James", "Soto", "1097642585", "3208948576", "aquinoesdonde@gmail.com", 21, "O+", "Sanitas", [mC5, mC6])
+    user4 = User("James", "Soto", "1097642585", "3208948576", "aquinoesdonde@gmail.com", 21, "O+", "Sanitas", mc_list)
     user4.rutina = r5
     user5 = User("Aroon", "Smith", "SW-1254873", "3200948006", "itsecurity@itsoft.sw", 21, "O+", "Sura", [])
     user5.rutina = r3
     data = [user1, user2, user3, user4, user5]
 
- 
-
-    
-
-    # def buscarPorEdad():
-    #     def binary_search_recursive(data, element, start, end):
-    #         if start > end:
-    #             return -1
-
-    #         mid = (start + end) // 2
-    #         if element == data[mid]:
-    #             return mid
-
-    #         if element < data[mid]:
-    #             return binary_search_recursive(data, element, start, mid-1)
-    #         else:
-    #             return binary_search_recursive(data, element, mid+1, end)
-        
-    #     searchAge = int(input(f"Sobre que edad desea buscar"))
-    #     print("Index of {}: {}".format(searchAge, binary_search_recursive(data, searchAge, 0, len(data))))
-
-
-        # def find_index(elements, value, key=lambda x: x):
-        #     ...
-
-        # # def contains(elements, value, key=lambda x: x):
-        # #     return find_index(elements, value, key=lambda x: x) is not None
-
-        # def find(elements, value, key=lambda x: x):
-        #     index = find_index(elements, value, key)
-        #     return None if index is None else elements[index]
-        
-
-        # find(data, key=lambda x : x.edad, value=33)
+    User.queue = data
+    Routine.queue = rutinas
 
     def options():
         opt = ''
         while (opt != 'x'):
-            opt = str(input("Ingrese una de las siguientes opciones\n-----//-----//-----//-----//-----//-----//-----//-----\n1-) Ordenar por Usuarios\n2-) Ordenar por Rutinas\n3-) Buscar Usuario por Edad\nX-) Salir\n").lower())
+            opt = str(input("Ingrese una de las siguientes opciones\n-----//-----//-----//-----//-----//-----//-----//-----\n1-) Usuarios\n2-) Rutinas\n3-) Control Medico\nX-) Salir\t").lower())
             if opt == 'x':
-                print('Adios')
+                print('Bye')
             elif opt == '1':
-                User.optUsuarios(data)
+                opt_user = ''
+                while (opt_user != 'x'):
+                    print("\nIngrese una de las siguientes opciones")
+                    print("-----//-----" * 4)
+                    opt_user = str(input("1-) Quick Sort\n2-) Enqueue\n3-) Dequeue\n4-) Use Stack\n5-) Back\t").lower())
+                    if opt_user == '1':
+                        User.optUsuarios(data)
+                    elif opt_user == '2':
+                        User.enqueue(user1, data)
+                    elif opt_user == '3':
+                        User.dequeue(user1)
+                    elif opt_user == '4':
+                        User.stack(user1)
+                    elif opt_user == '5':
+                        print("Bye")
+                        break
+                    else:
+                        print('Ingreso una opción erronea')
             elif opt == '2':
-                Routine.optRutinas(rutinas)
-            # elif opt == '3':
-            #     buscarPorEdad()
-            #     pass
+                print("\nIngrese una de las siguientes opciones")
+                print("-----//-----" * 4)
+                opt_rutine = str(input("1-) Marge Sort\n2-) Enqueue\n3-) Dequeue\n4-) Use Stack\n5-) Back\t").lower())
+                if opt_rutine == '1':
+                    Routine.optRutinas(rutinas)
+                elif opt_rutine == '2':
+                    Routine.enqueue(r1, rutinas)
+                elif opt_rutine == '3':
+                    Routine.dequeue(r1)
+                elif opt_rutine == '4':
+                    Routine.stack(r1)
+                elif opt_rutine == '5':
+                    print("Bye")
+                    break
+                else:
+                    print('Ingreso una opción erronea')
+            elif opt == '3':
+                print("\nIngrese una de las siguientes opciones")
+                print("-----//-----" * 4)
+                opt_MC = ""
+                while (opt_MC != 'x'):
+                    print("\nIngrese una de las siguientes opciones")
+                    print("-----//-----" * 4)
+                    opt_MC = str(input("1-) Enqueue\n2-) Dequeue\n3-) Use Stack\n4-) Volver\t").lower())
+                    if opt_MC == '4':
+                        print("Bye")
+                        break
+                    elif  opt_MC == '1':
+                        User.enqueue(mC1, mc_list)
+                    elif  opt_MC == '2':
+                        User.dequeue(mC1)
+                    elif  opt_MC == '3':
+                        User.stack(mC1)
+                    else:
+                        print('Ingreso una opción erronea')
             else:
                 print('Ingreso una opción erronea')
     options()
