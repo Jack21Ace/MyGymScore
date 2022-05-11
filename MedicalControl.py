@@ -119,39 +119,39 @@ class MedicalControl:
     def __str__(self):
         return f"El medico que le atiende es: {str(self.medicEmploName)}\nDiagnostico Medico: {str(self.diagnosis)}\nTratamiento: {str(self.treatment)}\nSugerencia: {str(self.suggestions)}\nFecha de la Cita: {str(self.medicalDate)}\nNivel Evolutivo en el GYM: {str(self.evolutionaryLevel)}\nCodigo Patologia: {str(self.patologies)}"
 
-    def enqueue(self, data):
-        if (len(self.queue) >= self.size):
-            print(f"Queue is Full!!!!")
-            result = list(map(lambda x:x, data))
-            print(result)
-        else:
-            input("Ingrese datos de la rutina a encolar")
-            medicEmploName = str(input("Medico quién atiende: "))
-            diagnosis = str(input("Diagnostico: "))
-            treatment = str(input("Tratamiento: "))
-            suggestions = str(input("Sugerencias: "))
-            medicalDate = str(input("Fecha cita: "))
-            evolutionaryLevel = float(input("Nivel evolutivo: "))
-            patologies = str(input("Patologia nueva: "))
-            self.e = MedicalControl(medicEmploName, diagnosis, treatment, suggestions, medicalDate, evolutionaryLevel, patologies)
-            self.queue[:0] = [self.e]
-            print(self.queue)
+#     def enqueue(self, data):
+#         if (len(self.queue) >= self.size):
+#             print(f"Queue is Full!!!!")
+#             result = list(map(lambda x:x, data))
+#             print(result)
+#         else:
+#             input("Ingrese datos de la rutina a encolar")
+#             medicEmploName = str(input("Medico quién atiende: "))
+#             diagnosis = str(input("Diagnostico: "))
+#             treatment = str(input("Tratamiento: "))
+#             suggestions = str(input("Sugerencias: "))
+#             medicalDate = str(input("Fecha cita: "))
+#             evolutionaryLevel = float(input("Nivel evolutivo: "))
+#             patologies = str(input("Patologia nueva: "))
+#             self.e = MedicalControl(medicEmploName, diagnosis, treatment, suggestions, medicalDate, evolutionaryLevel, patologies)
+#             self.queue[:0] = [self.e]
+#             print(self.queue)
 
-    def dequeue(self):
-        if not self.queue:
-            print('Queue is Empty!!')
-        else:
-            self.head = self.queue[-1]
-            tem = self.queue[:-1]
-            self.queue = tem
-            print(f'Element removed: {self.head.medicalDate}\n{self.head}\n{self.queue}')
+#     def dequeue(self):
+#         if not self.queue:
+#             print('Queue is Empty!!')
+#         else:
+#             self.head = self.queue[-1]
+#             tem = self.queue[:-1]
+#             self.queue = tem
+#             print(f'Element removed: {self.head.medicalDate}\n{self.head}\n{self.queue}')
 
-    def stack(self):
-        temp = self.queue[1:]
-        self.queue = temp
-        print(f'Element removed: {self.head.medicalDate}\n{self.head}\n{self.queue}')
+#     def stack(self):
+#         temp = self.queue[1:]
+#         self.queue = temp
+#         print(f'Element removed: {self.head.medicalDate}\n{self.head}\n{self.queue}')
 
 
 
-# obj_MC = MedicalControl("Dr. Rojas", "Paciente con fractura en muñeca derecha, reco: Terapia F", "Rutinas poco peso, fuertes repeticiones", "todos los días", date(2022, 5, 7), 0.0, ['A5248','A9634', 'R9865'])
-# print(obj_MC)
+# # obj_MC = MedicalControl("Dr. Rojas", "Paciente con fractura en muñeca derecha, reco: Terapia F", "Rutinas poco peso, fuertes repeticiones", "todos los días", date(2022, 5, 7), 0.0, ['A5248','A9634', 'R9865'])
+# # print(obj_MC)

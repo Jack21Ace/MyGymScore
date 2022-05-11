@@ -3,11 +3,7 @@ from Routine import Routine
 
 
 class User:
-    # Declaracion de Variables
-    # cola vacia
-    queue:list = []
-    # head
-    head:int = 0
+
 
     def __init__(self, nombre: str, apellido: str, dni: str, email: str, telefono: str, edad: int, rh: str, eps: str, medicalControl:list):
         self._nombre = nombre
@@ -167,36 +163,3 @@ class User:
         return data
     # FINAL quick sort para usuarios
 
-    def enqueue(self, data):
-        if (len(self.queue) >= self.sizeMedicalControl):
-            print(f"Queue is Full!!!!")
-            result = list(map(lambda x:x, data))
-            print(result)
-        else:
-            input("Ingrese datos del usario a encolar")
-            nombre = str(input("Ingrese Nombre: "))
-            apellido = str(input("Ingrese Apellido: "))
-            dni = str(input("Ingrese Dni: "))
-            email = str(input("Ingrese Email: "))
-            telefono = str(input("Ingrese Telefono: "))
-            edad = int(input("Ingrese Edad: "))
-            rh = str(input("Ingrese Rh: "))
-            eps = str(input("Ingrese Eps: "))
-            medicalControl = []
-            self.e = User(nombre, apellido, dni, email, telefono, edad, rh, eps, medicalControl)
-            self.queue[:0] = [self.e]
-            print(self.queue)
-
-    def dequeue(self):
-        if not self.queue:
-            print('Queue is Empty!!')
-        else:
-            self.head = self.queue[-1]
-            tem = self.queue[:-1]
-            self.queue = tem
-            print(f'Element removed: {self.head.dni}\n{self.head}\n{self.queue}')
-
-    def stack(self):
-        temp = self.queue[1:]
-        self.queue = temp
-        print(f'Element removed: {self.head.dni}\n{self.head}\n{self.queue}')
