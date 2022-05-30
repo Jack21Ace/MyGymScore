@@ -1,7 +1,4 @@
-from Node import DoubleLinkList
-from MC_Queue import MC_Queue
-from RoutineQueue import RoutineQueue
-from UserQueue import UserQueue
+from Node import DoublyLinkedList
 from User import User
 from Routine import Routine
 from datetime import time, date
@@ -9,11 +6,6 @@ from MedicalControl import MedicalControl
 
 if __name__ == '__main__':
 
-    # objUserQueue = UserQueue()
-    # objRoutineQueue = RoutineQueue()
-    # objMC_Queue = MC_Queue()
-
-    # Objetos quemados de Rutinas
     rutinas:list = []
     r1 = Routine(102, 4, 15, 20.0, time(8, 30), "Acondicionamiento")
     r2 = Routine(202, 3, 10, 30.0, time(9, 45), "Tonificar")
@@ -23,17 +15,6 @@ if __name__ == '__main__':
     r6 = Routine(250, 3, 13, 20.5, time(5, 00), "Tonificar")
     r7 = Routine(300, 4, 10, 15.0, time(20, 40), "Acondicionamiento")
     rutinas = [r1,r2,r3,r4,r5,r6,r7]
-
-    # def routineQueue(rutinas):
-    #     for e in rutinas:
-    #         #print(e._routineId)
-    #         objRoutineQueue.enqueue(e.routineId)
-
-    # def routineDequeue():
-    #     objRoutineQueue.dequeue()
-
-    # def routineStack():
-    #     objRoutineQueue.stack()
 
     mc_list:list = []
     mC1 = MedicalControl("1", "Paciente de ingreso, reco: Acondicionamiento", "Rutina: Acondicionamiento Inicial", "1-Sem", date(2022, 5, 7), 0.0, ['A5800','A9645', 'R9865'])
@@ -45,18 +26,6 @@ if __name__ == '__main__':
     mC7 = MedicalControl("7", "Paciente por revisión, reco: N/A", "Rutina: libre", "N/A", date(2022, 5, 7), 30.0, ['AB25844','C9634', 'E9865'])
     mc_list = [mC1, mC2, mC3 , mC4, mC5, mC6, mC7]
 
-    # def mc_Queue(mc_list):
-    #     for e in mc_list:
-    #     #print(e._routineId)
-    #         objMC_Queue.enqueue(e.medicEmploName)
-
-    # def mc_Dequeue():
-    #     objMC_Queue.dequeue()
-
-    # def mc_Stack():
-    #     objMC_Queue.stack()
-
-    # Objetos quemados de usuarios
     data:list=[]
     user1 = User("Victor", "Patiño", "13467925-T", "example@yahoo.com", "3010222555", 25, "O+", "Sura", [mC1])
     # user1.rutina = r1
@@ -70,87 +39,56 @@ if __name__ == '__main__':
     # user5.rutina = r3
     data:User = [user1, user2, user3, user4, user5]
 
-    # def userQueue(data):
-    #     for e in data:
-    #         #print(e.nombre)
-    #         objUserQueue.enqueue(e.nombre)
-
-    # def userDequeue():
-    #     objUserQueue.dequeue()
-
-    # def userStack():
-    #     objUserQueue.stack()
-
-    # single_obj = DoubleLinkList()
-    # print(single_obj.is_empty() )
-    # single_obj.add(user1)
-    # single_obj.add(user2)
-    # single_obj.add(user3)
-    # single_obj.travel()
-
-    # def options():
-    #     opt = ''
-    #     while (opt != 'x'):
-    #         opt = str(input("Ingrese una de las siguientes opciones\n-----//-----//-----//-----//-----//-----//-----//-----\n1-) Usuarios\n2-) Rutinas\n3-) Control Medico\nX-) Salir\t").lower())
-    #         if opt == 'x':
-    #             print('Bye')
-    #         elif opt == '1':
-    #             opt_user = ''
-    #             while (opt_user != 'x'):
-    #                 print("\nIngrese una de las siguientes opciones")
-    #                 print("-----//-----" * 4)
-    #                 opt_user = str(input("1-) Quick Sort\n2-) Enqueue\n3-) Dequeue\n4-) Use Stack\n5-) Back\t").lower())
-    #                 if opt_user == '1':
-    #                     user1:User.optUsuarios(data)
-    #                 elif opt_user == '2':
-    #                     userQueue(data)
-    #                 elif opt_user == '3':
-    #                     userDequeue()
-    #                 elif opt_user == '4':
-    #                     userStack()
-    #                 elif opt_user == '5':
-    #                     print("Bye")
-    #                     break
-    #                 else:
-    #                     print('Ingreso una opción erronea')
-    #         elif opt == '2':
-    #             print("\nIngrese una de las siguientes opciones")
-    #             print("-----//-----" * 4)
-    #             opt_Rut = ""
-    #             while (opt_Rut != 'x'):
-    #                 print("\nIngrese una de las siguientes opciones")
-    #                 print("-----//-----" * 4)
-    #                 opt_Rut = str(input("1-) Enqueue\n2-) Dequeue\n3-) Use Stack\n4-) Volver\t").lower())
-    #                 if opt_Rut == '4':
-    #                     print("Bye")
-    #                     break
-    #                 elif  opt_Rut == '1':
-    #                     routineQueue(rutinas)
-    #                 elif  opt_Rut == '2':
-    #                     routineDequeue()
-    #                 elif  opt_Rut == '3':
-    #                     routineStack()
-    #                 else:
-    #                     print('Ingreso una opción erronea')
-    #         elif opt == '3':
-    #             print("\nIngrese una de las siguientes opciones")
-    #             print("-----//-----" * 4)
-    #             opt_MC = ""
-    #             while (opt_MC != 'x'):
-    #                 print("\nIngrese una de las siguientes opciones")
-    #                 print("-----//-----" * 4)
-    #                 opt_MC = str(input("1-) Enqueue\n2-) Dequeue\n3-) Use Stack\n4-) Volver\t").lower())
-    #                 if opt_MC == '4':
-    #                     print("Bye")
-    #                     break
-    #                 elif  opt_MC == '1':
-    #                     mc_Queue(mc_list)
-    #                 elif  opt_MC == '2':
-    #                     mc_Dequeue()
-    #                 elif  opt_MC == '3':
-    #                     mc_Stack()
-    #                 else:
-    #                     print('Ingreso una opción erronea')
-    #         else:
-    #             print('Ingreso una opción erronea')
-    # options()
+    new_linked_list = DoublyLinkedList()
+    def options():
+        opt = ''
+        while (opt != 'x'):
+            opt = str(input("Ingrese una de las siguientes opciones\n-----//-----//-----//-----//-----//-----//-----//-----\n1-) Listar elementos\n2-) Insertar al inicio\n3-) Insertar despues de\n4-) Insertar antes de\n5-) Insertar al final\n6-) Eliminar el primero\n7-) Eliminar el ultimo\n8-) Eliminar selección\n9-) Invertir Lista\nX-) Salir\t").lower())
+            if opt == 'x':
+                print('Bye')
+            elif opt == '1':
+                print('\tLista Actual\n','----'*7,'\n')
+                new_linked_list.traverse_list()
+            elif opt == '2':
+                if (new_linked_list.start_node == None):
+                    e = user1.nombre
+                    new_linked_list.insert_in_emptylist(e)
+                else:
+                    new_linked_list.insert_at_start(e)
+            elif opt == '3':
+                print('\tLista Actual\n','----'*7,'\n')
+                new_linked_list.traverse_list()
+                x = input('Despues de que elemento desea insertar')
+                e = user2.nombre
+                new_linked_list.insert_after_item(x, e)
+            elif opt == '4':
+                print('\tLista Actual\n','----'*7,'\n')
+                new_linked_list.traverse_list()
+                x = input('Antes de que elemento desea insertar')
+                e = user3.nombre
+                new_linked_list.insert_before_item(x, e)
+            elif opt == '5':
+                print('\tLista Actual\n','----'*7,'\n')
+                new_linked_list.traverse_list()
+                e = user4.nombre
+                new_linked_list.insert_at_end(e)
+            elif opt == '6':
+                new_linked_list.delete_at_start()
+                print('\tLista Actual\n','----'*7,'\n')
+                new_linked_list.traverse_list()
+            elif opt == '7':
+                new_linked_list.delete_at_end
+                print('\tLista Actual\n','----'*7,'\n')
+                new_linked_list.traverse_list()
+            elif opt == '8':
+                x = input('que elemento desea Eliminar')
+                new_linked_list.delete_element_by_value(x)
+                print('\tLista Actual\n','----'*7,'\n')
+                new_linked_list.traverse_list()
+            elif opt == '9':
+                new_linked_list.delete_element_by_value(x)
+                print('\tLista Actual\n','----'*7,'\n')
+                new_linked_list.reverse_linked_list()
+            else:
+                print('Opcion incorrecta')
+    options()
