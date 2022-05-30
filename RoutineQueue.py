@@ -29,4 +29,4 @@ class RoutineQueue:
         else:
             temp = self.queue[1:]
             self.queue = temp
-            print(f'Element removed: {self.head}\n{self.queue}')
+            print(f'Element removed: {self.head}\n{self.queue}') 

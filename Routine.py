@@ -133,7 +133,7 @@ class Routine:
         print("Rutinas ordenadas por hota inicio: ")
         for r in rutinas:
             print(r)
-        print("\n")
+        print("\n" )
 
     def enqueue(self, data):
         if (len(self.queue) >= self.size):

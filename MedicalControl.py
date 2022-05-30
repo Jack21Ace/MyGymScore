@@ -2,12 +2,6 @@ from datetime import date
 from typing import Any
 
 class MedicalControl:
-    # Declaracion de Variables
-    # cola vacia
-    emptyQueue:list = []
-    # head
-    head:int = 0
-
     # Declaración del constructor o Inicializador de tipo objeto
     def __init__(self, medicEmploName:str, diagnosis:str, treatment:str, suggestions:str, medicalDate:date,
     evolutionaryLevel:float, patologies:list):
@@ -22,7 +16,6 @@ class MedicalControl:
         self._medicalDate = medicalDate
         self._evolutionaryLevel = evolutionaryLevel
         self._patologies:list = patologies
-        self.size = 7
 
 # START METHODS
     # Getter && Setter para medicEmploName
@@ -154,4 +147,4 @@ class MedicalControl:
 
 
 # # obj_MC = MedicalControl("Dr. Rojas", "Paciente con fractura en muñeca derecha, reco: Terapia F", "Rutinas poco peso, fuertes repeticiones", "todos los días", date(2022, 5, 7), 0.0, ['A5248','A9634', 'R9865'])
-# # print(obj_MC)
+# # print(obj_MC )
