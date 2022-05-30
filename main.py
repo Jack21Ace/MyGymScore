@@ -58,13 +58,13 @@ if __name__ == '__main__':
             elif opt == '3':
                 print('\tLista Actual\n','----'*7,'\n')
                 new_linked_list.traverse_list()
-                x = input('Despues de que elemento desea insertar')
+                x = input('Despues de que elemento desea insertar\t')
                 e = user2.nombre
                 new_linked_list.insert_after_item(x, e)
             elif opt == '4':
                 print('\tLista Actual\n','----'*7,'\n')
                 new_linked_list.traverse_list()
-                x = input('Antes de que elemento desea insertar')
+                x = input('Antes de que elemento desea insertar\t')
                 e = user3.nombre
                 new_linked_list.insert_before_item(x, e)
             elif opt == '5':
@@ -81,7 +81,7 @@ if __name__ == '__main__':
                 print('\tLista Actual\n','----'*7,'\n')
                 new_linked_list.traverse_list()
             elif opt == '8':
-                x = input('que elemento desea Eliminar')
+                x = input('que elemento desea Eliminar\t')
                 new_linked_list.delete_element_by_value(x)
                 print('\tLista Actual\n','----'*7,'\n')
                 new_linked_list.traverse_list()
