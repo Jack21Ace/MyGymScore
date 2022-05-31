@@ -7,7 +7,7 @@ from MedicalControl import MedicalControl
 if __name__ == '__main__':
 
     rutinas:list = []
-    r1 = Routine(102, 4, 15, 20.0, time(8, 30), "Acondicionamiento")
+    r1 = Routine(102, 4, 15, 20.0, time(8, 30),"Acondicionamiento")
     r2 = Routine(202, 3, 10, 30.0, time(9, 45), "Tonificar")
     r3 = Routine(140, 4, 12, 10.0, time(10, 00), "Terapia Fisica")
     r4 = Routine(127, 6, 18, 0.0, time(13, 30), "Terapia Fisica")
@@ -17,7 +17,7 @@ if __name__ == '__main__':
     rutinas = [r1,r2,r3,r4,r5,r6,r7]
 
     mc_list:list = []
-    mC1 = MedicalControl("1", "Paciente de ingreso, reco: Acondicionamiento", "Rutina: Acondicionamiento Inicial", "1-Sem", date(2022, 5, 7), 0.0, ['A5800','A9645', 'R9865'])
+    mC1 = MedicalControl('1', "Paciente de ingreso, reco: Acondicionamiento", "Rutina: Acondicionamiento Inicial", "1-Sem", date(2022, 5, 7), 0.0, ['A5800','A9645', 'R9865'])
     mC2 = MedicalControl("2", "Paciente Sin novedad, reco: N/A", "Rutina: libre", "N/A", date(2022, 5, 7), 30.0, ['AB25844','C9634', 'E9865'])
     mC3 = MedicalControl("3", "Paciente con mareos, reco: Tonificar", "Rutina: peso medido, fuertes repeticiones", "alternancia", date(2022, 5, 7), 23.5, ['A5248', 'RW961'])
     mC4 = MedicalControl("4", "Paciente de competencia, reco: N/A", "Rutina: , fuertes repeticiones", "todos los días", date(2022, 5, 7), 15.0, [])
@@ -39,56 +39,185 @@ if __name__ == '__main__':
     # user5.rutina = r3
     data:User = [user1, user2, user3, user4, user5]
 
-    new_linked_list = DoublyLinkedList()
-    def options():
-        opt = ''
-        while (opt != 'x'):
-            opt = str(input("Ingrese una de las siguientes opciones\n-----//-----//-----//-----//-----//-----//-----//-----\n1-) Listar elementos\n2-) Insertar al inicio\n3-) Insertar despues de\n4-) Insertar antes de\n5-) Insertar al final\n6-) Eliminar el primero\n7-) Eliminar el ultimo\n8-) Eliminar selección\n9-) Invertir Lista\nX-) Salir\t").lower())
-            if opt == 'x':
-                print('Bye')
-            elif opt == '1':
-                print('\tLista Actual\n','----'*7,'\n')
-                new_linked_list.traverse_list()
-            elif opt == '2':
-                if (new_linked_list.start_node == None):
-                    e = user1.nombre
-                    new_linked_list.insert_in_emptylist(e)
+    def userLinked():
+        new_linked_list = DoublyLinkedList()
+        def options():
+            opt = ''
+            while (opt != 'x'):
+                opt = str(input("Ingrese una de las siguientes opciones\n-----//-----//-----//-----//-----//-----//-----//-----\n1-) Listar elementos\n2-) Insertar al inicio\n3-) Insertar despues de\n4-) Insertar antes de\n5-) Insertar al final\n6-) Eliminar el primero\n7-) Eliminar el ultimo\n8-) Eliminar selección\n9-) Invertir Lista\nX-) Salir\t").lower())
+                if opt == 'x':
+                    print('Bye')
+                elif opt == '1':
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                elif opt == '2':
+                    if (new_linked_list.start_node == None):
+                        e = user1.nombre
+                        new_linked_list.insert_in_emptylist(e)
+                    else:
+                        new_linked_list.insert_at_start(e)
+                elif opt == '3':
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                    x = input('Despues de que elemento desea insertar\t')
+                    e = user2.nombre
+                    new_linked_list.insert_after_item(x, e)
+                elif opt == '4':
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                    x = input('Antes de que elemento desea insertar\t')
+                    e = user3.nombre
+                    new_linked_list.insert_before_item(x, e)
+                elif opt == '5':
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                    e = user4.nombre
+                    new_linked_list.insert_at_end(e)
+                elif opt == '6':
+                    new_linked_list.delete_at_start()
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                elif opt == '7':
+                    new_linked_list.delete_at_end
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                elif opt == '8':
+                    x = input('que elemento desea Eliminar\t')
+                    new_linked_list.delete_element_by_value(x)
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                elif opt == '9':
+                    new_linked_list.delete_element_by_value(x)
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.reverse_linked_list()
                 else:
-                    new_linked_list.insert_at_start(e)
-            elif opt == '3':
-                print('\tLista Actual\n','----'*7,'\n')
-                new_linked_list.traverse_list()
-                x = input('Despues de que elemento desea insertar\t')
-                e = user2.nombre
-                new_linked_list.insert_after_item(x, e)
-            elif opt == '4':
-                print('\tLista Actual\n','----'*7,'\n')
-                new_linked_list.traverse_list()
-                x = input('Antes de que elemento desea insertar\t')
-                e = user3.nombre
-                new_linked_list.insert_before_item(x, e)
-            elif opt == '5':
-                print('\tLista Actual\n','----'*7,'\n')
-                new_linked_list.traverse_list()
-                e = user4.nombre
-                new_linked_list.insert_at_end(e)
-            elif opt == '6':
-                new_linked_list.delete_at_start()
-                print('\tLista Actual\n','----'*7,'\n')
-                new_linked_list.traverse_list()
-            elif opt == '7':
-                new_linked_list.delete_at_end
-                print('\tLista Actual\n','----'*7,'\n')
-                new_linked_list.traverse_list()
-            elif opt == '8':
-                x = input('que elemento desea Eliminar\t')
-                new_linked_list.delete_element_by_value(x)
-                print('\tLista Actual\n','----'*7,'\n')
-                new_linked_list.traverse_list()
-            elif opt == '9':
-                new_linked_list.delete_element_by_value(x)
-                print('\tLista Actual\n','----'*7,'\n')
-                new_linked_list.reverse_linked_list()
-            else:
-                print('Opcion incorrecta')
+                    print('Opcion incorrecta')
+        options()
+
+
+    def routineLinked():
+        new_linked_list = DoublyLinkedList()
+        def options():
+            opt = ''
+            while (opt != 'x'):
+                opt = str(input("Ingrese una de las siguientes opciones\n-----//-----//-----//-----//-----//-----//-----//-----\n1-) Listar elementos\n2-) Insertar al inicio\n3-) Insertar despues de\n4-) Insertar antes de\n5-) Insertar al final\n6-) Eliminar el primero\n7-) Eliminar el ultimo\n8-) Eliminar selección\n9-) Invertir Lista\nX-) Salir\t").lower())
+                if opt == 'x':
+                    print('Bye')
+                elif opt == '1':
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                elif opt == '2':
+                    if (new_linked_list.start_node == None):
+                        e = r1._bodyZone
+                        new_linked_list.insert_in_emptylist(e)
+                    else:
+                        new_linked_list.insert_at_start(e)
+                elif opt == '3':
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                    x = input('Despues de que elemento desea insertar\t')
+                    e = r2._bodyZone
+                    new_linked_list.insert_after_item(x, e)
+                elif opt == '4':
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                    x = input('Antes de que elemento desea insertar\t')
+                    e = r3._bodyZone
+                    new_linked_list.insert_before_item(x, e)
+                elif opt == '5':
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                    e = r4._bodyZone
+                    new_linked_list.insert_at_end(e)
+                elif opt == '6':
+                    new_linked_list.delete_at_start()
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                elif opt == '7':
+                    new_linked_list.delete_at_end
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                elif opt == '8':
+                    x = input('que elemento desea Eliminar\t')
+                    new_linked_list.delete_element_by_value(x)
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                elif opt == '9':
+                    new_linked_list.delete_element_by_value(x)
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.reverse_linked_list()
+                else:
+                    print('Opcion incorrecta')
+        options()
+
+
+    def medicalControlLinked():
+        new_linked_list = DoublyLinkedList()
+        def options():
+            opt = ''
+            while (opt != 'x'):
+                opt = str(input("Ingrese una de las siguientes opciones\n-----//-----//-----//-----//-----//-----//-----//-----\n1-) Listar elementos\n2-) Insertar al inicio\n3-) Insertar despues de\n4-) Insertar antes de\n5-) Insertar al final\n6-) Eliminar el primero\n7-) Eliminar el ultimo\n8-) Eliminar selección\n9-) Invertir Lista\nX-) Salir\t").lower())
+                if opt == 'x':
+                    print('Bye')
+                elif opt == '1':
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                elif opt == '2':
+                    if (new_linked_list.start_node == None):
+                        e = mC1.medicEmploName
+                        new_linked_list.insert_in_emptylist(e)
+                    else:
+                        new_linked_list.insert_at_start(e)
+                elif opt == '3':
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                    x = input('Despues de que elemento desea insertar\t')
+                    e = mC2.medicEmploName
+                    new_linked_list.insert_after_item(x, e)
+                elif opt == '4':
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                    x = input('Antes de que elemento desea insertar\t')
+                    e = mC3.medicEmploName
+                    new_linked_list.insert_before_item(x, e)
+                elif opt == '5':
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                    e = mC4.medicEmploName
+                    new_linked_list.insert_at_end(e)
+                elif opt == '6':
+                    new_linked_list.delete_at_start()
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                elif opt == '7':
+                    new_linked_list.delete_at_end
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                elif opt == '8':
+                    x = input('que elemento desea Eliminar\t')
+                    new_linked_list.delete_element_by_value(x)
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.traverse_list()
+                elif opt == '9':
+                    new_linked_list.delete_element_by_value(x)
+                    print('\tLista Actual\n','----'*7,'\n')
+                    new_linked_list.reverse_linked_list()
+                else:
+                    print('Opcion incorrecta')
+        options()
+
+    def options():
+                opt = ''
+                while (opt != 'x'):
+                    opt = str(input("Ingrese una de las siguientes opciones\n-----//-----//-----//-----//-----//-----//-----//-----\n1-) Usuarios\n2-) Rutinas\n3-) Controles medicos\nX-) Salir\t").lower())
+                    if opt == 'x':
+                        print('Bye')
+                    elif opt == '1':
+                        userLinked()
+                    elif opt == '2':
+                        routineLinked()
+                    elif opt == '3':
+                        medicalControlLinked()
+                    else:
+                        print('Opcion incorrecta')
     options()
